@@ -1,18 +1,18 @@
 //
-//  ViewController.m
-//  Spotifiron
+//  SecondViewController.m
+//  Spotifiron-TabView
 //
 //  Created by Bronson Dupaix on 3/8/16.
 //  Copyright © 2016 Bronson Dupaix. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SecondViewController.h"
 
-@interface ViewController ()
+@interface SecondViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
