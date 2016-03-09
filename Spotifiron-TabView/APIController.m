@@ -1,31 +1,14 @@
 //
-//  FirstViewController.m
+//  APIController.m
 //  Spotifiron-TabView
 //
-//  Created by Bronson Dupaix on 3/8/16.
+//  Created by Sean Calkins on 3/8/16.
 //  Copyright © 2016 Bronson Dupaix. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "APIController.h"
 
-@interface FirstViewController ()
-
-@end
-
-@implementation FirstViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self getArtistApi];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
+@implementation APIController
 -(void) getArtistApi {
     NSString *urlString = @"https://api.spotify.com/v1/search?q=slayer&type=artist";
     NSURLSession *session = [NSURLSession sharedSession];
@@ -36,6 +19,6 @@
                 NSLog(@"%@", data);
                 
             }] resume];
-    
+ 
 }
 @end

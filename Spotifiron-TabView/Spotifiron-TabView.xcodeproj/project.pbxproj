@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14CC5FF31C8FBFFB0007BB74 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF21C8FBFFB0007BB74 /* Artist.m */; };
+		14CC5FF61C8FC0060007BB74 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF51C8FC0060007BB74 /* Album.m */; };
+		14CC5FF91C8FC0160007BB74 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF81C8FC0160007BB74 /* Track.m */; };
+		14CC5FFD1C8FC1F80007BB74 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FFC1C8FC1F80007BB74 /* APIController.m */; };
+		14CC60001C8FC2170007BB74 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FFF1C8FC2170007BB74 /* DataStore.m */; };
 		CAF430F71C8F95BD006129C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF430F61C8F95BD006129C0 /* main.m */; };
 		CAF430FA1C8F95BD006129C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF430F91C8F95BD006129C0 /* AppDelegate.m */; };
 		CAF430FD1C8F95BD006129C0 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF430FC1C8F95BD006129C0 /* FirstViewController.m */; };
@@ -17,6 +22,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14CC5FF11C8FBFFB0007BB74 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
+		14CC5FF21C8FBFFB0007BB74 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
+		14CC5FF41C8FC0060007BB74 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		14CC5FF51C8FC0060007BB74 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		14CC5FF71C8FC0160007BB74 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		14CC5FF81C8FC0160007BB74 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
+		14CC5FFB1C8FC1F80007BB74 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIController.h; path = ../APIController.h; sourceTree = "<group>"; };
+		14CC5FFC1C8FC1F80007BB74 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIController.m; path = ../APIController.m; sourceTree = "<group>"; };
+		14CC5FFE1C8FC2170007BB74 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
+		14CC5FFF1C8FC2170007BB74 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
 		CAF430F21C8F95BD006129C0 /* Spotifiron-TabView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spotifiron-TabView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF430F61C8F95BD006129C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAF430F81C8F95BD006129C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +57,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14CC5FFA1C8FC0210007BB74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14CC5FF11C8FBFFB0007BB74 /* Artist.h */,
+				14CC5FF21C8FBFFB0007BB74 /* Artist.m */,
+				14CC5FF41C8FC0060007BB74 /* Album.h */,
+				14CC5FF51C8FC0060007BB74 /* Album.m */,
+				14CC5FF71C8FC0160007BB74 /* Track.h */,
+				14CC5FF81C8FC0160007BB74 /* Track.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		14CC60011C8FC21F0007BB74 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				14CC5FFB1C8FC1F80007BB74 /* APIController.h */,
+				14CC5FFC1C8FC1F80007BB74 /* APIController.m */,
+				14CC5FFE1C8FC2170007BB74 /* DataStore.h */,
+				14CC5FFF1C8FC2170007BB74 /* DataStore.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		14CC60021C8FC22E0007BB74 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAF430FB1C8F95BD006129C0 /* FirstViewController.h */,
+				CAF430FC1C8F95BD006129C0 /* FirstViewController.m */,
+				CAF430FE1C8F95BD006129C0 /* SecondViewController.h */,
+				CAF430FF1C8F95BD006129C0 /* SecondViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		CAF430E91C8F95BD006129C0 = {
 			isa = PBXGroup;
 			children = (
@@ -63,11 +113,10 @@
 			children = (
 				CAF430F81C8F95BD006129C0 /* AppDelegate.h */,
 				CAF430F91C8F95BD006129C0 /* AppDelegate.m */,
-				CAF430FB1C8F95BD006129C0 /* FirstViewController.h */,
-				CAF430FC1C8F95BD006129C0 /* FirstViewController.m */,
-				CAF430FE1C8F95BD006129C0 /* SecondViewController.h */,
-				CAF430FF1C8F95BD006129C0 /* SecondViewController.m */,
 				CAF431011C8F95BD006129C0 /* Main.storyboard */,
+				14CC60021C8FC22E0007BB74 /* View Controllers */,
+				14CC60011C8FC21F0007BB74 /* Controllers */,
+				14CC5FFA1C8FC0210007BB74 /* Models */,
 				CAF431041C8F95BD006129C0 /* Assets.xcassets */,
 				CAF431061C8F95BD006129C0 /* LaunchScreen.storyboard */,
 				CAF431091C8F95BD006129C0 /* Info.plist */,
@@ -155,10 +204,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CC5FFD1C8FC1F80007BB74 /* APIController.m in Sources */,
+				14CC5FF91C8FC0160007BB74 /* Track.m in Sources */,
 				CAF431001C8F95BD006129C0 /* SecondViewController.m in Sources */,
 				CAF430FA1C8F95BD006129C0 /* AppDelegate.m in Sources */,
 				CAF430FD1C8F95BD006129C0 /* FirstViewController.m in Sources */,
+				14CC5FF61C8FC0060007BB74 /* Album.m in Sources */,
 				CAF430F71C8F95BD006129C0 /* main.m in Sources */,
+				14CC5FF31C8FBFFB0007BB74 /* Artist.m in Sources */,
+				14CC60001C8FC2170007BB74 /* DataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +359,7 @@
 				CAF4310E1C8F95BD006129C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
