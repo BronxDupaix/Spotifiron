@@ -13,6 +13,8 @@
     NSMutableArray *artists;
 }
 
+@property (strong, nonatomic) NSMutableArray *artistArray;
+
 @end
 
 @implementation FirstViewController
@@ -20,6 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getArtistApi];
+    
+    self.artistArray = [[NSMutableArray alloc] init];
+    
+    NSArray *array = @[ @""]; 
+    
+    [self.artistArray addObjectsFromArray:array];
 }
 
 
