@@ -14,4 +14,7 @@
 @property (nonatomic, strong) NSArray *imageUrls;
 @property (nonatomic, strong) NSArray *albums;
 @property (nonatomic, strong) NSArray *topTracks;
+
++ (Artist *)artistWithDictionary:(NSDictionary *)artistDictionary;
+
 @end

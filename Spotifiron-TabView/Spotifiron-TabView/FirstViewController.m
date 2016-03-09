@@ -9,7 +9,9 @@
 #import "FirstViewController.h"
 #import "Artist.h"
 
-@interface FirstViewController ()
+@interface FirstViewController () {
+    NSMutableArray *artists;
+}
 
 @end
 
@@ -50,15 +52,20 @@
                         NSLog(@"the json was bad");
                     }
                     
-                    if([object isKindOfClass:[NSDictionary class]])
+                    if([object isKindOfClass:[NSArray class]])
                     {
-                        NSDictionary *results = object;
-                        NSLog(@"%@", results);
-                       // [(Artist)initWithDictionary:(NSDictionary *)results];
+                        NSDictionary *results = [object firstObject];
+                            Artist *artist = [Artist artistWithDictionary:results];
+                        NSLog(@"%@", artist.name);
+                            [artists addObject:artist];
+                            for (Artist *a in artists) {
+                                NSLog(@"%@", a.name);
+                                NSLog(@"%lu", artists.count);
+                            }
                     }
                     else
                     {
-                    
+                        
                     }
                 }
                 else

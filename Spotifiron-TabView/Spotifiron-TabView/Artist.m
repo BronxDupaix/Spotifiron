@@ -9,19 +9,24 @@
 #import "Artist.h"
 
 @implementation Artist
--(instancetype)initWithDictionary:(NSDictionary *)dict {
+
+
++ (Artist *)artistWithDictionary:(NSDictionary *)artistDictionary
+{
+    Artist *artist = nil;
     
-    if(self = [super init] ) {
-        self.name = [dict valueForKey:@"name"];
+    if (artistDictionary) {
+        
+        artist = [[Artist alloc] init];
+        artist.name = [artistDictionary objectForKey:@"name"];
+        artist.idString = [artistDictionary objectForKey:@"id"];
     }
-    if(self = [super init] ) {
-        self.idString = [dict valueForKey:@"id"];
-    }
+    
+    return artist;
+}
+
 //    if(self = [super init] ) {
 //        self.imageUrls = [dict ]
 //    }
-    return self;
-    
-    
-}
+
 @end
