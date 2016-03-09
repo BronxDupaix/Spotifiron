@@ -62,14 +62,14 @@
                     
                     if([object isKindOfClass:[NSArray class]])
                     {
-                        NSDictionary *results = [object firstObject];
-                            Artist *artist = [Artist artistWithDictionary:results];
-                        NSLog(@"%@", artist.name);
-                            [artists addObject:artist];
-                            for (Artist *a in artists) {
-                                NSLog(@"%@", a.name);
-                                NSLog(@"%lu", artists.count);
-                            }
+//                        NSDictionary *results = [object firstObject];
+//                            Artist *artist = [Artist artistWithDictionary:results];
+//                        NSLog(@"%@", artist.name);
+//                            [artists addObject:artist];
+//                            for (Artist *a in artists) {
+//                                NSLog(@"%@", a.name);
+//                                NSLog(@"%lu", artists.count);
+//                            }
                     }
                     else
                     {
