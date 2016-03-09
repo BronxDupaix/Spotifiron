@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "Artist.h"
 
 @interface FirstViewController ()
 
@@ -32,6 +33,36 @@
                                 NSError *error) {
                 NSLog(@"%@", data);
                 
+                NSData *returnedData = data;
+                if (returnedData == nil) {
+                    NSLog(@"Bad data bro");
+                }
+                if(NSClassFromString(@"NSJSONSerialization"))
+                {
+                    NSError *error = nil;
+                    id object = [NSJSONSerialization
+                                 JSONObjectWithData:returnedData
+                                 options:0
+                                 error:&error];
+                    NSLog(@"%@", object);
+                    
+                    if(error) {
+                        NSLog(@"the json was bad");
+                    }
+                    
+                    if([object isKindOfClass:[NSDictionary class]])
+                    {
+                        NSDictionary *results = object;
+                        NSLog(@"%@", results);
+                       // [(Artist)initWithDictionary:(NSDictionary *)results];
+                    }
+                    else
+                    {
+                    
+                    }
+                }
+                else
+                    NSLog(@"bad things happened");
             }] resume];
     
 }
