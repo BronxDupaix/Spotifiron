@@ -20,64 +20,53 @@
 @implementation FirstViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     [self getArtistApi];
     
-    self.artistArray = [[NSMutableArray alloc] init];
-    
-    NSArray *array = @[ @""]; 
-    
-    [self.artistArray addObjectsFromArray:array];
 }
 
-
-
-
-
 -(void) getArtistApi {
-    NSString *urlString = @"https://api.spotify.com/v1/search?q=slayer&type=artist";
+    
+    NSString *urlString =@"https://api.spotify.com/v1/search?q=slayer&type=artist";
+    
     NSURLSession *session = [NSURLSession sharedSession];
+    
     [[session dataTaskWithURL:[NSURL URLWithString:urlString]
             completionHandler:^(NSData *data,
                                 NSURLResponse *response,
                                 NSError *error) {
-                NSLog(@"%@", data);
                 
-                NSData *returnedData = data;
-                if (returnedData == nil) {
-                    NSLog(@"Bad data bro");
+                if (error != nil) {
+                    NSLog(@"An error occurred: %@", error.localizedDescription);
+                    return;
                 }
-                if(NSClassFromString(@"NSJSONSerialization"))
-                {
-                    NSError *error = nil;
-                    id object = [NSJSONSerialization
-                                 JSONObjectWithData:returnedData
-                                 options:0
-                                 error:&error];
-                    NSLog(@"%@", object);
+                
+                // first dictionary
+                NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+                
+                if (jsonDict != nil) {
+                    // artists dictionary
+                    NSDictionary *artistsDict = [jsonDict objectForKey:@"artists"];
+                
+                    if(artistsDict != nil) {
+                        // array items
+                        NSArray *jsonArray = [artistsDict objectForKey:@"items"];
                     
-                    if(error) {
-                        NSLog(@"the json was bad");
+                        if(jsonArray && jsonArray.count>0) {
+                            for(NSDictionary *dict in jsonArray) {
+                                NSLog(@"%@",dict);
+                            }
+                        } else {
+                            NSLog(@"I couldnt part the items array");
+                        }
+                    } else {
+                        NSLog(@"Could not parse json");
                     }
-                    
-                    if([object isKindOfClass:[NSArray class]])
-                    {
-//                        NSDictionary *results = [object firstObject];
-//                            Artist *artist = [Artist artistWithDictionary:results];
-//                        NSLog(@"%@", artist.name);
-//                            [artists addObject:artist];
-//                            for (Artist *a in artists) {
-//                                NSLog(@"%@", a.name);
-//                                NSLog(@"%lu", artists.count);
-//                            }
-                    }
-                    else
-                    {
-                        
-                    }
+                } else {
+                    NSLog(@"I couldnt part the first json dictionary");
                 }
-                else
-                    NSLog(@"bad things happened");
             }] resume];
     
 }
