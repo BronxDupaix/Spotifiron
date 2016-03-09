@@ -8,7 +8,11 @@
 
 #import "SecondViewController.h"
 
+#import "Album.h"
+
 @interface SecondViewController ()
+
+@property (strong, nonatomic) NSMutableArray *albumArray;
 
 @end
 
@@ -16,6 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.albumArray = [[NSMutableArray alloc] init];
+    
+    NSArray *array = @[ @""];
+    
+    [self.albumArray addObjectsFromArray:array]; 
 
 }
 
