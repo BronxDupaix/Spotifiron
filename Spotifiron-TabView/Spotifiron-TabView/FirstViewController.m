@@ -19,7 +19,7 @@
     [self getArtistApi];
 }
 
-}
+
 
 
 
