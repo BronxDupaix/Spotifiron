@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Artist.h" 
+
 @interface FirstViewController : UIViewController
 
 

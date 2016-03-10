@@ -19,6 +19,7 @@
 		CAF431001C8F95BD006129C0 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF430FF1C8F95BD006129C0 /* SecondViewController.m */; };
 		CAF431051C8F95BD006129C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF431041C8F95BD006129C0 /* Assets.xcassets */; };
 		CAF431081C8F95BD006129C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF431061C8F95BD006129C0 /* LaunchScreen.storyboard */; };
+		CAF431111C91F05B006129C0 /* TopTracksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF431101C91F05B006129C0 /* TopTracksViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		CAF431041C8F95BD006129C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAF431071C8F95BD006129C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAF431091C8F95BD006129C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF4310F1C91F05B006129C0 /* TopTracksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTracksViewController.h; sourceTree = "<group>"; };
+		CAF431101C91F05B006129C0 /* TopTracksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTracksViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				CAF430FC1C8F95BD006129C0 /* FirstViewController.m */,
 				CAF430FE1C8F95BD006129C0 /* SecondViewController.h */,
 				CAF430FF1C8F95BD006129C0 /* SecondViewController.m */,
+				CAF4310F1C91F05B006129C0 /* TopTracksViewController.h */,
+				CAF431101C91F05B006129C0 /* TopTracksViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				14CC5FF91C8FC0160007BB74 /* Track.m in Sources */,
 				CAF431001C8F95BD006129C0 /* SecondViewController.m in Sources */,
 				CAF430FA1C8F95BD006129C0 /* AppDelegate.m in Sources */,
+				CAF431111C91F05B006129C0 /* TopTracksViewController.m in Sources */,
 				CAF430FD1C8F95BD006129C0 /* FirstViewController.m in Sources */,
 				14CC5FF61C8FC0060007BB74 /* Album.m in Sources */,
 				CAF430F71C8F95BD006129C0 /* main.m in Sources */,
