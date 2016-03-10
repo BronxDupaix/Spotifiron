@@ -20,13 +20,16 @@
         artist = [[Artist alloc] init];
         artist.name = [artistDictionary objectForKey:@"name"];
         artist.idString = [artistDictionary objectForKey:@"id"];
+        NSArray *items = [artistDictionary objectForKey:@"images"];
+        NSDictionary *item = items.lastObject;
+        NSString *imageUrl = [item objectForKey:@"url"];
+        artist.imageUrl = imageUrl;
+        NSLog(@"%@", artist.imageUrl);
+        
     }
     
     return artist;
 }
 
-//    if(self = [super init] ) {
-//        self.imageUrls = [dict ]
-//    }
 
 @end
