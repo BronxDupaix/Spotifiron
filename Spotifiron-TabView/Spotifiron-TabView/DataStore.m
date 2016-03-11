@@ -10,4 +10,13 @@
 
 @implementation DataStore
 
++ (id)sharedInstance {
+    static DataStore *sharedInstance = nil;
+    @synchronized(self) {
+        if (sharedInstance == nil)
+            sharedInstance = [[self alloc] init];
+    }
+    return sharedInstance;
+}
+
 @end
