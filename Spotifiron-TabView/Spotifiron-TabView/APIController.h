@@ -15,11 +15,11 @@
 @property (nonatomic, strong) NSMutableArray *topTracks;
 @property (nonatomic, strong) NSMutableArray *relatedArtists;
 
--(void) getArtistApi;
--(void) getAlbumApi;
--(void) getTrackApi;
--(void) getTopTracksApi;
--(void) getRelatedArtistsApi;
+-(void) getArtistApi:(NSString *)artistName;
+-(void) getAlbumApi:(NSString *)artistIdString;
+-(void) getTrackApi:(NSString *)albumIdString;
+-(void) getTopTracksApi:(NSString *)artistIdString;
+-(void) getRelatedArtistsApi:(NSString *)artistIdString;
 
 + (id)sharedInstance;
 

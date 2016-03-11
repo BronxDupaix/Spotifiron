@@ -13,7 +13,6 @@
 
 }
 
-
 @end
 
 @implementation FirstViewController
@@ -21,7 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+   
+    
+   [[APIController sharedInstance] getArtistApi:@"slayer"];
     
 }
 

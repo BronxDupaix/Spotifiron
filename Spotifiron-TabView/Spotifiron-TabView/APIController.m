@@ -23,10 +23,10 @@
     return sharedInstance;
 }
 
--(void) getArtistApi {
+
+-(void) getArtistApi:(NSString *)artistName {
     
-    NSString *urlString =@"https://api.spotify.com/v1/search?q=slayer&type=artist";
-    
+    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", artistName];
     NSURLSession *session = [NSURLSession sharedSession];
     
     [[session dataTaskWithURL:[NSURL URLWithString:urlString]
@@ -55,8 +55,8 @@
                             //                                NSLog(@"%@",dict);
                             Artist *a = [Artist artistWithDictionary:dict];
                             NSLog(@"%@", a.name);
-                            [artists addObject:a];
-                            NSLog(@"%lu",[artists count]);
+                            [self.artists addObject:a];
+                            NSLog(@"%lu",[self.artists count]);
                             
                         } else {
                             NSLog(@"I couldnt parse the items array");
@@ -71,7 +71,7 @@
     
 }
 
--(void) getAlbumApi {
+-(void) getAlbumApi:(NSString *)albumIdString {
     
     NSString *urlString =@"https://api.spotify.com/v1/artists/1IQ2e1buppatiN1bxUVkrk/albums";
     
@@ -97,8 +97,8 @@
                         for (NSDictionary *album in jsonArray) {
                             Album *a = [Album albumWithDictionary:album];
                             NSLog(@"%@", a.name);
-                            [albums addObject:a];
-                            NSLog(@"%lu",[albums count]);
+                            [self.albums addObject:a];
+                            NSLog(@"%lu",[self.albums count]);
                         }
                     } else {
                         NSLog(@"Could not parse json");
@@ -109,7 +109,7 @@
             }] resume];
     
 }
--(void) getTrackApi {
+-(void) getTrackApi:(NSString *)albumIdString {
     
     NSString *urlString =@"https://api.spotify.com/v1/albums/5pf1PjeTAMWmXVQjcn3Jc8/tracks";
     
@@ -135,8 +135,8 @@
                         for (NSDictionary *track in jsonArray) {
                             Track *t = [Track trackWithDictionary:track];
                             NSLog(@"%@", t.name);
-                            [tracks addObject:t];
-                            NSLog(@"%lu",[tracks count]);
+                            [self.tracks addObject:t];
+                            NSLog(@"%lu",[self.tracks count]);
                         }
                     } else {
                         NSLog(@"Could not parse json");
@@ -148,7 +148,7 @@
     
 }
 
--(void) getTopTracksApi {
+-(void) getTopTracksApi:(NSString *)artistIdString {
     
     NSString *urlString =@"https://api.spotify.com/v1/artists/1IQ2e1buppatiN1bxUVkrk/top-tracks?country=US";
     
@@ -173,8 +173,8 @@
                         for (NSDictionary *track in jsonArray) {
                             Track *t = [Track trackWithDictionary:track];
                             NSLog(@"%@", t.name);
-                            [topTracks addObject:t];
-                            NSLog(@"%lu",[topTracks count]);
+                            [self.topTracks addObject:t];
+                            NSLog(@"%lu",[self.topTracks count]);
                         }
                     } else {
                         NSLog(@"Could not parse json");
@@ -187,7 +187,7 @@
 }
 
 
--(void) getRelatedArtistsApi {
+-(void) getRelatedArtistsApi:(NSString *)artistIdString {
     
     NSString *urlString =@"https://api.spotify.com/v1/artists/1IQ2e1buppatiN1bxUVkrk/related-artists";
     
@@ -216,8 +216,8 @@
                             
                             Artist *a = [Artist artistWithDictionary:artistDict];
                             NSLog(@"%@", a.name);
-                            [relatedArtists addObject:a];
-                            NSLog(@"%lu",[relatedArtists count]);
+                            [self.relatedArtists addObject:a];
+                            NSLog(@"%lu",[self.relatedArtists count]);
                         }
                     }
                 } else {
