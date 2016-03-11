@@ -23,7 +23,7 @@
     return sharedInstance;
 }
 
-
+Artist *currentArtist;
 -(void) getArtistApi:(NSString *)artistName {
     
     NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", artistName];
@@ -52,11 +52,15 @@
                         
                         if(jsonArray && jsonArray.count>0) {
                             NSDictionary *dict = jsonArray.firstObject;
-                            //                                NSLog(@"%@",dict);
+                                                           //NSLog(@"%@",dict);
                             Artist *a = [Artist artistWithDictionary:dict];
                             NSLog(@"%@", a.name);
+                            currentArtist = a;
+                            [[APIController sharedInstance] getArtistApi:a.idString];
+                            NSLog(@"%@", a.idString);
+
                             [self.artists addObject:a];
-                            NSLog(@"%lu",[self.artists count]);
+                            NSLog(@"%lu",self.artists.count);
                             
                         } else {
                             NSLog(@"I couldnt parse the items array");
@@ -71,9 +75,9 @@
     
 }
 
--(void) getAlbumApi:(NSString *)albumIdString {
+-(void) getAlbumApi:(NSString *)artistIdString {
     
-    NSString *urlString =@"https://api.spotify.com/v1/artists/1IQ2e1buppatiN1bxUVkrk/albums";
+    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/artists/%@/albums", artistIdString];
     
     NSURLSession *session = [NSURLSession sharedSession];
     
