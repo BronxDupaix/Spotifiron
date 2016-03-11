@@ -10,6 +10,7 @@
 #import "Artist.h"
 #import "Album.h"
 #import "Track.h"
+#import "DataStore.h"
 
 @implementation APIController
 
@@ -52,15 +53,14 @@ Artist *currentArtist;
                         
                         if(jsonArray && jsonArray.count>0) {
                             NSDictionary *dict = jsonArray.firstObject;
-                                                           //NSLog(@"%@",dict);
+                            //NSLog(@"%@",dict);
                             Artist *a = [Artist artistWithDictionary:dict];
                             NSLog(@"%@", a.name);
                             currentArtist = a;
-                            [[APIController sharedInstance] getArtistApi:a.idString];
+                            [[APIController sharedInstance] getAlbumApi:a.idString];
                             NSLog(@"%@", a.idString);
-
-                            [self.artists addObject:a];
-                            NSLog(@"%lu",self.artists.count);
+                            [[[DataStore sharedInstance] artists] addObject:a];
+                            NSLog(@"%lu",[[[DataStore sharedInstance] artists] count]);
                             
                         } else {
                             NSLog(@"I couldnt parse the items array");
@@ -101,8 +101,8 @@ Artist *currentArtist;
                         for (NSDictionary *album in jsonArray) {
                             Album *a = [Album albumWithDictionary:album];
                             NSLog(@"%@", a.name);
-                            [self.albums addObject:a];
-                            NSLog(@"%lu",[self.albums count]);
+                            [[[DataStore sharedInstance] albums] addObject:a];
+                            NSLog(@"%lu",[[[DataStore sharedInstance] albums] count]);
                         }
                     } else {
                         NSLog(@"Could not parse json");
@@ -187,7 +187,6 @@ Artist *currentArtist;
                     NSLog(@"I couldnt part the first json dictionary");
                 }
             }] resume];
-    
 }
 
 
