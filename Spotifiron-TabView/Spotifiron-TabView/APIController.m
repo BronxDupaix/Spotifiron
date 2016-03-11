@@ -24,7 +24,6 @@
     return sharedInstance;
 }
 
-Artist *currentArtist;
 -(void) getArtistApi:(NSString *)artistName {
     
     NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", artistName];
@@ -56,7 +55,6 @@ Artist *currentArtist;
                             //NSLog(@"%@",dict);
                             Artist *a = [Artist artistWithDictionary:dict];
                             NSLog(@"%@", a.name);
-                            currentArtist = a;
                             [[APIController sharedInstance] getAlbumApi:a.idString];
                             NSLog(@"%@", a.idString);
                             [[[DataStore sharedInstance] artists] addObject:a];
