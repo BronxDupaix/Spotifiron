@@ -10,4 +10,7 @@
 
 @interface Track : NSObject
 @property (nonatomic, strong) NSString *name;
+
++ (Track *)trackWithDictionary:(NSDictionary *)trackDictionary;
+
 @end
