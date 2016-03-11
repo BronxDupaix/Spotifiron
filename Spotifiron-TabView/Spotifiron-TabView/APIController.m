@@ -13,6 +13,18 @@
 
 @implementation APIController
 
++ (instancetype)sharedInstance {
+    static APIController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[APIController alloc] init];
+    });
+    return sharedInstance;
+}
+
+
+
 NSMutableArray *artists;
 NSMutableArray *albums;
 NSMutableArray *tracks;
