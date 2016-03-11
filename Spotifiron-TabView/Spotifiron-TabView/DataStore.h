@@ -10,4 +10,6 @@
 
 @interface DataStore : NSObject
 
++ (id)sharedInstance;
+
 @end
