@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Theme.h"
+
+@class FirstViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) Theme *theme;
+@property (strong, nonatomic) FirstViewController *firstViewController;
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.firstViewController = [[FirstViewController alloc] init];
+    [self.firstViewController.view setBackgroundColor:[UIColor blackColor]];
+    
+    
     return YES;
 }
 
