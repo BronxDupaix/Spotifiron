@@ -8,8 +8,12 @@
 
 #import "AppDelegate.h"
 #import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "ArtistCollectionViewCell.h"
+#import "TopTracksViewController.h"
 
-@interface AppDelegate ()
+
+@interface AppDelegate()
 
 @end
 
@@ -20,10 +24,16 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]bounds]];
     self.firstViewController = [[FirstViewController alloc] init];
-    [self.firstViewController.view setBackgroundColor:[UIColor blackColor]];
-    
-    
+    [self.firstViewController.view setBackgroundColor:[UIColor redColor]];
+    self.secondViewController = [[SecondViewController alloc] init];
+    self.topTracksController = [[TopTracksViewController alloc] init];
+    self.tabBarController = [[UITabBarController alloc] init];
+    [self.tabBarController.tabBar setHidden:NO];
+    [self.window setRootViewController:self.firstViewController];
+    [self.window makeKeyAndVisible];
     return YES;
+    //    self.artistCollectionViewCell.ArtistLabel.font = [UIFont fontWithName: @"Helvetica" size:25.0f];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
