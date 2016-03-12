@@ -12,6 +12,7 @@
 		14CC5FF91C8FC0160007BB74 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF81C8FC0160007BB74 /* Track.m */; };
 		14CC60001C8FC2170007BB74 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FFF1C8FC2170007BB74 /* DataStore.m */; };
 		1B757B011C921796006CB185 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B757B001C921796006CB185 /* Theme.m */; };
+		1B757B041C933D16006CB185 /* ArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */; };
 		5EA617551C90DF9600B086A6 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA617541C90DF9600B086A6 /* APIController.m */; };
 		5EA6175B1C90E00800B086A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA617591C90E00800B086A6 /* Main.storyboard */; };
 		CAF430F71C8F95BD006129C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF430F61C8F95BD006129C0 /* main.m */; };
@@ -34,6 +35,8 @@
 		14CC5FFF1C8FC2170007BB74 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
 		1B757AFF1C921796006CB185 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		1B757B001C921796006CB185 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
+		1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistCollectionViewCell.h; sourceTree = "<group>"; };
+		1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistCollectionViewCell.m; sourceTree = "<group>"; };
 		5EA617531C90DF9600B086A6 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
 		5EA617541C90DF9600B086A6 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
 		5EA6175A1C90E00800B086A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				14CC5FF81C8FC0160007BB74 /* Track.m */,
 				1B757AFF1C921796006CB185 /* Theme.h */,
 				1B757B001C921796006CB185 /* Theme.m */,
+				1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */,
+				1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				CAF430F71C8F95BD006129C0 /* main.m in Sources */,
 				14CC5FF31C8FBFFB0007BB74 /* Artist.m in Sources */,
 				14CC60001C8FC2170007BB74 /* DataStore.m in Sources */,
+				1B757B041C933D16006CB185 /* ArtistCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

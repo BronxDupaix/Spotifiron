@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 #import "Artist.h" 
+#import "Theme.h"
 
 @interface FirstViewController : UIViewController
+
+    
 
 
 @end

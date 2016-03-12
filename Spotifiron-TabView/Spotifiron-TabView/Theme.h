@@ -13,7 +13,9 @@
 
 @property (nonatomic) NSString *font;
 @property (nonatomic, strong) UIColor *backgroundColor;
-@property (nonatomic, strong) UIColor *fontColor;
+@property (nonatomic, strong) NSString *fontColor;
+
+
 
 +(id)sharedManger;
 
