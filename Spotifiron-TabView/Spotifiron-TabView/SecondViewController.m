@@ -44,9 +44,7 @@
     return self.albumArray.count;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
+
 
 
 

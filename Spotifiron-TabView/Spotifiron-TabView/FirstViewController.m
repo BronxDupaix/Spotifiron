@@ -9,10 +9,13 @@
 #import "FirstViewController.h"
 #import "APIController.h"
 #import "Theme.h"
+#import "ArtistCollectionViewCell.h"
 
 @interface FirstViewController () {
 
 }
+
+@property (strong, nonatomic) NSMutableArray *artistArray;
 
 
 @end
@@ -27,7 +30,39 @@
     
    [[APIController sharedInstance] getArtistApi:@"slayer"];
     
+    self.artistArray = [[NSMutableArray alloc] init];
+    
+    [self.artistArray addObject:@"Slayer"];
+    
+    [self.artistArray addObject:@"Megadeth"];
+    
+    [self.artistArray addObject:@"Eminem"];
+    
+    [self.artistArray addObject:@"Lil Wayne"];
+    
+    [self.artistArray addObject:@"Megadeth"];
+    
+    [self.artistArray addObject:@"Eminem"];
+    
+    [self.artistArray addObject:@"Lil Wayne"];
 }
+
+-(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+     ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath] ;
+    
+    NSString* value = [self.artistArray objectAtIndex:indexPath.row];
+    
+    cell.ArtistLabel.text = value;
+
+    return cell;
+}
+
+-(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return self.artistArray.count;
+}
+
 
 
 @end
