@@ -11,8 +11,14 @@
 #import "Artist.h" 
 #import "Theme.h"
 
-@interface FirstViewController : UIViewController
+@protocol fetchArtist <NSObject>
 
+@end
+
+
+@interface FirstViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate> 
+
+@property (weak, nonatomic) IBOutlet UICollectionView *artistCollectionView;
     
 
 
