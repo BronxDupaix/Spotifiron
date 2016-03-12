@@ -18,5 +18,24 @@
     }
     return sharedInstance;
 }
+-(instancetype)init {
+    
+    if ( self = [super init] ) {
+        self.artists = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.albums = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.tracks = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.relatedArtists = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.topTracks = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
 
 @end

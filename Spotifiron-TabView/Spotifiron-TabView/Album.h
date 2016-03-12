@@ -12,7 +12,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *idString;
 @property (nonatomic, strong) NSString *imageUrl;
-@property (nonatomic, strong) NSArray *tracks;
+@property (nonatomic, strong) NSMutableArray *tracks;
 
 + (Album *)albumWithDictionary:(NSDictionary *)albumDictionary;
 

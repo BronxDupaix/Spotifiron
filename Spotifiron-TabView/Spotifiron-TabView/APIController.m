@@ -20,11 +20,48 @@
     @synchronized(self) {
         if (sharedInstance == nil)
             sharedInstance = [[self alloc] init];
+        
     }
+    
     return sharedInstance;
 }
+-(instancetype)init {
+    
+    if ( self = [super init] ) {
+        self.artists = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.albums = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.tracks = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.relatedArtists = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.topTracks = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.hasFinishedArtistApi = NO;
+        self.hasFinishedAlbumApi = NO;
+        self.hasFinishedTrackApi = NO;
+        self.hasFinishedRelatedArtistApi = NO;
+        self.hasFinishedTopTracksApi = NO;
+    }
+    return self;
+}
+
+
+Artist *currentArtist;
 
 -(void) getArtistApi:(NSString *)artistName {
+    
+    self.hasFinishedArtistApi = NO;
+    self.hasFinishedAlbumApi = NO;
+    self.hasFinishedTrackApi = NO;
+    self.hasFinishedRelatedArtistApi = NO;
+    self.hasFinishedTopTracksApi = NO;
     
     NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", artistName];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -33,7 +70,6 @@
             completionHandler:^(NSData *data,
                                 NSURLResponse *response,
                                 NSError *error) {
-                
                 if (error != nil) {
                     NSLog(@"An error occurred: %@", error.localizedDescription);
                     return;
@@ -54,11 +90,14 @@
                             NSDictionary *dict = jsonArray.firstObject;
                             //NSLog(@"%@",dict);
                             Artist *a = [Artist artistWithDictionary:dict];
-                            NSLog(@"%@", a.name);
+                            //NSLog(@"%@", a.name);
                             [[APIController sharedInstance] getAlbumApi:a.idString];
-                            NSLog(@"%@", a.idString);
-                            [[[DataStore sharedInstance] artists] addObject:a];
-                            NSLog(@"%lu",[[[DataStore sharedInstance] artists] count]);
+                            [[APIController sharedInstance] getTopTracksApi:a.idString];
+                            [[APIController sharedInstance] getRelatedArtistsApi:a.idString];
+                            // NSLog(@"%@", a.idString);
+                            currentArtist = a;
+                            [[[DataStore sharedInstance] artists] addObject:currentArtist];
+                            NSLog(@"%lu", [[[DataStore sharedInstance] artists] count]);
                             
                         } else {
                             NSLog(@"I couldnt parse the items array");
@@ -69,13 +108,15 @@
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
+                self.hasFinishedArtistApi = YES;
+                [self passArtistToDataStore];
             }] resume];
     
 }
 
 -(void) getAlbumApi:(NSString *)artistIdString {
     
-    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/artists/%@/albums", artistIdString];
+    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/artists/%@/albums?market=US&album_type=album", artistIdString];
     
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -99,8 +140,12 @@
                         for (NSDictionary *album in jsonArray) {
                             Album *a = [Album albumWithDictionary:album];
                             NSLog(@"%@", a.name);
-                            [[[DataStore sharedInstance] albums] addObject:a];
-                            NSLog(@"%lu",[[[DataStore sharedInstance] albums] count]);
+                            [[currentArtist albums] addObject:a];
+                            //                            NSLog(@"%lu",[[currentArtist albums] count]);
+                        }
+                        for (Album *a in currentArtist.albums) {
+                            // NSLog(@"%@", a.idString);
+                            [[APIController sharedInstance] getTrackApi:a.idString];
                         }
                     } else {
                         NSLog(@"Could not parse json");
@@ -108,12 +153,15 @@
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
+                self.hasFinishedAlbumApi = YES;
+                [self passArtistToDataStore];
             }] resume];
     
 }
 -(void) getTrackApi:(NSString *)albumIdString {
     
-    NSString *urlString =@"https://api.spotify.com/v1/albums/5pf1PjeTAMWmXVQjcn3Jc8/tracks";
+    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/albums/%@/tracks", albumIdString];
+    
     
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -136,9 +184,12 @@
                     if(jsonArray && jsonArray.count>0) {
                         for (NSDictionary *track in jsonArray) {
                             Track *t = [Track trackWithDictionary:track];
-                            NSLog(@"%@", t.name);
-                            [self.tracks addObject:t];
-                            NSLog(@"%lu",[self.tracks count]);
+                            //NSLog(@"%@", t.name);
+                            for (Album *album in [currentArtist albums]) {
+                                if ([album idString] == albumIdString) {
+                                    [[album tracks] addObject:t];
+                                }
+                            }
                         }
                     } else {
                         NSLog(@"Could not parse json");
@@ -146,13 +197,15 @@
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
+                self.hasFinishedTrackApi = YES;
+                [self passArtistToDataStore];
             }] resume];
     
 }
 
 -(void) getTopTracksApi:(NSString *)artistIdString {
     
-    NSString *urlString =@"https://api.spotify.com/v1/artists/1IQ2e1buppatiN1bxUVkrk/top-tracks?country=US";
+    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/artists/%@/top-tracks?country=US", artistIdString];
     
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -175,8 +228,7 @@
                         for (NSDictionary *track in jsonArray) {
                             Track *t = [Track trackWithDictionary:track];
                             NSLog(@"%@", t.name);
-                            [self.topTracks addObject:t];
-                            NSLog(@"%lu",[self.topTracks count]);
+                            [[currentArtist topTracks] addObject:t];
                         }
                     } else {
                         NSLog(@"Could not parse json");
@@ -184,13 +236,16 @@
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
+                self.hasFinishedTopTracksApi = YES;
+                [self passArtistToDataStore];
             }] resume];
+    
 }
 
 
 -(void) getRelatedArtistsApi:(NSString *)artistIdString {
     
-    NSString *urlString =@"https://api.spotify.com/v1/artists/1IQ2e1buppatiN1bxUVkrk/related-artists";
+    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/artists/%@/related-artists", artistIdString];
     
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -217,15 +272,28 @@
                             
                             Artist *a = [Artist artistWithDictionary:artistDict];
                             NSLog(@"%@", a.name);
-                            [self.relatedArtists addObject:a];
-                            NSLog(@"%lu",[self.relatedArtists count]);
+                            [[currentArtist relatedArtists] addObject:a];
+                            
                         }
                     }
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
+                self.hasFinishedRelatedArtistApi = YES;
+                [self passArtistToDataStore];
             }] resume];
     
+    
+}
+-(void) passArtistToDataStore {
+    if (self.hasFinishedArtistApi == YES && self.hasFinishedAlbumApi == YES && self.hasFinishedTrackApi == YES && self.hasFinishedRelatedArtistApi == YES && self.hasFinishedTopTracksApi == YES) {
+        [[[DataStore sharedInstance] artists] addObject:currentArtist];
+        NSArray *testAlbums = [[[[DataStore sharedInstance] artists] firstObject] albums];
+        for (Album *a in testAlbums) {
+            NSLog(@"these are the albums in data store");
+            NSLog(@"%lu", a.tracks.count);
+        }
+    }
 }
 
 

@@ -10,6 +10,12 @@
 
 @interface APIController : NSObject
 
+@property (nonatomic) BOOL hasFinishedAlbumApi;
+@property (nonatomic) BOOL hasFinishedRelatedArtistApi;
+@property (nonatomic) BOOL hasFinishedArtistApi;
+@property (nonatomic) BOOL hasFinishedTrackApi;
+@property (nonatomic) BOOL hasFinishedTopTracksApi;
+@property (nonatomic, strong) NSMutableArray *artists;
 @property (nonatomic, strong) NSMutableArray *albums;
 @property (nonatomic, strong) NSMutableArray *tracks;
 @property (nonatomic, strong) NSMutableArray *topTracks;
@@ -20,6 +26,7 @@
 -(void) getTrackApi:(NSString *)albumIdString;
 -(void) getTopTracksApi:(NSString *)artistIdString;
 -(void) getRelatedArtistsApi:(NSString *)artistIdString;
+-(void) passArtistToDataStore;
 
 + (id)sharedInstance;
 

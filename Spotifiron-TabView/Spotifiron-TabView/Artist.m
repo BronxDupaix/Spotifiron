@@ -24,11 +24,24 @@
         NSDictionary *item = items.lastObject;
         NSString *imageUrl = [item objectForKey:@"url"];
         artist.imageUrl = imageUrl;
-        NSLog(@"%@", artist.imageUrl);
+      //  NSLog(@"%@", artist.imageUrl);
         
     }
     
     return artist;
+}
+-(instancetype)init {
+    
+    if ( self = [super init] ) {
+        self.albums = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.topTracks = [[NSMutableArray alloc] init];
+    }
+    if ( self = [super init] ) {
+        self.relatedArtists = [[NSMutableArray alloc] init];
+    }
+    return self;
 }
 
 

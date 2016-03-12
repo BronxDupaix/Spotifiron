@@ -23,11 +23,18 @@
         NSDictionary *item = items.lastObject;
         NSString *imageUrl = [item objectForKey:@"url"];
         album.imageUrl = imageUrl;
-        NSLog(@"%@", album.imageUrl);
+     //   NSLog(@"%@", album.imageUrl);
         
     }
     
    return album;
+}
+-(instancetype)init {
+    
+    if ( self = [super init] ) {
+        self.tracks = [[NSMutableArray alloc] init];
+    }
+    return self;
 }
 
 @end
