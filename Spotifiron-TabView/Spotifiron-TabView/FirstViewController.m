@@ -10,6 +10,7 @@
 #import "APIController.h"
 #import "Theme.h"
 #import "ArtistCollectionViewCell.h"
+#import "DataStore.h"
 
 @interface FirstViewController () {
 
@@ -30,7 +31,10 @@
     
    [[APIController sharedInstance] getArtistApi:@"slayer"];
     
+    
+    
     self.artistArray = [[NSMutableArray alloc] init];
+    
     
     [self.artistArray addObject:@"Slayer"];
     
@@ -45,6 +49,10 @@
     [self.artistArray addObject:@"Eminem"];
     
     [self.artistArray addObject:@"Lil Wayne"];
+    
+
+    
+    
 }
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
