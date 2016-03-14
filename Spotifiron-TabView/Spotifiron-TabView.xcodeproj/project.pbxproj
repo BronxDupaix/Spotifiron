@@ -85,12 +85,6 @@
 				14CC5FF51C8FC0060007BB74 /* Album.m */,
 				14CC5FF71C8FC0160007BB74 /* Track.h */,
 				14CC5FF81C8FC0160007BB74 /* Track.m */,
-				1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */,
-				1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */,
-				CAF431121C9666C2006129C0 /* AlbumCollectionViewCell.h */,
-				CAF431131C9666C2006129C0 /* AlbumCollectionViewCell.m */,
-				CAF431181C967115006129C0 /* TrackTableViewCell.h */,
-				CAF431191C967115006129C0 /* TrackTableViewCell.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -119,8 +113,22 @@
 				CAF431101C91F05B006129C0 /* TopTracksViewController.m */,
 				CAF431151C966B50006129C0 /* SettingsViewController.h */,
 				CAF431161C966B50006129C0 /* SettingsViewController.m */,
+				5E8C6D771C975419009487BB /* TableViewCells */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5E8C6D771C975419009487BB /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */,
+				1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */,
+				CAF431121C9666C2006129C0 /* AlbumCollectionViewCell.h */,
+				CAF431131C9666C2006129C0 /* AlbumCollectionViewCell.m */,
+				CAF431181C967115006129C0 /* TrackTableViewCell.h */,
+				CAF431191C967115006129C0 /* TrackTableViewCell.m */,
+			);
+			name = TableViewCells;
 			sourceTree = "<group>";
 		};
 		CAF430E91C8F95BD006129C0 = {
@@ -196,7 +204,7 @@
 				TargetAttributes = {
 					CAF430F11C8F95BD006129C0 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = R99S6E3AYJ;
+						DevelopmentTeam = 86Z976V88Y;
 					};
 				};
 			};
@@ -360,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Spotifiron-TabView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BronxDupaix.Spotifiron-TabView";
@@ -371,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Spotifiron-TabView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BronxDupaix.Spotifiron-TabView";
