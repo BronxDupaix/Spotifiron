@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14BF23CA1C97516B00148463 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		14CC5FF11C8FBFFB0007BB74 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		14CC5FF21C8FBFFB0007BB74 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
 		14CC5FF41C8FC0060007BB74 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
@@ -84,8 +85,6 @@
 				14CC5FF51C8FC0060007BB74 /* Album.m */,
 				14CC5FF71C8FC0160007BB74 /* Track.h */,
 				14CC5FF81C8FC0160007BB74 /* Track.m */,
-				1B757AFF1C921796006CB185 /* ThemeManager.h */,
-				1B757B001C921796006CB185 /* ThemeManager.m */,
 				1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */,
 				1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */,
 				CAF431121C9666C2006129C0 /* AlbumCollectionViewCell.h */,
@@ -99,6 +98,8 @@
 		14CC60011C8FC21F0007BB74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B757AFF1C921796006CB185 /* ThemeManager.h */,
+				1B757B001C921796006CB185 /* ThemeManager.m */,
 				5EA617531C90DF9600B086A6 /* APIController.h */,
 				5EA617541C90DF9600B086A6 /* APIController.m */,
 				14CC5FFE1C8FC2170007BB74 /* DataStore.h */,
@@ -143,6 +144,7 @@
 			children = (
 				CAF430F81C8F95BD006129C0 /* AppDelegate.h */,
 				CAF430F91C8F95BD006129C0 /* AppDelegate.m */,
+				14BF23CA1C97516B00148463 /* Constants.h */,
 				5EA617591C90E00800B086A6 /* Main.storyboard */,
 				14CC60021C8FC22E0007BB74 /* View Controllers */,
 				14CC60011C8FC21F0007BB74 /* Controllers */,

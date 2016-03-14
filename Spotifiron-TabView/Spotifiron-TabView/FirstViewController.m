@@ -11,15 +11,13 @@
 #import "ThemeManager.h"
 #import "ArtistCollectionViewCell.h"
 #import "DataStore.h"
+#import "Constants.h"
 
 @interface FirstViewController () {
     
 }
 
 @property (strong, nonatomic) NSMutableArray *relatedArtists;
-
-//@property (weak, nonatomic) DataStore *dataStore;
-
 
 @end
 
@@ -30,48 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-  
-    
     [[APIController sharedInstance] getArtistApi:@"slayer"];
-    
-    
-    
-    
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
     [[self artistCollectionView] reloadData];
-   
-    
-   // [self.artistArray  addObjectsFromArray:artists];
-//    
- //   [self.relatedArtists addObject:@"Slayer"];
-//    
-//    [self.artistArray addObject:@"Megadeth"];
-//    
-//    [self.artistArray addObject:@"Eminem"];
-//    
-//    [self.artistArray addObject:@"Lil Wayne"];
-//    
-//    [self.artistArray addObject:@"Megadeth"];
-//    
-//    [self.artistArray addObject:@"Eminem"];
-//    
-//    [self.artistArray addObject:@"Lil Wayne"];
-//    
-//    [self.artistArray addObject:@"Slayer"];
-//    
-//    [self.artistArray addObject:@"Megadeth"];
-//    
-//    [self.artistArray addObject:@"Eminem"];
-//    
-//    [self.artistArray addObject:@"Lil Wayne"];
-//    
-//    [self.artistArray addObject:@"Megadeth"];
-//    
-//    [self.artistArray addObject:@"Eminem"];
-//    
-//    [self.artistArray addObject:@"Lil Wayne"];
-    
-}
+
+    }
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)
 
