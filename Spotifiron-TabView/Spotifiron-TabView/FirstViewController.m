@@ -8,12 +8,12 @@
 
 #import "FirstViewController.h"
 #import "APIController.h"
-#import "Theme.h"
+#import "ThemeManager.h"
 #import "ArtistCollectionViewCell.h"
 #import "DataStore.h"
 
 @interface FirstViewController () {
-
+    
 }
 
 @property (strong, nonatomic) NSMutableArray *relatedArtists;
@@ -29,7 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     
   
     
@@ -72,11 +71,11 @@
 //    
 //    [self.artistArray addObject:@"Lil Wayne"];
     
-    }
+}
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)
 
-    collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
      ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath];
     
@@ -85,7 +84,7 @@
     cell.ArtistLabel.text = artist.name;
     
     cell.artistImage.image = [UIImage imageNamed:@"Slayer"];
-
+    
     return cell;
 }
 
