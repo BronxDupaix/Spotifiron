@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "Artist.h" 
-#import "Theme.h"
+#import "ThemeManager.h"
 #import "DataStore.h" 
 
 @protocol fetchArtist <NSObject> 
@@ -20,7 +20,7 @@
 @interface FirstViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate> 
 
 @property (weak, nonatomic) IBOutlet UICollectionView *artistCollectionView;
-    
+
 
 
 @end

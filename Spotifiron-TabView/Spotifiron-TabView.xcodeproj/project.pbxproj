@@ -11,7 +11,7 @@
 		14CC5FF61C8FC0060007BB74 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF51C8FC0060007BB74 /* Album.m */; };
 		14CC5FF91C8FC0160007BB74 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF81C8FC0160007BB74 /* Track.m */; };
 		14CC60001C8FC2170007BB74 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FFF1C8FC2170007BB74 /* DataStore.m */; };
-		1B757B011C921796006CB185 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B757B001C921796006CB185 /* Theme.m */; };
+		1B757B011C921796006CB185 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B757B001C921796006CB185 /* ThemeManager.m */; };
 		1B757B041C933D16006CB185 /* ArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */; };
 		5EA617551C90DF9600B086A6 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA617541C90DF9600B086A6 /* APIController.m */; };
 		5EA6175B1C90E00800B086A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA617591C90E00800B086A6 /* Main.storyboard */; };
@@ -36,8 +36,8 @@
 		14CC5FF81C8FC0160007BB74 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		14CC5FFE1C8FC2170007BB74 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
 		14CC5FFF1C8FC2170007BB74 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
-		1B757AFF1C921796006CB185 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
-		1B757B001C921796006CB185 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
+		1B757AFF1C921796006CB185 /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		1B757B001C921796006CB185 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
 		1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistCollectionViewCell.h; sourceTree = "<group>"; };
 		1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistCollectionViewCell.m; sourceTree = "<group>"; };
 		5EA617531C90DF9600B086A6 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 				14CC5FF51C8FC0060007BB74 /* Album.m */,
 				14CC5FF71C8FC0160007BB74 /* Track.h */,
 				14CC5FF81C8FC0160007BB74 /* Track.m */,
-				1B757AFF1C921796006CB185 /* Theme.h */,
-				1B757B001C921796006CB185 /* Theme.m */,
+				1B757AFF1C921796006CB185 /* ThemeManager.h */,
+				1B757B001C921796006CB185 /* ThemeManager.m */,
 				1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */,
 				1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */,
 				CAF431121C9666C2006129C0 /* AlbumCollectionViewCell.h */,
@@ -238,7 +238,7 @@
 				14CC5FF91C8FC0160007BB74 /* Track.m in Sources */,
 				CAF431001C8F95BD006129C0 /* SecondViewController.m in Sources */,
 				CAF430FA1C8F95BD006129C0 /* AppDelegate.m in Sources */,
-				1B757B011C921796006CB185 /* Theme.m in Sources */,
+				1B757B011C921796006CB185 /* ThemeManager.m in Sources */,
 				CAF431111C91F05B006129C0 /* TopTracksViewController.m in Sources */,
 				CAF430FD1C8F95BD006129C0 /* FirstViewController.m in Sources */,
 				CAF4311A1C967115006129C0 /* TrackTableViewCell.m in Sources */,
