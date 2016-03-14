@@ -39,6 +39,8 @@
     
 }
 - (void)dataLoaded {
+    
+    self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
     [[self artistCollectionView] reloadData];
 }
 
