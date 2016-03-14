@@ -22,6 +22,9 @@
 		CAF431051C8F95BD006129C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF431041C8F95BD006129C0 /* Assets.xcassets */; };
 		CAF431081C8F95BD006129C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF431061C8F95BD006129C0 /* LaunchScreen.storyboard */; };
 		CAF431111C91F05B006129C0 /* TopTracksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF431101C91F05B006129C0 /* TopTracksViewController.m */; };
+		CAF431141C9666C2006129C0 /* AlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF431131C9666C2006129C0 /* AlbumCollectionViewCell.m */; };
+		CAF431171C966B50006129C0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF431161C966B50006129C0 /* SettingsViewController.m */; };
+		CAF4311A1C967115006129C0 /* TrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF431191C967115006129C0 /* TrackTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,12 @@
 		CAF431091C8F95BD006129C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF4310F1C91F05B006129C0 /* TopTracksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTracksViewController.h; sourceTree = "<group>"; };
 		CAF431101C91F05B006129C0 /* TopTracksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTracksViewController.m; sourceTree = "<group>"; };
+		CAF431121C9666C2006129C0 /* AlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewCell.h; sourceTree = "<group>"; };
+		CAF431131C9666C2006129C0 /* AlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewCell.m; sourceTree = "<group>"; };
+		CAF431151C966B50006129C0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CAF431161C966B50006129C0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		CAF431181C967115006129C0 /* TrackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackTableViewCell.h; sourceTree = "<group>"; };
+		CAF431191C967115006129C0 /* TrackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +88,10 @@
 				1B757B001C921796006CB185 /* Theme.m */,
 				1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */,
 				1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */,
+				CAF431121C9666C2006129C0 /* AlbumCollectionViewCell.h */,
+				CAF431131C9666C2006129C0 /* AlbumCollectionViewCell.m */,
+				CAF431181C967115006129C0 /* TrackTableViewCell.h */,
+				CAF431191C967115006129C0 /* TrackTableViewCell.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -103,6 +116,8 @@
 				CAF430FF1C8F95BD006129C0 /* SecondViewController.m */,
 				CAF4310F1C91F05B006129C0 /* TopTracksViewController.h */,
 				CAF431101C91F05B006129C0 /* TopTracksViewController.m */,
+				CAF431151C966B50006129C0 /* SettingsViewController.h */,
+				CAF431161C966B50006129C0 /* SettingsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -226,11 +241,14 @@
 				1B757B011C921796006CB185 /* Theme.m in Sources */,
 				CAF431111C91F05B006129C0 /* TopTracksViewController.m in Sources */,
 				CAF430FD1C8F95BD006129C0 /* FirstViewController.m in Sources */,
+				CAF4311A1C967115006129C0 /* TrackTableViewCell.m in Sources */,
+				CAF431141C9666C2006129C0 /* AlbumCollectionViewCell.m in Sources */,
 				14CC5FF61C8FC0060007BB74 /* Album.m in Sources */,
 				CAF430F71C8F95BD006129C0 /* main.m in Sources */,
 				14CC5FF31C8FBFFB0007BB74 /* Artist.m in Sources */,
 				14CC60001C8FC2170007BB74 /* DataStore.m in Sources */,
 				1B757B041C933D16006CB185 /* ArtistCollectionViewCell.m in Sources */,
+				CAF431171C966B50006129C0 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

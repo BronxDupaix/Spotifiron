@@ -10,8 +10,9 @@
 
 #import "Artist.h" 
 #import "Theme.h"
+#import "DataStore.h" 
 
-@protocol fetchArtist <NSObject>
+@protocol fetchArtist <NSObject> 
 
 @end
 

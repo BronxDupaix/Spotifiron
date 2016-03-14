@@ -7,8 +7,8 @@
 //
 
 #import "SecondViewController.h"
-
 #import "Album.h"
+#import "AlbumCollectionViewCell.h"
 
 @interface SecondViewController ()
 
@@ -24,16 +24,54 @@
     
     self.albumArray = [[NSMutableArray alloc] init];
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"AlbumCell"];
+    // [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"AlbumCell"];
+    
+    [self.albumArray addObject:@"Meteora"];
+    
+    [self.albumArray addObject:@"Relapse"];
+    
+    [self.albumArray addObject:@"Eminem Show"];
+    
+    [self.albumArray addObject:@"Hybrid Theory"];
+    
+    [self.albumArray addObject:@"Meteora"];
+    
+    [self.albumArray addObject:@"Relapse"];
+    
+    [self.albumArray addObject:@"Eminem Show"];
+    
+    [self.albumArray addObject:@"Hybrid Theory"];
+    
+    [self.albumArray addObject:@"Meteora"];
+    
+    [self.albumArray addObject:@"Relapse"];
+    
+    [self.albumArray addObject:@"Eminem Show"];
+    
+    [self.albumArray addObject:@"Hybrid Theory"];
+    
+    [self.albumArray addObject:@"Meteora"];
+    
+    [self.albumArray addObject:@"Relapse"];
+    
+    [self.albumArray addObject:@"Eminem Show"];
+    
+    [self.albumArray addObject:@"Hybrid Theory"];
+
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
 
     cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    NSString* album = [self.albumArray objectAtIndex:indexPath.row];
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"AlbumCell" forIndexPath:indexPath];
     
+    AlbumCollectionViewCell *cell = [collectionView   dequeueReusableCellWithReuseIdentifier:@"AlbumCell" forIndexPath:indexPath];
+    
+    cell.albumName.text = album;
+    
+    cell.albumImage.image = [UIImage imageNamed:@"PinkFloyd"];
     
     return cell;
     
