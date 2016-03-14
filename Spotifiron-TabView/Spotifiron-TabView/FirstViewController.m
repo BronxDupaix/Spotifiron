@@ -28,17 +28,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataLoaded)
+                                                 name:kNotificationTracksLoaded
+                                               object:nil];
+    
     [[APIController sharedInstance] getArtistApi:@"slayer"];
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
+    
+    
+}
+- (void)dataLoaded {
     [[self artistCollectionView] reloadData];
-
-    }
+}
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)
 
 collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-     ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath];
+    ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath];
     
     Artist *artist = [self.relatedArtists objectAtIndex:indexPath.row];
     

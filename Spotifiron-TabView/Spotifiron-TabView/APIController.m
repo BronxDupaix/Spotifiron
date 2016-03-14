@@ -11,6 +11,7 @@
 #import "Album.h"
 #import "Track.h"
 #import "DataStore.h"
+#import "Constants.h"
 
 @implementation APIController
 
@@ -284,16 +285,11 @@ Artist *currentArtist;
         [[[DataStore sharedInstance] artists] addObject:currentArtist];
         NSArray *sharedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
         NSLog(@"%lu", sharedArtists.count);
-        //        NSArray *testAlbums = [[[[DataStore sharedInstance] artists] firstObject] albums];
-        //        for (Album *a in testAlbums) {
-        //         NSLog(@"these are the albums in data store");
-        //            NSLog(@"Album name %@ count: %lu",a.name, a.tracks.count);
-        //        }
-        //        NSArray *currentArtistAlbums = [currentArtist albums];
-        //        for (Album *a in currentArtistAlbums) {
-        //            NSLog(@"these are the albums in current artist");
-        //            NSLog(@"%lu", a.tracks.count);
-        //        }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationTracksLoaded
+                                                            object:nil
+                                                          userInfo:nil];
+        
     }
 }
 -(void) checkIfAllDataIsLoaded {
