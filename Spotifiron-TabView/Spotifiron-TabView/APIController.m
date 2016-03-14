@@ -25,23 +25,14 @@
     
     return sharedInstance;
 }
+
+
 -(instancetype)init {
     
     if ( self = [super init] ) {
         self.artists = [[NSMutableArray alloc] init];
     }
-    if ( self = [super init] ) {
-        self.albums = [[NSMutableArray alloc] init];
-    }
-    if ( self = [super init] ) {
-        self.tracks = [[NSMutableArray alloc] init];
-    }
-    if ( self = [super init] ) {
-        self.relatedArtists = [[NSMutableArray alloc] init];
-    }
-    if ( self = [super init] ) {
-        self.topTracks = [[NSMutableArray alloc] init];
-    }
+    
     return self;
 }
 
@@ -57,9 +48,9 @@ Artist *currentArtist;
 
 
 -(void) getArtistApi:(NSString *)artistName {
+    dispatch_group_t apiGroup = dispatch_group_create();
     
-    
-    
+    dispatch_group_enter(apiGroup);
     NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", artistName];
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -93,8 +84,8 @@ Artist *currentArtist;
                             [[APIController sharedInstance] getRelatedArtistsApi:a.idString];
                             // NSLog(@"%@", a.idString);
                             currentArtist = a;
-//                            [[[DataStore sharedInstance] artists] addObject:currentArtist];
-//                            NSLog(@"%lu", [[[DataStore sharedInstance] artists] count]);
+                            //                            [[[DataStore sharedInstance] artists] addObject:currentArtist];
+                            //                            NSLog(@"%lu", [[[DataStore sharedInstance] artists] count]);
                             
                         } else {
                             NSLog(@"I couldnt parse the items array");
@@ -135,9 +126,9 @@ Artist *currentArtist;
                     if(jsonArray && jsonArray.count>0) {
                         for (NSDictionary *album in jsonArray) {
                             Album *a = [Album albumWithDictionary:album];
-                            NSLog(@"%@", a.name);
+                           // NSLog(@"%@", a.name);
                             [[currentArtist albums] addObject:a];
-                            NSLog(@"%lu",[[currentArtist albums] count]);
+                           // NSLog(@"%lu",[[currentArtist albums] count]);
                         }
                         for (Album *a in currentArtist.albums) {
                             // NSLog(@"%@", a.idString);
@@ -187,7 +178,7 @@ Artist *currentArtist;
                                 }
                             }
                         }
-                        //[self passArtistToDataStore];
+                        [self passArtistToDataStore];
                     } else {
                         NSLog(@"Could not parse json");
                     }
@@ -280,16 +271,27 @@ Artist *currentArtist;
 }
 
 -(void) passArtistToDataStore {
-    [[[DataStore sharedInstance] artists] addObject:currentArtist];
-    NSArray *testAlbums = [[[[DataStore sharedInstance] artists] firstObject] albums];
-    for (Album *a in testAlbums) {
-        NSLog(@"these are the albums in data store");
-        NSLog(@"%lu", a.tracks.count);
+    BOOL allAlbumsLoaded = YES;
+    
+    for (Album *album in currentArtist.albums) {
+        if (album.tracks.count == 0) {
+            allAlbumsLoaded = NO;
+        }
     }
-    NSArray *currentArtistAlbums = [currentArtist albums];
-    for (Album *a in currentArtistAlbums) {
-        NSLog(@"these are the albums in current artist");
-        NSLog(@"%lu", a.tracks.count);
+    
+    if (allAlbumsLoaded == YES) {
+        
+        [[[DataStore sharedInstance] artists] addObject:currentArtist];
+        NSArray *testAlbums = [[[[DataStore sharedInstance] artists] firstObject] albums];
+        for (Album *a in testAlbums) {
+            NSLog(@"these are the albums in data store");
+            NSLog(@"Album name %@ count: %lu",a.name, a.tracks.count);
+        }
+//        NSArray *currentArtistAlbums = [currentArtist albums];
+//        for (Album *a in currentArtistAlbums) {
+//            NSLog(@"these are the albums in current artist");
+//            NSLog(@"%lu", a.tracks.count);
+//        }
     }
 }
 
