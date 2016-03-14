@@ -11,10 +11,20 @@
 
 @interface ThemeManager : NSObject
 
-@property (nonatomic) NSString *font;
-@property (nonatomic, strong) UIColor *backgroundColor;
-@property (nonatomic, strong) NSString *fontColor;
-
 +(id)sharedManger;
+
+
+@property (nonatomic, weak)   NSUserDefaults *defaults;
+@property (nonatomic, strong) NSString *currentFontNameString;
+@property (nonatomic, strong) UIColor *currentBackgroundColor;
+@property (nonatomic, strong) UIColor *currentFontColor;
+
+-(void)chooseDefaultTheme;
+-(void)chooseTheme2;
+-(void)chooseTheme3;
+
+-(BOOL)loadCustomTheme;
+-(BOOL)saveCustomTheme;
+
 
 @end

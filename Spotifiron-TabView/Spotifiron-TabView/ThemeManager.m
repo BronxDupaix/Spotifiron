@@ -19,5 +19,51 @@
     return sharedTheme;
 }
 
+-(instancetype)init {
+    
+    if ( self = [super init]) {
+        
+        self.defaults = [NSUserDefaults standardUserDefaults];
+        
+    }
+    
+    return self;
+}
+
+
+//currentFontNameString;
+//currentBackgroundColor;
+//currentFontColor;
+
+-(void)chooseDefaultTheme {
+    
+    self.currentBackgroundColor = [UIColor orangeColor];
+    self.currentFontNameString =@"Helvetica";
+    self.currentFontColor = [UIColor blueColor];
+}
+
+-(void)chooseTheme2 {
+    
+    
+}
+
+
+
+-(void)chooseTheme3 {
+    
+}
+
+-(BOOL)loadCustomTheme {
+    return NO;
+}
+
+-(BOOL)saveCustomTheme {
+    
+    
+    
+    return NO;
+}
+
+
 
 @end
