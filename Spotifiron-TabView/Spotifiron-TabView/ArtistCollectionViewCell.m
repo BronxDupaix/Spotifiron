@@ -7,6 +7,7 @@
 //
 
 #import "ArtistCollectionViewCell.h"
+#import "ThemeManager.h" 
 
 @implementation ArtistCollectionViewCell
 

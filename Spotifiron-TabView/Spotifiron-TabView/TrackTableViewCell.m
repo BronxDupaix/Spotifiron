@@ -7,6 +7,7 @@
 //
 
 #import "TrackTableViewCell.h"
+#import "ThemeManager.h"
 
 @implementation TrackTableViewCell
 
