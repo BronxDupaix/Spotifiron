@@ -31,7 +31,12 @@
     [super viewDidLoad];
    
     
-   [[APIController sharedInstance] getArtistApi:@"slayer"];
+  
+    
+    [[APIController sharedInstance] getArtistApi:@"slayer"];
+    
+    
+    
     
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
     [[self artistCollectionView] reloadData];
