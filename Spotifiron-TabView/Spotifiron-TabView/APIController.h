@@ -10,11 +10,6 @@
 
 @interface APIController : NSObject
 
-@property (nonatomic) BOOL hasFinishedAlbumApi;
-@property (nonatomic) BOOL hasFinishedRelatedArtistApi;
-@property (nonatomic) BOOL hasFinishedArtistApi;
-@property (nonatomic) BOOL hasFinishedTrackApi;
-@property (nonatomic) BOOL hasFinishedTopTracksApi;
 @property (nonatomic, strong) NSMutableArray *artists;
 @property (nonatomic, strong) NSMutableArray *albums;
 @property (nonatomic, strong) NSMutableArray *tracks;
