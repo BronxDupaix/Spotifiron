@@ -13,6 +13,10 @@
 #import "DataStore.h"
 #import "Constants.h"
 
+@interface APIController ()
+@property(nonatomic, strong) Artist *currentArtist;
+@end
+
 @implementation APIController
 
 
@@ -37,8 +41,6 @@
     return self;
 }
 
-
-Artist *currentArtist;
 
 
 //[[NSNotificationCenter defaultCenter] addObserver:self
@@ -84,7 +86,7 @@ Artist *currentArtist;
                             [[APIController sharedInstance] getTopTracksApi:a.idString];
                             [[APIController sharedInstance] getRelatedArtistsApi:a.idString];
                             // NSLog(@"%@", a.idString);
-                            currentArtist = a;
+                            self.currentArtist = a;
                             //                            [[[DataStore sharedInstance] artists] addObject:currentArtist];
                             //                            NSLog(@"%lu", [[[DataStore sharedInstance] artists] count]);
                             
@@ -128,10 +130,10 @@ Artist *currentArtist;
                         for (NSDictionary *album in jsonArray) {
                             Album *a = [Album albumWithDictionary:album];
                             // NSLog(@"%@", a.name);
-                            [[currentArtist albums] addObject:a];
+                            [[self.currentArtist albums] addObject:a];
                             // NSLog(@"%lu",[[currentArtist albums] count]);
                         }
-                        for (Album *a in currentArtist.albums) {
+                        for (Album *a in self.currentArtist.albums) {
                             // NSLog(@"%@", a.idString);
                             [[APIController sharedInstance] getTrackApi:a.idString];
                         }
@@ -173,7 +175,7 @@ Artist *currentArtist;
                         for (NSDictionary *track in jsonArray) {
                             Track *t = [Track trackWithDictionary:track];
                             //NSLog(@"%@", t.name);
-                            for (Album *album in [currentArtist albums]) {
+                            for (Album *album in [self.currentArtist albums]) {
                                 if ([album idString] == albumIdString) {
                                     [[album tracks] addObject:t];
                                 }
@@ -216,7 +218,7 @@ Artist *currentArtist;
                         for (NSDictionary *track in jsonArray) {
                             Track *t = [Track trackWithDictionary:track];
                             // NSLog(@"%@", t.name);
-                            [[currentArtist topTracks] addObject:t];
+                            [[self.currentArtist topTracks] addObject:t];
                         }
                     } else {
                         NSLog(@"Could not parse json");
@@ -258,7 +260,7 @@ Artist *currentArtist;
                             
                             Artist *a = [Artist artistWithDictionary:artistDict];
                             // NSLog(@"%@", a.name);
-                            [[currentArtist relatedArtists] addObject:a];
+                            [[self.currentArtist relatedArtists] addObject:a];
                             
                         }
                     }
@@ -274,7 +276,7 @@ Artist *currentArtist;
 -(void) passArtistToDataStore {
     BOOL allAlbumsLoaded = YES;
     
-    for (Album *album in currentArtist.albums) {
+    for (Album *album in self.currentArtist.albums) {
         if (album.tracks.count == 0) {
             allAlbumsLoaded = NO;
         }
@@ -282,7 +284,7 @@ Artist *currentArtist;
     }
     if (allAlbumsLoaded == YES) {
         
-        [[[DataStore sharedInstance] artists] addObject:currentArtist];
+        [[[DataStore sharedInstance] artists] addObject:self.currentArtist];
         NSArray *sharedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
         NSLog(@"%lu", sharedArtists.count);
         
@@ -292,11 +294,12 @@ Artist *currentArtist;
         
     }
 }
+
 -(void) checkIfAllDataIsLoaded {
     
     BOOL allAlbumsLoaded = YES;
     
-    for (Album *album in currentArtist.albums) {
+    for (Album *album in self.currentArtist.albums) {
         if (album.tracks.count == 0) {
             allAlbumsLoaded = NO;
         }
