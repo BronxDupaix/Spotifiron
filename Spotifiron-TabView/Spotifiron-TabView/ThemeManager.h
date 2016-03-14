@@ -11,7 +11,7 @@
 
 @interface ThemeManager : NSObject
 
-+(id)sharedManger;
++(id)sharedManager;
 
 
 @property (nonatomic, weak)   NSUserDefaults *defaults;

@@ -33,12 +33,34 @@
                                                  name:kNotificationTracksLoaded
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateUI)
+                                                 name:kNotificationThemeChanged
+                                               object:nil];
+    
     [[APIController sharedInstance] getArtistApi:@"slayer"];
-    self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
+    
+    self.relatedArtists = [[NSMutableArray alloc] init];
+    
+    [self updateUI];
     
     
 }
+
+-(void)updateUI
+{
+    
+    NSLog(@"\n\nUpdateUI\n\n");
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    
+    [[self artistCollectionView] reloadData];
+}
+
 - (void)dataLoaded {
+    
+    self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
+    
     [[self artistCollectionView] reloadData];
 }
 
@@ -48,11 +70,15 @@ collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath];
     
+    cell.artistImage.image = nil;
+    cell.ArtistLabel.text = @"";
+    
+    
     Artist *artist = [self.relatedArtists objectAtIndex:indexPath.row];
     
     cell.ArtistLabel.text = artist.name;
     
-    cell.artistImage.image = [UIImage imageNamed:@"Slayer"];
+    [cell loadImageFromURLString:artist.imageUrl];
     
     return cell;
 }

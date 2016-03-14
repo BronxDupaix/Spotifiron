@@ -7,17 +7,19 @@
 //
 
 #import "ThemeManager.h"
+#import "Constants.h"
 
 @implementation ThemeManager
 
-+ (id)sharedManger {
-    ThemeManager *sharedTheme = nil;
++ (id)sharedManager {
+    static ThemeManager *sharedManager = nil;
     @synchronized(self) {
-        if (sharedTheme == nil)
-            sharedTheme = [[self alloc] init];
+        if (sharedManager == nil)
+            sharedManager = [[self alloc] init];
     }
-    return sharedTheme;
+    return sharedManager;
 }
+
 
 -(instancetype)init {
     
@@ -62,6 +64,14 @@
     
     
     return NO;
+}
+
+-(void)postNotification
+{
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationThemeChanged
+                                                        object:nil];
+    
 }
 
 

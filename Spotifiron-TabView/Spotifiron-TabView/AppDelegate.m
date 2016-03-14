@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ThemeManager.h"
 
 @interface AppDelegate()
 
@@ -17,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    [[ThemeManager sharedManager] chooseDefaultTheme];
     
     return YES;
 }
