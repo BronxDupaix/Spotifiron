@@ -7,6 +7,7 @@
 //
 
 #import "AlbumCollectionViewCell.h"
+#import "ThemeManager.h" 
 
 @implementation AlbumCollectionViewCell
 
