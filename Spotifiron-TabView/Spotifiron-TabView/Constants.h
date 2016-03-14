@@ -9,6 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
+#define kNotificationThemeChanged        @"ThemeChanged"
 #define kNotificationTracksLoaded        @"TracksLoaded"
 
 #endif /* Constants_h */
