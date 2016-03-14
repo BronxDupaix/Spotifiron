@@ -16,9 +16,9 @@
 
 }
 
-@property (strong, nonatomic) NSMutableArray *artistArray;
+@property (strong, nonatomic) NSMutableArray *relatedArtists;
 
-@property (weak, nonatomic) DataStore *dataStore;
+//@property (weak, nonatomic) DataStore *dataStore;
 
 
 @end
@@ -33,41 +33,39 @@
     
    [[APIController sharedInstance] getArtistApi:@"slayer"];
     
-   // NSArray *artists = [[DataStore sharedInstance] relatedArtists];
-    
-   // NSLog(@"ArtistArray %@", artists);
-    
-    self.artistArray = [[NSMutableArray alloc] init];
+    self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
+    [[self artistCollectionView] reloadData];
+   
     
    // [self.artistArray  addObjectsFromArray:artists];
-    
-    [self.artistArray addObject:@"Slayer"];
-    
-    [self.artistArray addObject:@"Megadeth"];
-    
-    [self.artistArray addObject:@"Eminem"];
-    
-    [self.artistArray addObject:@"Lil Wayne"];
-    
-    [self.artistArray addObject:@"Megadeth"];
-    
-    [self.artistArray addObject:@"Eminem"];
-    
-    [self.artistArray addObject:@"Lil Wayne"];
-    
-    [self.artistArray addObject:@"Slayer"];
-    
-    [self.artistArray addObject:@"Megadeth"];
-    
-    [self.artistArray addObject:@"Eminem"];
-    
-    [self.artistArray addObject:@"Lil Wayne"];
-    
-    [self.artistArray addObject:@"Megadeth"];
-    
-    [self.artistArray addObject:@"Eminem"];
-    
-    [self.artistArray addObject:@"Lil Wayne"];
+//    
+ //   [self.relatedArtists addObject:@"Slayer"];
+//    
+//    [self.artistArray addObject:@"Megadeth"];
+//    
+//    [self.artistArray addObject:@"Eminem"];
+//    
+//    [self.artistArray addObject:@"Lil Wayne"];
+//    
+//    [self.artistArray addObject:@"Megadeth"];
+//    
+//    [self.artistArray addObject:@"Eminem"];
+//    
+//    [self.artistArray addObject:@"Lil Wayne"];
+//    
+//    [self.artistArray addObject:@"Slayer"];
+//    
+//    [self.artistArray addObject:@"Megadeth"];
+//    
+//    [self.artistArray addObject:@"Eminem"];
+//    
+//    [self.artistArray addObject:@"Lil Wayne"];
+//    
+//    [self.artistArray addObject:@"Megadeth"];
+//    
+//    [self.artistArray addObject:@"Eminem"];
+//    
+//    [self.artistArray addObject:@"Lil Wayne"];
     
     }
 
@@ -75,11 +73,11 @@
 
     collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-     ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath] ; 
+     ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath];
     
-    NSString* artist = [self.artistArray objectAtIndex:indexPath.row];
+    Artist *artist = [self.relatedArtists objectAtIndex:indexPath.row];
     
-    cell.ArtistLabel.text = artist;
+    cell.ArtistLabel.text = artist.name;
     
     cell.artistImage.image = [UIImage imageNamed:@"Slayer"];
 
@@ -88,7 +86,7 @@
 
 -(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.artistArray.count;
+    return self.relatedArtists.count;
 }
 
 

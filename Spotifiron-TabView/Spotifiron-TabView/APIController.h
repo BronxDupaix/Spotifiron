@@ -19,6 +19,7 @@
 -(void) getTopTracksApi:(NSString *)artistIdString;
 -(void) getRelatedArtistsApi:(NSString *)artistIdString;
 -(void) passArtistToDataStore;
+-(void) checkIfAllDataIsLoaded;
 
 + (id)sharedInstance;
 

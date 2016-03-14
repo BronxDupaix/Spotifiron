@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UxE-yw-aQe">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gsj-ER-q0a">
                                     <size key="itemSize" width="200" height="244"/>
@@ -60,10 +60,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="UxE-yw-aQe" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="9fR-gR-rU8"/>
-                            <constraint firstItem="UxE-yw-aQe" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="lBY-vX-jxS"/>
-                            <constraint firstItem="UxE-yw-aQe" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="s3G-GK-fyl"/>
-                            <constraint firstItem="UxE-yw-aQe" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="vXS-rQ-XX2"/>
+                            <constraint firstAttribute="trailing" secondItem="UxE-yw-aQe" secondAttribute="trailing" id="LmJ-e5-i2S"/>
+                            <constraint firstItem="UxE-yw-aQe" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="jCH-Nj-rh4"/>
+                            <constraint firstItem="UxE-yw-aQe" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="uKy-kU-go4"/>
+                            <constraint firstAttribute="bottom" secondItem="UxE-yw-aQe" secondAttribute="bottom" constant="44" id="vXB-hM-UR3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Related Artists" image="guitar" id="acW-dT-cKf"/>

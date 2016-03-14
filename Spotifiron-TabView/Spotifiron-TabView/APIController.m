@@ -96,7 +96,7 @@ Artist *currentArtist;
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
-                NSLog(@"artist api done");
+                //  NSLog(@"artist api done");
             }] resume];
     
 }
@@ -126,9 +126,9 @@ Artist *currentArtist;
                     if(jsonArray && jsonArray.count>0) {
                         for (NSDictionary *album in jsonArray) {
                             Album *a = [Album albumWithDictionary:album];
-                           // NSLog(@"%@", a.name);
+                            // NSLog(@"%@", a.name);
                             [[currentArtist albums] addObject:a];
-                           // NSLog(@"%lu",[[currentArtist albums] count]);
+                            // NSLog(@"%lu",[[currentArtist albums] count]);
                         }
                         for (Album *a in currentArtist.albums) {
                             // NSLog(@"%@", a.idString);
@@ -140,7 +140,7 @@ Artist *currentArtist;
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
-                NSLog(@"album api done");
+                //   NSLog(@"album api done");
             }] resume];
     
 }
@@ -185,7 +185,7 @@ Artist *currentArtist;
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
-                NSLog(@"tracks api done");
+                //  NSLog(@"tracks api done");
             }] resume];
     
 }
@@ -223,7 +223,7 @@ Artist *currentArtist;
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
-                NSLog(@"top tracks api done");
+                //  NSLog(@"top tracks api done");
             }] resume];
 }
 
@@ -264,7 +264,7 @@ Artist *currentArtist;
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
-                NSLog(@"related artist api done");
+                //  NSLog(@"related artist api done");
             }] resume];
     
     
@@ -277,21 +277,34 @@ Artist *currentArtist;
         if (album.tracks.count == 0) {
             allAlbumsLoaded = NO;
         }
+        
     }
-    
     if (allAlbumsLoaded == YES) {
         
         [[[DataStore sharedInstance] artists] addObject:currentArtist];
-        NSArray *testAlbums = [[[[DataStore sharedInstance] artists] firstObject] albums];
-        for (Album *a in testAlbums) {
-            NSLog(@"these are the albums in data store");
-            NSLog(@"Album name %@ count: %lu",a.name, a.tracks.count);
+        NSArray *sharedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
+        NSLog(@"%lu", sharedArtists.count);
+        //        NSArray *testAlbums = [[[[DataStore sharedInstance] artists] firstObject] albums];
+        //        for (Album *a in testAlbums) {
+        //         NSLog(@"these are the albums in data store");
+        //            NSLog(@"Album name %@ count: %lu",a.name, a.tracks.count);
+        //        }
+        //        NSArray *currentArtistAlbums = [currentArtist albums];
+        //        for (Album *a in currentArtistAlbums) {
+        //            NSLog(@"these are the albums in current artist");
+        //            NSLog(@"%lu", a.tracks.count);
+        //        }
+    }
+}
+-(void) checkIfAllDataIsLoaded {
+    
+    BOOL allAlbumsLoaded = YES;
+    
+    for (Album *album in currentArtist.albums) {
+        if (album.tracks.count == 0) {
+            allAlbumsLoaded = NO;
         }
-//        NSArray *currentArtistAlbums = [currentArtist albums];
-//        for (Album *a in currentArtistAlbums) {
-//            NSLog(@"these are the albums in current artist");
-//            NSLog(@"%lu", a.tracks.count);
-//        }
+        
     }
 }
 

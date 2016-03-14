@@ -20,7 +20,7 @@
 @interface FirstViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate> 
 
 @property (weak, nonatomic) IBOutlet UICollectionView *artistCollectionView;
-    
+
 
 
 @end
