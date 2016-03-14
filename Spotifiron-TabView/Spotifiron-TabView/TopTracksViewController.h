@@ -10,8 +10,9 @@
 
 #import "Track.h"
 
-@interface TopTracksViewController : UIViewController
+@interface TopTracksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *trackTableView; 
 
 
 

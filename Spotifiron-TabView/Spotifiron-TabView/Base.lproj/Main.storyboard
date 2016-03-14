@@ -58,7 +58,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UxE-yw-aQe" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="9fR-gR-rU8"/>
                             <constraint firstItem="UxE-yw-aQe" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="lBY-vX-jxS"/>
@@ -87,7 +87,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ZE-FX-gLs">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ZE-FX-gLs" userLabel="Album Collection View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hMi-nX-Qgq">
@@ -97,7 +97,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="SxD-en-WUU">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="SxD-en-WUU" customClass="AlbumCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="244"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -116,6 +116,10 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <outlet property="albumImage" destination="ofU-4w-mMq" id="9tc-Wg-Jak"/>
+                                            <outlet property="albumName" destination="NMa-l7-gYq" id="0P0-Rd-hht"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -133,6 +137,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Albums" image="cd" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="collectionView" destination="2ZE-FX-gLs" id="nHe-c8-5tN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +169,7 @@
         <!--Settings-->
         <scene sceneID="gDk-46-XmJ">
             <objects>
-                <viewController storyboardIdentifier="settingsID" id="nAQ-B8-Psa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsID" id="nAQ-B8-Psa" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TFY-4w-5u5"/>
                         <viewControllerLayoutGuide type="bottom" id="ax8-4y-ccW"/>
@@ -170,18 +177,47 @@
                     <view key="view" contentMode="scaleToFill" id="QtF-03-kCi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search for Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-ip-0K0">
+                                <rect key="frame" x="0.5" y="28" width="600" height="22"/>
+                                <color key="backgroundColor" red="0.15751965866524861" green="0.7019608021" blue="0.32476140441804913" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-ZN-AmE">
+                                <rect key="frame" x="217" y="106" width="166" height="30"/>
+                                <state key="normal" title="Change to vampire style">
+                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Vv-nzB">
+                                <rect key="frame" x="221" y="204" width="159" height="30"/>
+                                <state key="normal" title="Change to Nordic Style">
+                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.52745593605181851" green="0.23979129570265204" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" constant="8" id="5zB-Yg-GW7"/>
+                            <constraint firstItem="FSn-Vv-nzB" firstAttribute="top" secondItem="4kI-ZN-AmE" secondAttribute="bottom" constant="68" id="9lY-5K-v8g"/>
+                            <constraint firstItem="4kI-ZN-AmE" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="HiZ-HW-1Qg"/>
+                            <constraint firstItem="4kI-ZN-AmE" firstAttribute="top" secondItem="Ibb-ip-0K0" secondAttribute="bottom" constant="56" id="Kjc-lW-D7i"/>
+                            <constraint firstItem="FSn-Vv-nzB" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="h2T-lB-bt9"/>
+                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="width" secondItem="QtF-03-kCi" secondAttribute="width" id="vDe-q1-Jyo"/>
+                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="ypy-zL-LBc"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="KXR-WL-unC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weH-jX-y5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-702" y="883"/>
+            <point key="canvasLocation" x="-689" y="1004"/>
         </scene>
         <!--Top Tracks-->
         <scene sceneID="1Yz-vi-ccg">
             <objects>
-                <viewController storyboardIdentifier="tracksID" id="tzw-dd-NOP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tracksID" id="tzw-dd-NOP" customClass="TopTracksViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rmc-GH-5Jc"/>
                         <viewControllerLayoutGuide type="bottom" id="Tmr-6j-fAc"/>
@@ -194,15 +230,35 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" id="Fey-ae-G0x">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" id="Fey-ae-G0x" customClass="TrackTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fey-ae-G0x" id="0sX-J1-K3i">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEU-CS-0js">
+                                                    <rect key="frame" x="8" y="11.5" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.034675970673561096" green="0.91868883371353149" blue="0.95458227396011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iEU-CS-0js" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="ZtU-Yi-LVi"/>
+                                                <constraint firstItem="iEU-CS-0js" firstAttribute="leading" secondItem="0sX-J1-K3i" secondAttribute="leading" constant="8" id="oUG-gr-JJA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="trackName" destination="iEU-CS-0js" id="EEc-1u-mjA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tzw-dd-NOP" id="mw9-sh-Bip"/>
+                                    <outlet property="delegate" destination="tzw-dd-NOP" id="fTz-R5-wgF"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,10 +270,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Top Tracks" image="music" id="jBG-nf-KH2"/>
+                    <connections>
+                        <outlet property="trackTableView" destination="VHy-EZ-H3U" id="TV7-5r-Rvy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLe-5f-GLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="1011"/>
+            <point key="canvasLocation" x="0.0" y="1004"/>
         </scene>
     </scenes>
     <resources>

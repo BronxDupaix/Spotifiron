@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) NSMutableArray *artistArray;
 
+@property (weak, nonatomic) DataStore *dataStore;
+
 
 @end
 
@@ -31,10 +33,13 @@
     
    [[APIController sharedInstance] getArtistApi:@"slayer"];
     
+   // NSArray *artists = [[DataStore sharedInstance] relatedArtists];
     
+   // NSLog(@"ArtistArray %@", artists);
     
     self.artistArray = [[NSMutableArray alloc] init];
     
+   // [self.artistArray  addObjectsFromArray:artists];
     
     [self.artistArray addObject:@"Slayer"];
     
@@ -50,18 +55,33 @@
     
     [self.artistArray addObject:@"Lil Wayne"];
     
+    [self.artistArray addObject:@"Slayer"];
+    
+    [self.artistArray addObject:@"Megadeth"];
+    
+    [self.artistArray addObject:@"Eminem"];
+    
+    [self.artistArray addObject:@"Lil Wayne"];
+    
+    [self.artistArray addObject:@"Megadeth"];
+    
+    [self.artistArray addObject:@"Eminem"];
+    
+    [self.artistArray addObject:@"Lil Wayne"];
+    
+    }
 
-    
-    
-}
+-(UICollectionViewCell *) collectionView:(UICollectionView *)
 
--(UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-     ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath] ;
+     ArtistCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ArtistCell" forIndexPath:indexPath] ; 
     
-    NSString* value = [self.artistArray objectAtIndex:indexPath.row];
+    NSString* artist = [self.artistArray objectAtIndex:indexPath.row];
     
-    cell.ArtistLabel.text = value;
+    cell.ArtistLabel.text = artist;
+    
+    cell.artistImage.image = [UIImage imageNamed:@"Slayer"];
 
     return cell;
 }
