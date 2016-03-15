@@ -7,8 +7,11 @@
 //
 
 #import "SecondViewController.h"
+#import "Artist.h" 
 #import "Album.h"
 #import "AlbumCollectionViewCell.h"
+#import "DataStore.h"
+#import "APIController.h"
 
 @interface SecondViewController ()
 
@@ -24,54 +27,36 @@
     
     self.albumArray = [[NSMutableArray alloc] init];
     
-    // [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"AlbumCell"];
-    
     [self.albumArray addObject:@"Meteora"];
     
     [self.albumArray addObject:@"Relapse"];
-    
-    [self.albumArray addObject:@"Eminem Show"];
-    
-    [self.albumArray addObject:@"Hybrid Theory"];
-    
-    [self.albumArray addObject:@"Meteora"];
-    
-    [self.albumArray addObject:@"Relapse"];
-    
-    [self.albumArray addObject:@"Eminem Show"];
-    
-    [self.albumArray addObject:@"Hybrid Theory"];
-    
-    [self.albumArray addObject:@"Meteora"];
-    
-    [self.albumArray addObject:@"Relapse"];
-    
-    [self.albumArray addObject:@"Eminem Show"];
-    
-    [self.albumArray addObject:@"Hybrid Theory"];
-    
-    [self.albumArray addObject:@"Meteora"];
-    
-    [self.albumArray addObject:@"Relapse"];
-    
-    [self.albumArray addObject:@"Eminem Show"];
-    
-    [self.albumArray addObject:@"Hybrid Theory"];
 
+     self.albumArray = [[[[DataStore sharedInstance] albums] firstObject] albumArray];
+    
+    NSArray *albums =[[DataStore sharedInstance] albums];
+    
+    NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]); 
+
+    [self.albumArray addObjectsFromArray:albums];
+
+    
+    [[self collectionView] reloadData]; 
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
 
     cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString* album = [self.albumArray objectAtIndex:indexPath.row];
-    
-    
     AlbumCollectionViewCell *cell = [collectionView   dequeueReusableCellWithReuseIdentifier:@"AlbumCell" forIndexPath:indexPath];
     
-    cell.albumName.text = album;
+    Album* album = [self.albumArray objectAtIndex:indexPath.row];
     
-    cell.albumImage.image = [UIImage imageNamed:@"PinkFloyd"];
+    //  cell.albumImage.image = nil;
+   //  cell.albumName.text = @"";
+    
+    cell.albumName.text = album.name;
+    
+   // [cell loadImageFromURLString: album.imageUrl];
     
     return cell;
     

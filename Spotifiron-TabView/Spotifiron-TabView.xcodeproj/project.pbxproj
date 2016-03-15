@@ -79,7 +79,6 @@
 		14CC5FFA1C8FC0210007BB74 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5E8C6D771C975419009487BB /* TableViewCells */,
 				14CC5FF11C8FBFFB0007BB74 /* Artist.h */,
 				14CC5FF21C8FBFFB0007BB74 /* Artist.m */,
 				14CC5FF41C8FC0060007BB74 /* Album.h */,
@@ -114,6 +113,7 @@
 				CAF431101C91F05B006129C0 /* TopTracksViewController.m */,
 				CAF431151C966B50006129C0 /* SettingsViewController.h */,
 				CAF431161C966B50006129C0 /* SettingsViewController.m */,
+				5E8C6D771C975419009487BB /* TableViewCells */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

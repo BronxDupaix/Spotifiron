@@ -7,7 +7,7 @@
 //
 
 #import "TopTracksViewController.h"
-
+#import "DataStore.h"
 #import "TrackTableViewCell.h" 
 
 @interface TopTracksViewController ()
@@ -27,49 +27,7 @@
     
     [self.tracksArray addObject:@"Cold world"];
     
-    [self.tracksArray addObject:@"Wizard"];
-    
-    [self.tracksArray addObject:@"Bloodlust"];
-    
-    [self.tracksArray addObject:@"Drugs"];
-    
-    [self.tracksArray addObject:@"Green Arrow"];
-    
-    [self.tracksArray addObject:@"Hello"];
-    
-    [self.tracksArray addObject:@"Cold world"];
-    
-    [self.tracksArray addObject:@"Wizard"];
-    
-    [self.tracksArray addObject:@"Bloodlust"];
-    
-    [self.tracksArray addObject:@"Drugs"];
-    
-    [self.tracksArray addObject:@"Green Arrow"];
-    
-    [self.tracksArray addObject:@"Hello"];
-    
-    [self.tracksArray addObject:@"Cold world"];
-    
-    [self.tracksArray addObject:@"Wizard"];
-    
-    [self.tracksArray addObject:@"Bloodlust"];
-    
-    [self.tracksArray addObject:@"Drugs"];
-    
-    [self.tracksArray addObject:@"Green Arrow"];
-    
-    [self.tracksArray addObject:@"Hello"];
-    
-    [self.tracksArray addObject:@"Cold world"];
-    
-    [self.tracksArray addObject:@"Wizard"];
-    
-    [self.tracksArray addObject:@"Bloodlust"];
-    
-    [self.tracksArray addObject:@"Drugs"];
-    
-    [self.tracksArray addObject:@"Green Arrow"];
+    // self.tracksArray =[[DataStore sharedInstance] tracks];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

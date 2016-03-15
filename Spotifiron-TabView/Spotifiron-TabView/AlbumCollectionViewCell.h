@@ -14,5 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *albumName;
 
+-(void)loadImageFromURLString:(NSString *)urlString;
+
 
 @end

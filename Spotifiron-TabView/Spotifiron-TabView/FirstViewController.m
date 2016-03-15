@@ -59,7 +59,8 @@
 
 - (void)dataLoaded {
     
-    self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
+    self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists]; 
+    
     [[self artistCollectionView] reloadData];
 }
 
@@ -75,7 +76,7 @@ collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     Artist *artist = [self.relatedArtists objectAtIndex:indexPath.row];
     
-    cell.ArtistLabel.text = artist.name;
+    cell.ArtistLabel.text = artist.name; 
     
     [cell loadImageFromURLString: artist.imageUrl];
     
