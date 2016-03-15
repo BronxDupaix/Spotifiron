@@ -21,25 +21,24 @@
         artist.name = [artistDictionary objectForKey:@"name"];
         artist.idString = [artistDictionary objectForKey:@"id"];
         NSArray *items = [artistDictionary objectForKey:@"images"];
-        NSDictionary *item = items.lastObject;
+        NSDictionary *item = [items objectAtIndex:2];
         NSString *imageUrl = [item objectForKey:@"url"];
         artist.imageUrl = imageUrl;
-      //  NSLog(@"%@", artist.imageUrl);
-        
+    } else {
+         NSLog(@"issue with parsing artist image urls");
     }
+    
     
     return artist;
 }
 -(instancetype)init {
     
     if ( self = [super init] ) {
+        
         self.albums = [[NSMutableArray alloc] init];
-    }
-    if ( self = [super init] ) {
         self.topTracks = [[NSMutableArray alloc] init];
-    }
-    if ( self = [super init] ) {
         self.relatedArtists = [[NSMutableArray alloc] init];
+        
     }
     return self;
 }

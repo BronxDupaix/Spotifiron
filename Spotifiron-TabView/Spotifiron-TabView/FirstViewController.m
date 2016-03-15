@@ -77,7 +77,7 @@ collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     cell.ArtistLabel.text = artist.name;
     
-    [cell loadImageFromURLString:artist.imageUrl];
+    [cell loadImageFromURLString: artist.imageUrl];
     
     return cell;
 }
