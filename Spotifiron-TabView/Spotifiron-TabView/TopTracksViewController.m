@@ -9,10 +9,15 @@
 #import "TopTracksViewController.h"
 #import "DataStore.h"
 #import "TrackTableViewCell.h" 
+#import "Artist.h" 
+#import "Track.h" 
+
 
 @interface TopTracksViewController ()
 
 @property (strong, nonatomic) NSMutableArray *tracksArray;
+
+@property (strong, nonatomic) Artist * currentArtist; 
 
 @end
 
@@ -23,20 +28,38 @@
     
     self.tracksArray = [[NSMutableArray alloc] init];
     
-    [self.tracksArray addObject:@"Hello"];
+    NSMutableArray* artists = [[DataStore sharedInstance]artists]; 
+
+    for (Artist *a in artists){
+        
+        self.currentArtist = a;
+        
+        
+    }
     
-    [self.tracksArray addObject:@"Cold world"];
+    if (self.currentArtist !=nil) {
+        
+        NSMutableArray *tracks = self.currentArtist.topTracks;
+        
+        for (Track *track in tracks){ 
+            
+            NSLog(@"%@" , track.name);
+            
+            [self.tracksArray addObject:track];
+        }
+    }
+
+
     
-    // self.tracksArray =[[DataStore sharedInstance] tracks];
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *track = [self.tracksArray objectAtIndex:indexPath.row];
+    Track *track = [self.tracksArray objectAtIndex:indexPath.row];
     
     TrackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell" forIndexPath: indexPath];
     
-    cell.trackName.text = track;
+    cell.trackName.text = track.name;
     
     return cell;
 }
@@ -47,7 +70,10 @@
 }
 
 
-
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 100; 
+}
 
 
 @end

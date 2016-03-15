@@ -38,12 +38,13 @@
                                                  name:kNotificationThemeChanged
                                                object:nil];
     
-    [[APIController sharedInstance] getArtistApi:@"slayer"];
+   [[APIController sharedInstance] getArtistApi:@"slayer"];
     
     self.relatedArtists = [[NSMutableArray alloc] init];
     
     [self updateUI];
     
+    [self.artistCollectionView  reloadData];
     
 }
 

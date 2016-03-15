@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) NSMutableArray *albumArray;
 
+@property (strong , nonatomic) Artist *currentArtist;
+
 @end
 
 @implementation SecondViewController
@@ -27,17 +29,31 @@
     
     self.albumArray = [[NSMutableArray alloc] init];
     
-    [self.albumArray addObject:@"Meteora"];
+    NSMutableArray *artists = [[DataStore sharedInstance]artists];
     
-    [self.albumArray addObject:@"Relapse"];
+    
+    for (Artist *a in artists){
+        
+        self.currentArtist = a;
+        
+        
+    }
+    
+    if (self.currentArtist !=nil) {
+        
+        NSMutableArray *albumsArray = self.currentArtist.albums;
+        
+        for (Album *album in albumsArray){
+            
+            NSLog(@"%@" , album.name);
+            
+            [self.albumArray addObject:album];
+        }
+    }
+    
 
-     self.albumArray = [[[[DataStore sharedInstance] albums] firstObject] albumArray];
     
-    NSArray *albums =[[DataStore sharedInstance] albums];
-    
-    NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]); 
-
-    [self.albumArray addObjectsFromArray:albums];
+    NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]);
 
     
     [[self collectionView] reloadData]; 
@@ -51,12 +67,13 @@
     
     Album* album = [self.albumArray objectAtIndex:indexPath.row];
     
-    //  cell.albumImage.image = nil;
-   //  cell.albumName.text = @"";
+    cell.albumImage.image = nil;
+    
+    cell.albumName.text = @""; 
     
     cell.albumName.text = album.name;
     
-   // [cell loadImageFromURLString: album.imageUrl];
+    [cell loadImageFromURLString: album.imageUrl];
     
     return cell;
     

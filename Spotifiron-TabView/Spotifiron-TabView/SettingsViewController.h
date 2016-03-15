@@ -10,6 +10,9 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField; 
+
+
 - (IBAction)firstThemeButton:(UIButton *)sender;
 
 - (IBAction)secondThemeButton:(UIButton *)sender;
