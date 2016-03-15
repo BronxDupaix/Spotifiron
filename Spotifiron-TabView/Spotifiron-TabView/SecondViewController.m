@@ -12,6 +12,8 @@
 #import "AlbumCollectionViewCell.h"
 #import "DataStore.h"
 #import "APIController.h"
+#import "ThemeManager.h"
+#import "Constants.h"
 
 @interface SecondViewController ()
 
@@ -26,6 +28,12 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateUI)
+                                                 name:kNotificationThemeChanged
+                                               object:nil];
+   
     
     self.albumArray = [[NSMutableArray alloc] init];
     
@@ -45,18 +53,22 @@
         
         for (Album *album in albumsArray){
             
-            NSLog(@"%@" , album.name);
+            // NSLog(@"%@" , album.name);
             
             [self.albumArray addObject:album];
         }
     }
     
-
-    
     NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]);
 
     
     [[self collectionView] reloadData]; 
+}
+
+-(void) updateUI {
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView

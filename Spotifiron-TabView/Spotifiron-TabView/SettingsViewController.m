@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "ThemeManager.h"
 #import "APIController.h"
+#import "Constants.h" 
 
 @interface SettingsViewController ()
 
@@ -17,21 +18,19 @@
 @implementation SettingsViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad]; 
     
-
 }
-
-
 
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
-    NSString *str = self.artistSearchTextField.text;
+    
+    //NSString *str = self.artistSearchTextField.text;
 
     [[ThemeManager sharedManager] chooseDefaultTheme];
     [[ThemeManager sharedManager] postNotification];
     
-    [[APIController sharedInstance] getArtistApi:str];
+    //[[APIController sharedInstance] getArtistApi:str];
 
 }
 

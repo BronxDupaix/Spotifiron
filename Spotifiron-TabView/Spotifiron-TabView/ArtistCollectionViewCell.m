@@ -8,12 +8,12 @@
 
 #import "ArtistCollectionViewCell.h"
 #import "ThemeManager.h" 
+#import "Constants.h"
+#import "ThemeManager.h"
 
 @implementation ArtistCollectionViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
-    
     
 }
 
@@ -48,6 +48,12 @@
 
 -(void)layoutSubviews {
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(layoutSubviews)
+                                                 name:kNotificationThemeChanged
+                                               object:nil];
+    
+    self.ArtistLabel.backgroundColor = [[ThemeManager sharedManager] currentFontColor]; 
     
     
 }

@@ -9,6 +9,7 @@
 #import "AlbumCollectionViewCell.h"
 #import "ThemeManager.h" 
 #import "Album.h"
+#import "Constants.h"
 
 @implementation AlbumCollectionViewCell
 
@@ -40,6 +41,23 @@
     [downloadPhotoTask resume];
     
 }
+
+-(void)layoutSubviews {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(layoutSubviews)
+                                                 name:kNotificationThemeChanged
+                                               object:nil];
+    
+    self.albumName.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
+    
+    self.albumName.textColor = [[ThemeManager sharedManager] currentFontColor];
+    
+    self.albumName.font = [[ThemeManager sharedManager] currentFontNameString]; 
+    
+}
+
+
 
 
 @end

@@ -179,8 +179,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-ZN-AmE">
-                                <rect key="frame" x="217" y="106" width="166" height="30"/>
-                                <state key="normal" title="Change to vampire style">
+                                <rect key="frame" x="201" y="106" width="199" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="DEFAULT THEME ">
                                     <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -188,8 +189,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Vv-nzB">
-                                <rect key="frame" x="221" y="204" width="159" height="30"/>
-                                <state key="normal" title="Change to Nordic Style">
+                                <rect key="frame" x="194" y="216" width="212" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="SECOND THEME">
                                     <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

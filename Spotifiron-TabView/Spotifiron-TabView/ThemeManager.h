@@ -16,7 +16,8 @@
 
 @property (nonatomic, weak)   NSUserDefaults *defaults;
 
-@property (nonatomic, strong) NSString *currentFontNameString;
+@property (nonatomic, strong) UIFont *currentFontNameString; 
+
 @property (nonatomic, strong) UIColor *currentBackgroundColor;
 @property (nonatomic, strong) UIColor *currentFontColor;
 
