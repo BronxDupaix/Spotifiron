@@ -35,4 +35,15 @@
  }
  */
 
+- (IBAction)firstThemeButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] chooseDefaultTheme];
+    [[ThemeManager sharedManager] postNotification];
+}
+
+- (IBAction)secondThemeButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] chooseTheme2];
+    [[ThemeManager sharedManager] postNotification];
+}
 @end

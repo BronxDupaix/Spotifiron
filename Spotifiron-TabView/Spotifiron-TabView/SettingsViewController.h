@@ -10,4 +10,8 @@
 
 @interface SettingsViewController : UIViewController
 
+- (IBAction)firstThemeButton:(UIButton *)sender;
+
+- (IBAction)secondThemeButton:(UIButton *)sender;
+
 @end

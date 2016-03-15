@@ -42,17 +42,23 @@
     self.currentBackgroundColor = [UIColor orangeColor];
     self.currentFontNameString =@"Helvetica";
     self.currentFontColor = [UIColor blueColor];
+    
 }
 
 -(void)chooseTheme2 {
     
+    self.currentBackgroundColor = [UIColor cyanColor];
+    self.currentFontNameString = @"Avenir Next";
+    self.currentFontColor = [UIColor yellowColor];
     
 }
 
-
-
 -(void)chooseTheme3 {
     
+    self.currentBackgroundColor = [UIColor redColor];
+    self.currentFontNameString = @"Futura";
+    self.currentFontColor = [UIColor blackColor];
+
 }
 
 -(BOOL)loadCustomTheme {

@@ -189,12 +189,18 @@
                                 <state key="normal" title="Change to vampire style">
                                     <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="firstThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="cxk-KW-0eO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Vv-nzB">
                                 <rect key="frame" x="221" y="204" width="159" height="30"/>
                                 <state key="normal" title="Change to Nordic Style">
                                     <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="secondThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="9pg-38-llS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.52745593605181851" green="0.23979129570265204" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>

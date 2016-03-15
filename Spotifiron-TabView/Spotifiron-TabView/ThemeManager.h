@@ -22,7 +22,7 @@
 -(void)chooseDefaultTheme;
 -(void)chooseTheme2;
 -(void)chooseTheme3;
-
+-(void)postNotification;
 -(BOOL)loadCustomTheme;
 -(BOOL)saveCustomTheme;
 
