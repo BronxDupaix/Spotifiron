@@ -53,7 +53,7 @@
     
     NSLog(@"\n\nUpdateUI\n\n");
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor]; 
     
     [[self artistCollectionView] reloadData];
 }

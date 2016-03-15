@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UIColor *currentBackgroundColor;
 @property (nonatomic, strong) UIColor *currentFontColor;
 
+@property (nonatomic, strong) UIColor *currentViewColor; 
+
 -(void)chooseDefaultTheme;
 -(void)chooseTheme2;
 -(void)chooseTheme3;

@@ -8,6 +8,7 @@
 
 #import "TrackTableViewCell.h"
 #import "ThemeManager.h"
+#import "Constants.h"
 
 @implementation TrackTableViewCell
 
@@ -17,16 +18,27 @@
     
 }
 
+
+    
 -(void)layoutSubviews {
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(layoutSubviews)
+                                                     name:kNotificationThemeChanged
+                                                   object:nil];
+        
+  
+
+    self.trackName.font = [[ThemeManager sharedManager] currentFontNameString];
+    
+    self.trackName.textColor = [[ThemeManager sharedManager] currentFontColor];
+    
+//    self.trackName.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     
     
     
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
-}
+
 
 @end

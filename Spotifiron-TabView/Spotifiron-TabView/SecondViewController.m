@@ -67,7 +67,7 @@
 
 -(void) updateUI {
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
     
 }
 
