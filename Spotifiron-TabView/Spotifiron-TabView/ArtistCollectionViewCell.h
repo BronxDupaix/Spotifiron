@@ -13,6 +13,9 @@
 -(void)loadImageFromURLString:(NSString *)urlString;
 
 @property (weak, nonatomic) IBOutlet UILabel *ArtistLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *artistImage;
+
+
 
 @end

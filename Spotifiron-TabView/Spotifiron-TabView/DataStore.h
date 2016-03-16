@@ -20,6 +20,6 @@
 
 @property (nonatomic, strong) NSMutableArray *relatedArtists;
 
-+ (id)sharedInstance;
++ (id)sharedInstance;  
 
 @end

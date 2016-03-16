@@ -251,6 +251,7 @@
                 NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
                 
                 if (jsonDict != nil) {
+                    
                     // artists dictionary
                     NSArray *artistsArray = [jsonDict objectForKey:@"artists"];
                     

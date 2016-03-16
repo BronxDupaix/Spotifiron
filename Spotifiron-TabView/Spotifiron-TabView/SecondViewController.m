@@ -7,12 +7,19 @@
 //
 
 #import "SecondViewController.h"
+#import "Artist.h" 
 #import "Album.h"
 #import "AlbumCollectionViewCell.h"
+#import "DataStore.h"
+#import "APIController.h"
+#import "ThemeManager.h"
+#import "Constants.h"
 
 @interface SecondViewController ()
 
 @property (strong, nonatomic) NSMutableArray *albumArray;
+
+@property (strong , nonatomic) Artist *currentArtist;
 
 @end
 
@@ -22,56 +29,63 @@
     
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateUI)
+                                                 name:kNotificationThemeChanged
+                                               object:nil];
+   
+    
     self.albumArray = [[NSMutableArray alloc] init];
     
-    // [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"AlbumCell"];
+    NSMutableArray *artists = [[DataStore sharedInstance]artists];
     
-    [self.albumArray addObject:@"Meteora"];
     
-    [self.albumArray addObject:@"Relapse"];
+    for (Artist *a in artists){
+        
+        self.currentArtist = a;
+        
+        
+    }
     
-    [self.albumArray addObject:@"Eminem Show"];
+    if (self.currentArtist !=nil) {
+        
+        NSMutableArray *albumsArray = self.currentArtist.albums;
+        
+        for (Album *album in albumsArray){
+            
+            // NSLog(@"%@" , album.name);
+            
+            [self.albumArray addObject:album];
+        }
+    }
     
-    [self.albumArray addObject:@"Hybrid Theory"];
-    
-    [self.albumArray addObject:@"Meteora"];
-    
-    [self.albumArray addObject:@"Relapse"];
-    
-    [self.albumArray addObject:@"Eminem Show"];
-    
-    [self.albumArray addObject:@"Hybrid Theory"];
-    
-    [self.albumArray addObject:@"Meteora"];
-    
-    [self.albumArray addObject:@"Relapse"];
-    
-    [self.albumArray addObject:@"Eminem Show"];
-    
-    [self.albumArray addObject:@"Hybrid Theory"];
-    
-    [self.albumArray addObject:@"Meteora"];
-    
-    [self.albumArray addObject:@"Relapse"];
-    
-    [self.albumArray addObject:@"Eminem Show"];
-    
-    [self.albumArray addObject:@"Hybrid Theory"];
+    NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]);
 
+    
+    [[self collectionView] reloadData]; 
+}
+
+-(void) updateUI {
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
 
     cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString* album = [self.albumArray objectAtIndex:indexPath.row];
-    
-    
     AlbumCollectionViewCell *cell = [collectionView   dequeueReusableCellWithReuseIdentifier:@"AlbumCell" forIndexPath:indexPath];
     
-    cell.albumName.text = album;
+    Album* album = [self.albumArray objectAtIndex:indexPath.row];
     
-    cell.albumImage.image = [UIImage imageNamed:@"PinkFloyd"];
+    cell.albumImage.image = nil;
+    
+    cell.albumName.text = @""; 
+    
+    cell.albumName.text = album.name;
+    
+    [cell loadImageFromURLString: album.imageUrl];
     
     return cell;
     
