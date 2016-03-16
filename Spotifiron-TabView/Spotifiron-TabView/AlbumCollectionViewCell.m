@@ -49,11 +49,11 @@
                                                  name:kNotificationThemeChanged
                                                object:nil];
     
-    self.albumName.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
+    self.albumName.backgroundColor = [[ThemeManager sharedManager] secondBackgroundColor];
     
-    self.albumName.textColor = [[ThemeManager sharedManager] currentFontColor];
+    self.albumName.textColor = [[ThemeManager sharedManager] secondFontColor]; 
     
-    self.albumName.font = [[ThemeManager sharedManager] currentFontNameString]; 
+    self.albumName.font = [[ThemeManager sharedManager] secondFontNameString]; 
     
 }
 

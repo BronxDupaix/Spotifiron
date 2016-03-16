@@ -11,6 +11,8 @@
 #import "TrackTableViewCell.h" 
 #import "Artist.h" 
 #import "Track.h" 
+#import "ThemeManager.h" 
+#import "Constants.h"
 
 
 @interface TopTracksViewController ()
@@ -26,6 +28,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateUI)
+                                                 name:kNotificationThemeChanged
+                                               object:nil];
+    
     self.tracksArray = [[NSMutableArray alloc] init];
     
     NSMutableArray* artists = [[DataStore sharedInstance]artists]; 
@@ -33,8 +40,6 @@
     for (Artist *a in artists){
         
         self.currentArtist = a;
-        
-        
     }
     
     if (self.currentArtist !=nil) {
@@ -43,13 +48,19 @@
         
         for (Track *track in tracks){ 
             
-            NSLog(@"%@" , track.name);
+            // NSLog(@"%@" , track.name);
             
             [self.tracksArray addObject:track];
         }
     }
 
+}
 
+-(void) updateUI {
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
+    
+    self.trackTableView.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
     
 }
 
@@ -60,6 +71,9 @@
     TrackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell" forIndexPath: indexPath];
     
     cell.trackName.text = track.name;
+    
+    cell.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
+    
     
     return cell;
 }
@@ -72,7 +86,7 @@
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 100; 
+    return 80;
 }
 
 

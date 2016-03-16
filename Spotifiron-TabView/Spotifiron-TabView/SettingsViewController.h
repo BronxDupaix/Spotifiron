@@ -12,9 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField; 
 
-
 - (IBAction)firstThemeButton:(UIButton *)sender;
 
 - (IBAction)secondThemeButton:(UIButton *)sender;
+
+- (IBAction)artistSearchButton:(UIButton *)sender;
 
 @end

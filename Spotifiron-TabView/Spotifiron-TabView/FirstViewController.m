@@ -38,6 +38,11 @@
                                                  name:kNotificationThemeChanged
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataLoaded) 
+                                                 name:kNotificationGetNewApi
+                                               object:nil];
+    
    [[APIController sharedInstance] getArtistApi:@"slayer"];
     
     self.relatedArtists = [[NSMutableArray alloc] init];
@@ -53,15 +58,17 @@
     
     NSLog(@"\n\nUpdateUI\n\n");
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor]; 
     
     [[self artistCollectionView] reloadData];
 }
 
 - (void)dataLoaded {
     
-    self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists]; 
+    self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
+    
     NSLog(@"%lu", [[[[[DataStore sharedInstance] artists] firstObject] relatedArtists] count]);
+    
     [[self artistCollectionView] reloadData];
 }
 

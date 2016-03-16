@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "ThemeManager.h"
+#import "APIController.h" 
 
 @interface SettingsViewController ()
 
@@ -23,12 +24,12 @@
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
     
-    //NSString *str = self.artistSearchTextField.text;
+    
 
     [[ThemeManager sharedManager] chooseDefaultTheme];
     [[ThemeManager sharedManager] postNotification];
     
-    //[[APIController sharedInstance] getArtistApi:str];
+    
 
 }
 
@@ -38,17 +39,13 @@
     [[ThemeManager sharedManager] postNotification];
 }
 
-- (IBAction)thirdThemeButton:(UIButton *)sender {
+- (IBAction)artistSearchButton:(UIButton *)sender {
     
-    [[ThemeManager sharedManager] chooseTheme3];
-    [[ThemeManager sharedManager] postNotification];
+    NSString *str = self.artistSearchTextField.text;
     
-}
-
-- (IBAction)customThemeButton:(UIButton *)sender {
+    [[APIController sharedInstance] getArtistApi:str];
     
-    
-    
+    [[ThemeManager sharedManager] changeAPI]; 
 }
 
 

@@ -7,7 +7,7 @@
 //
 
 #import "ThemeManager.h"
-#import "Constants.h"
+#import "Constants.h" 
 
 @implementation ThemeManager
 
@@ -43,6 +43,16 @@
     self.currentFontNameString = [UIFont fontWithName: @"Helvetica" size:25];
     self.currentFontColor = [UIColor blueColor];
     
+    self.currentViewColor = [UIColor blackColor];
+    
+    self.secondFontNameString = [UIFont fontWithName: @"Helvetica" size: 18];
+    
+    self.secondBackgroundColor = [UIColor cyanColor];
+    
+    self.secondFontColor = [UIColor purpleColor];
+    
+    self.secondViewColor = [UIColor lightGrayColor]; 
+    
 }
 
 -(void)chooseTheme2 {
@@ -51,13 +61,29 @@
     self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size:25];
     self.currentFontColor = [UIColor cyanColor];
     
+    self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size: 25];
+    
+    self.secondFontNameString = [UIFont fontWithName: @"Avenir Next" size: 18];
+
+    self.currentViewColor = [UIColor purpleColor]; 
+    
+    self.secondBackgroundColor = [UIColor redColor];
+    
+    self.secondFontColor = [UIColor blackColor];
+    
+    self.secondViewColor = [UIColor magentaColor];
 }
 
 -(void)chooseTheme3 {
     
     self.currentBackgroundColor = [UIColor redColor];
     self.currentFontNameString = [UIFont fontWithName: @"Futura" size: 25];
+    
     self.currentFontColor = [UIColor blackColor];
+    
+    self.currentViewColor = [UIColor purpleColor]; 
+    
+    
 
 }
 
@@ -87,9 +113,14 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationThemeChanged
                                                         object:nil];
-    
 }
 
+-(void)changeAPI {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationGetNewApi
+                                                        object:nil];
+    
+}
 
 
 @end
