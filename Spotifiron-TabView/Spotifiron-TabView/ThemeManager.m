@@ -51,8 +51,11 @@
 -(void)chooseTheme2 {
     
     self.currentBackgroundColor = [UIColor grayColor];
-    self.currentFontNameString = @"Avenir Next";
     self.currentFontColor = [UIColor cyanColor];
+    
+    self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size: 25];
+    
+    self.currentFontColor = [UIColor yellowColor];
     
     self.currentViewColor = [UIColor grayColor];
 }

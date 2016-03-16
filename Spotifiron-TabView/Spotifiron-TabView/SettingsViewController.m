@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "ThemeManager.h"
+#import "APIController.h" 
 
 @interface SettingsViewController ()
 
@@ -46,4 +47,6 @@
     
     [[ThemeManager sharedManager] changeAPI]; 
 }
+
+
 @end
