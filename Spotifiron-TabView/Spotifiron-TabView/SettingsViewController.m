@@ -46,4 +46,19 @@
     [[ThemeManager sharedManager] chooseTheme2];
     [[ThemeManager sharedManager] postNotification];
 }
+
+- (IBAction)thirdThemeButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] chooseTheme3];
+    [[ThemeManager sharedManager] postNotification];
+    
+}
+
+- (IBAction)customThemeButton:(UIButton *)sender {
+    
+    
+    
+}
+
+
 @end
