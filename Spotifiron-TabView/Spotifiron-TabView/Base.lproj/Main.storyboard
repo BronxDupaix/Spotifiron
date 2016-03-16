@@ -237,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVj-DJ-vpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1756" y="941"/>
+            <point key="canvasLocation" x="-1752" y="864"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="gDk-46-XmJ">
@@ -287,7 +287,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.52745593605181851" green="0.23979129570265204" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" constant="8" id="5zB-Yg-GW7"/>
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="top" secondItem="4kI-ZN-AmE" secondAttribute="bottom" constant="68" id="9lY-5K-v8g"/>
                             <constraint firstItem="4kI-ZN-AmE" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="HiZ-HW-1Qg"/>
                             <constraint firstItem="E9s-fA-fhK" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="M6z-Qf-E2U"/>
@@ -367,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLe-5f-GLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="1004"/>
+            <point key="canvasLocation" x="550" y="1084"/>
         </scene>
         <!--Settings-->
         <scene sceneID="t0P-0j-D9o">
