@@ -53,7 +53,7 @@
     
     self.albumName.textColor = [[ThemeManager sharedManager] secondFontColor]; 
     
-    self.albumName.font = [[ThemeManager sharedManager] currentFontNameString]; 
+    self.albumName.font = [[ThemeManager sharedManager] secondFontNameString]; 
     
 }
 

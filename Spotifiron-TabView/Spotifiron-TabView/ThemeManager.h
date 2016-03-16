@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) UIFont *currentFontNameString;
 
+@property (nonatomic, strong) UIFont *secondFontNameString; 
+
 @property (nonatomic, strong) UIColor *currentBackgroundColor;
 @property (nonatomic, strong) UIColor *currentFontColor;
 

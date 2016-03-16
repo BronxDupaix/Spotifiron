@@ -7,7 +7,7 @@
 //
 
 #import "ThemeManager.h"
-#import "Constants.h"
+#import "Constants.h" 
 
 @implementation ThemeManager
 
@@ -47,6 +47,8 @@
     
     self.currentViewColor = [UIColor blackColor];
     
+    self.secondFontNameString = [UIFont fontWithName: @"Helvetica" size: 18];
+    
     self.secondBackgroundColor = [UIColor cyanColor];
     
     self.secondFontColor = [UIColor purpleColor];
@@ -58,21 +60,20 @@
 -(void)chooseTheme2 {
     
     self.currentBackgroundColor = [UIColor grayColor];
+    
     self.currentFontColor = [UIColor cyanColor];
     
     self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size: 25];
     
-    self.currentFontColor = [UIColor yellowColor];
-    
-    self.currentViewColor = [UIColor grayColor];
+    self.secondFontNameString = [UIFont fontWithName: @"Avenir Next" size: 18];
+
+    self.currentViewColor = [UIColor purpleColor]; 
     
     self.secondBackgroundColor = [UIColor redColor];
     
     self.secondFontColor = [UIColor blackColor];
     
-    self.secondViewColor = [UIColor yellowColor];
-    
-    
+    self.secondViewColor = [UIColor magentaColor];
 }
 
 -(void)chooseTheme3 {
