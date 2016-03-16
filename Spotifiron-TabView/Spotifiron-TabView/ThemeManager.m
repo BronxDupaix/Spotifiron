@@ -40,20 +40,16 @@
 -(void)chooseDefaultTheme {
     
     self.currentBackgroundColor = [UIColor orangeColor];
-    
-    self.currentFontNameString = [UIFont fontWithName: @"Helvetica" size: 25];
-    
+    self.currentFontNameString =@"Helvetica";
     self.currentFontColor = [UIColor blueColor];
     
 }
 
 -(void)chooseTheme2 {
     
-    self.currentBackgroundColor = [UIColor cyanColor];
-    
-    self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size: 25];
-    
-    self.currentFontColor = [UIColor yellowColor];
+    self.currentBackgroundColor = [UIColor grayColor];
+    self.currentFontNameString = @"Avenir Next";
+    self.currentFontColor = [UIColor cyanColor];
     
 }
 
@@ -65,8 +61,18 @@
 
 }
 
+-(void)chooseCustomTheme {
+    
+    self.currentBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    self.currentFontColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+//    self.currentFontNameString = @"@%", selectedFont;
+
+}
+
 -(BOOL)loadCustomTheme {
+    
     return NO;
+    
 }
 
 -(BOOL)saveCustomTheme {

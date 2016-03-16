@@ -15,15 +15,14 @@
 
 
 @property (nonatomic, weak)   NSUserDefaults *defaults;
-
-@property (nonatomic, strong) UIFont *currentFontNameString; 
-
+@property (nonatomic, strong) NSString *currentFontNameString;
 @property (nonatomic, strong) UIColor *currentBackgroundColor;
 @property (nonatomic, strong) UIColor *currentFontColor;
 
 -(void)chooseDefaultTheme;
 -(void)chooseTheme2;
 -(void)chooseTheme3;
+-(void)chooseCustomTheme;
 -(void)postNotification;
 -(BOOL)loadCustomTheme;
 -(BOOL)saveCustomTheme;
