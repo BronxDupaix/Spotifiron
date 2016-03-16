@@ -4,6 +4,8 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Self referencing constraints of the same attribute" minToolsVersion="5.1"/>
+        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Related Artists-->
@@ -160,7 +162,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="tzw-dd-NOP" kind="relationship" relationship="viewControllers" id="NS7-oh-44E"/>
-                        <segue destination="nAQ-B8-Psa" kind="relationship" relationship="viewControllers" id="YHF-LB-q90"/>
+                        <segue destination="YNI-In-FPI" kind="relationship" relationship="viewControllers" id="YHF-LB-q90"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -235,9 +237,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVj-DJ-vpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1386" y="1009"/>
+            <point key="canvasLocation" x="-1756" y="941"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="gDk-46-XmJ">
             <objects>
                 <viewController storyboardIdentifier="settingsID" id="nAQ-B8-Psa" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -249,7 +251,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-ZN-AmE">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-ZN-AmE">
                                 <rect key="frame" x="249" y="106" width="101" height="30"/>
                                 <state key="normal" title="Default Theme">
                                     <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -258,7 +260,7 @@
                                     <action selector="firstThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="cxk-KW-0eO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Vv-nzB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Vv-nzB">
                                 <rect key="frame" x="259" y="204" width="83" height="30"/>
                                 <state key="normal" title="Cool Theme">
                                     <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -267,14 +269,14 @@
                                     <action selector="secondThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="9pg-38-llS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9l-ur-2yN">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9l-ur-2yN">
                                 <rect key="frame" x="241" y="303" width="118" height="30"/>
                                 <state key="normal" title="Hot Topic Theme"/>
                                 <connections>
                                     <action selector="thirdThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="jc2-BY-35f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9s-fA-fhK">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9s-fA-fhK">
                                 <rect key="frame" x="247.5" y="402" width="105" height="30"/>
                                 <state key="normal" title="Custom Theme"/>
                                 <connections>
@@ -285,27 +287,23 @@
                         </subviews>
                         <color key="backgroundColor" red="0.52745593605181851" green="0.23979129570265204" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" constant="8" id="5zB-Yg-GW7"/>
+                            <constraint firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" constant="8" id="5zB-Yg-GW7"/>
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="top" secondItem="4kI-ZN-AmE" secondAttribute="bottom" constant="68" id="9lY-5K-v8g"/>
                             <constraint firstItem="4kI-ZN-AmE" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="HiZ-HW-1Qg"/>
-                            <constraint firstItem="4kI-ZN-AmE" firstAttribute="top" secondItem="Ibb-ip-0K0" secondAttribute="bottom" constant="56" id="Kjc-lW-D7i"/>
                             <constraint firstItem="E9s-fA-fhK" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="M6z-Qf-E2U"/>
                             <constraint firstItem="o9l-ur-2yN" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="NGb-Hh-VUt"/>
                             <constraint firstItem="o9l-ur-2yN" firstAttribute="top" secondItem="FSn-Vv-nzB" secondAttribute="bottom" constant="69" id="cSW-z9-JqK"/>
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="h2T-lB-bt9"/>
                             <constraint firstItem="E9s-fA-fhK" firstAttribute="top" secondItem="o9l-ur-2yN" secondAttribute="bottom" constant="69" id="rgw-C3-ViC"/>
-                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="width" secondItem="QtF-03-kCi" secondAttribute="width" id="vDe-q1-Jyo"/>
-                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="ypy-zL-LBc"/>
+                            <constraint firstAttribute="width" secondItem="QtF-03-kCi" secondAttribute="width" id="vDe-q1-Jyo"/>
+                            <constraint firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="ypy-zL-LBc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="KXR-WL-unC"/>
-                    <connections>
-                        <outlet property="artistSearchTextField" destination="Ibb-ip-0K0" id="EU4-Ba-aLD"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="dgE-FQ-e9u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weH-jX-y5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-689" y="1004"/>
+            <point key="canvasLocation" x="-889" y="864"/>
         </scene>
         <!--Top Tracks-->
         <scene sceneID="1Yz-vi-ccg">
@@ -369,7 +367,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLe-5f-GLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1004"/>
+            <point key="canvasLocation" x="812" y="1004"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="t0P-0j-D9o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YNI-In-FPI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="KXR-WL-unC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aUw-jd-B6R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nAQ-B8-Psa" kind="relationship" relationship="rootViewController" id="XQe-Sa-yAx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlj-Tb-UHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-121" y="844"/>
         </scene>
     </scenes>
     <resources>
