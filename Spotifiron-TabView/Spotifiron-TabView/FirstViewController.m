@@ -67,6 +67,8 @@
     
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
     
+    
+    
     NSLog(@"%lu", [[[[[DataStore sharedInstance] artists] firstObject] relatedArtists] count]);
     
     [[self artistCollectionView] reloadData];
@@ -81,10 +83,10 @@ collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     cell.artistImage.image = nil;
     cell.ArtistLabel.text = @"";
     
-    
     Artist *artist = [self.relatedArtists objectAtIndex:indexPath.row];
     
-    cell.ArtistLabel.text = artist.name; 
+    
+    cell.ArtistLabel.text = artist.name;
     
     [cell loadImageFromURLString: artist.imageUrl];
     

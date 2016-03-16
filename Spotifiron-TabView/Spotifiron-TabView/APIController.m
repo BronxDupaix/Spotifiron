@@ -54,7 +54,7 @@
     dispatch_group_t apiGroup = dispatch_group_create();
     
     dispatch_group_enter(apiGroup);
-    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", artistName];
+    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", artistName]; 
     NSURLSession *session = [NSURLSession sharedSession];
     
     [[session dataTaskWithURL:[NSURL URLWithString:urlString]
