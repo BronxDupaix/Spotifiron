@@ -66,7 +66,7 @@
 - (void)dataLoaded {
     
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists]; 
-    
+    NSLog(@"%lu", [[[[[DataStore sharedInstance] artists] firstObject] relatedArtists] count]);
     [[self artistCollectionView] reloadData];
 }
 

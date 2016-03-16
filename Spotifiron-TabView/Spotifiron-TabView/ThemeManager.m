@@ -50,11 +50,9 @@
 
 -(void)chooseTheme2 {
     
-    self.currentBackgroundColor = [UIColor cyanColor];
-    
-    self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size: 25];
-    
-    self.currentFontColor = [UIColor yellowColor];
+    self.currentBackgroundColor = [UIColor grayColor];
+    self.currentFontNameString = @"Avenir Next";
+    self.currentFontColor = [UIColor cyanColor];
     
     self.currentViewColor = [UIColor grayColor];
 }
@@ -69,8 +67,18 @@
 
 }
 
+-(void)chooseCustomTheme {
+    
+    self.currentBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    self.currentFontColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+//    self.currentFontNameString = @"@%", selectedFont;
+
+}
+
 -(BOOL)loadCustomTheme {
+    
     return NO;
+    
 }
 
 -(BOOL)saveCustomTheme {
