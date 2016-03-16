@@ -40,9 +40,7 @@
 -(void)chooseDefaultTheme {
     
     self.currentBackgroundColor = [UIColor orangeColor];
-    
-    self.currentFontNameString = [UIFont fontWithName: @"Helvetica" size: 25];
-    
+    self.currentFontNameString =@"Helvetica";
     self.currentFontColor = [UIColor blueColor];
     
 }

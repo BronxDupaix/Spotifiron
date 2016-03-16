@@ -8,8 +8,6 @@
 
 #import "SettingsViewController.h"
 #import "ThemeManager.h"
-#import "APIController.h"
-#import "Constants.h" 
 
 @interface SettingsViewController ()
 
