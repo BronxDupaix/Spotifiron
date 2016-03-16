@@ -38,6 +38,11 @@
                                                  name:kNotificationThemeChanged
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(dataLoaded) 
+                                                 name:kNotificationGetNewApi
+                                               object:nil];
+    
    [[APIController sharedInstance] getArtistApi:@"slayer"];
     
     self.relatedArtists = [[NSMutableArray alloc] init];

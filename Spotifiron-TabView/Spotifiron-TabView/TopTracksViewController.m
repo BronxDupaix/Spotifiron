@@ -48,7 +48,7 @@
         
         for (Track *track in tracks){ 
             
-            NSLog(@"%@" , track.name);
+            // NSLog(@"%@" , track.name);
             
             [self.tracksArray addObject:track];
         }

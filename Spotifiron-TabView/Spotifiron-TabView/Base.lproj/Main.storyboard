@@ -198,6 +198,16 @@
                                     <action selector="secondThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="9pg-38-llS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPy-WY-VbI">
+                                <rect key="frame" x="251.5" y="326" width="97" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="SEARCH">
+                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="artistSearchButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="Mch-Xm-2Rn"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search for Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-ip-0K0">
                                 <rect key="frame" x="0.0" y="28" width="600" height="22"/>
                                 <color key="backgroundColor" red="0.15751965866524861" green="0.7019608021" blue="0.32476140441804913" alpha="1" colorSpace="calibratedRGB"/>
@@ -211,6 +221,8 @@
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="top" secondItem="4kI-ZN-AmE" secondAttribute="bottom" constant="68" id="9lY-5K-v8g"/>
                             <constraint firstItem="4kI-ZN-AmE" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="HiZ-HW-1Qg"/>
                             <constraint firstItem="4kI-ZN-AmE" firstAttribute="top" secondItem="Ibb-ip-0K0" secondAttribute="bottom" constant="56" id="Kjc-lW-D7i"/>
+                            <constraint firstItem="lPy-WY-VbI" firstAttribute="top" secondItem="FSn-Vv-nzB" secondAttribute="bottom" constant="64" id="UZB-dc-6nj"/>
+                            <constraint firstItem="lPy-WY-VbI" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="euw-yb-LRB"/>
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="h2T-lB-bt9"/>
                             <constraint firstItem="Ibb-ip-0K0" firstAttribute="width" secondItem="QtF-03-kCi" secondAttribute="width" id="vDe-q1-Jyo"/>
                             <constraint firstItem="Ibb-ip-0K0" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="ypy-zL-LBc"/>

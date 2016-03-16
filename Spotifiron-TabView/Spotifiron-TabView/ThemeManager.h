@@ -29,6 +29,7 @@
 -(void)postNotification;
 -(BOOL)loadCustomTheme;
 -(BOOL)saveCustomTheme;
+-(void)changeAPI; 
 
 
 @end

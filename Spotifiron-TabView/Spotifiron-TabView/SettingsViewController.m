@@ -25,12 +25,12 @@
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
     
-    //NSString *str = self.artistSearchTextField.text;
+    
 
     [[ThemeManager sharedManager] chooseDefaultTheme];
     [[ThemeManager sharedManager] postNotification];
     
-    //[[APIController sharedInstance] getArtistApi:str];
+    
 
 }
 
@@ -38,5 +38,14 @@
     
     [[ThemeManager sharedManager] chooseTheme2];
     [[ThemeManager sharedManager] postNotification];
+}
+
+- (IBAction)artistSearchButton:(UIButton *)sender {
+    
+    NSString *str = self.artistSearchTextField.text;
+    
+    [[APIController sharedInstance] getArtistApi:str];
+    
+    [[ThemeManager sharedManager] changeAPI]; 
 }
 @end

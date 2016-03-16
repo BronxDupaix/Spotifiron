@@ -85,9 +85,14 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationThemeChanged
                                                         object:nil];
-    
 }
 
+-(void)changeAPI {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationGetNewApi
+                                                        object:nil];
+    
+}
 
 
 @end

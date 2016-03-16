@@ -59,7 +59,7 @@
         }
     }
     
-    NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]);
+   // NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]);
 
     
     [[self collectionView] reloadData]; 
