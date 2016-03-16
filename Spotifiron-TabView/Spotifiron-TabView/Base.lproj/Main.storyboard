@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E61b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -162,7 +162,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="tzw-dd-NOP" kind="relationship" relationship="viewControllers" id="NS7-oh-44E"/>
-                        <segue destination="nAQ-B8-Psa" kind="relationship" relationship="viewControllers" id="YHF-LB-q90"/>
+                        <segue destination="YNI-In-FPI" kind="relationship" relationship="viewControllers" id="YHF-LB-q90"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -205,13 +205,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6V-hT-vz3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6V-hT-vz3">
                                 <rect key="frame" x="20" y="233" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekk-Dg-C4S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekk-Dg-C4S">
                                 <rect key="frame" x="20" y="143" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -237,9 +237,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVj-DJ-vpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1386" y="1009"/>
+            <point key="canvasLocation" x="-1756" y="941"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="gDk-46-XmJ">
             <objects>
                 <viewController storyboardIdentifier="settingsID" id="nAQ-B8-Psa" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -269,41 +269,41 @@
                                     <action selector="secondThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="9pg-38-llS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9l-ur-2yN">
-                                <rect key="frame" x="241" y="303" width="118" height="30"/>
-                                <state key="normal" title="Hot Topic Theme"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPy-WY-VbI">
+                                <rect key="frame" x="251.5" y="326" width="97" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="SEARCH">
+                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="thirdThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="jc2-BY-35f"/>
+                                    <action selector="artistSearchButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="Mch-Xm-2Rn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9s-fA-fhK">
-                                <rect key="frame" x="248" y="402" width="105" height="30"/>
-                                <state key="normal" title="Custom Theme"/>
-                                <connections>
-                                    <action selector="customThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="kYu-VS-brq"/>
-                                    <segue destination="8YM-Wd-SPM" kind="show" identifier="customSegue" id="bbN-Ws-ByL"/>
-                                </connections>
-                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search for Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-ip-0K0">
+                                <rect key="frame" x="0.0" y="28" width="600" height="22"/>
+                                <color key="backgroundColor" red="0.15751965866524861" green="0.7019608021" blue="0.32476140441804913" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.52745593605181851" green="0.23979129570265204" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" constant="8" id="5zB-Yg-GW7"/>
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="top" secondItem="4kI-ZN-AmE" secondAttribute="bottom" constant="68" id="9lY-5K-v8g"/>
                             <constraint firstItem="4kI-ZN-AmE" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="HiZ-HW-1Qg"/>
-                            <constraint firstItem="E9s-fA-fhK" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="M6z-Qf-E2U"/>
-                            <constraint firstItem="o9l-ur-2yN" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="NGb-Hh-VUt"/>
-                            <constraint firstItem="o9l-ur-2yN" firstAttribute="top" secondItem="FSn-Vv-nzB" secondAttribute="bottom" constant="69" id="cSW-z9-JqK"/>
+                            <constraint firstItem="4kI-ZN-AmE" firstAttribute="top" secondItem="Ibb-ip-0K0" secondAttribute="bottom" constant="56" id="Kjc-lW-D7i"/>
+                            <constraint firstItem="lPy-WY-VbI" firstAttribute="top" secondItem="FSn-Vv-nzB" secondAttribute="bottom" constant="64" id="UZB-dc-6nj"/>
+                            <constraint firstItem="lPy-WY-VbI" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="euw-yb-LRB"/>
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="h2T-lB-bt9"/>
-                            <constraint firstItem="E9s-fA-fhK" firstAttribute="top" secondItem="o9l-ur-2yN" secondAttribute="bottom" constant="69" id="rgw-C3-ViC"/>
                             <constraint firstAttribute="width" secondItem="QtF-03-kCi" secondAttribute="width" id="vDe-q1-Jyo"/>
                             <constraint firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="ypy-zL-LBc"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="KXR-WL-unC"/>
+                    <navigationItem key="navigationItem" id="dgE-FQ-e9u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weH-jX-y5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-689" y="1004"/>
+            <point key="canvasLocation" x="-1069" y="906"/>
         </scene>
         <!--Top Tracks-->
         <scene sceneID="1Yz-vi-ccg">
@@ -325,10 +325,10 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fey-ae-G0x" id="0sX-J1-K3i">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEU-CS-0js">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEU-CS-0js">
                                                     <rect key="frame" x="8" y="12" width="42" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.034675970673561096" green="0.91868883371353149" blue="0.95458227396011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -367,7 +367,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLe-5f-GLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1004"/>
+            <point key="canvasLocation" x="300" y="906"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="t0P-0j-D9o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YNI-In-FPI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="KXR-WL-unC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aUw-jd-B6R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nAQ-B8-Psa" kind="relationship" relationship="rootViewController" id="XQe-Sa-yAx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlj-Tb-UHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-349" y="906"/>
         </scene>
     </scenes>
     <resources>

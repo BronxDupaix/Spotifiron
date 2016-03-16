@@ -53,7 +53,11 @@
                                                  name:kNotificationThemeChanged
                                                object:nil];
     
-    self.ArtistLabel.backgroundColor = [[ThemeManager sharedManager] currentFontColor]; 
+    self.ArtistLabel.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
+    
+    self.ArtistLabel.font = [[ThemeManager sharedManager] currentFontNameString];
+    
+    self.ArtistLabel.textColor = [[ThemeManager sharedManager] currentFontColor];
     
     
 }

@@ -11,5 +11,7 @@
 
 #define kNotificationThemeChanged        @"ThemeChanged"
 #define kNotificationTracksLoaded        @"TracksLoaded"
+#define kNotificationGetNewApi           @"ApiChanged"
+
 
 #endif /* Constants_h */
