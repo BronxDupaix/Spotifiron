@@ -45,7 +45,14 @@
     
     self.currentFontColor = [UIColor blueColor];
     
-    self.currentViewColor = [UIColor blackColor]; 
+    self.currentViewColor = [UIColor blackColor];
+    
+    self.secondBackgroundColor = [UIColor cyanColor];
+    
+    self.secondFontColor = [UIColor purpleColor];
+    
+    self.secondViewColor = [UIColor lightGrayColor]; 
+    
 }
 
 -(void)chooseTheme2 {
@@ -58,15 +65,26 @@
     self.currentFontColor = [UIColor yellowColor];
     
     self.currentViewColor = [UIColor grayColor];
+    
+    self.secondBackgroundColor = [UIColor redColor];
+    
+    self.secondFontColor = [UIColor blackColor];
+    
+    self.secondViewColor = [UIColor yellowColor];
+    
+    
 }
 
 -(void)chooseTheme3 {
     
     self.currentBackgroundColor = [UIColor redColor];
     self.currentFontNameString = [UIFont fontWithName: @"Futura" size: 25];
+    
     self.currentFontColor = [UIColor blackColor];
     
     self.currentViewColor = [UIColor purpleColor]; 
+    
+    
 
 }
 

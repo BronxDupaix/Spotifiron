@@ -38,37 +38,25 @@
     self.albumArray = [[NSMutableArray alloc] init];
     
     NSMutableArray *artists = [[DataStore sharedInstance]artists];
-    
-    
     for (Artist *a in artists){
-        
         self.currentArtist = a;
-        
-        
     }
     
     if (self.currentArtist !=nil) {
-        
         NSMutableArray *albumsArray = self.currentArtist.albums;
-        
         for (Album *album in albumsArray){
-            
             // NSLog(@"%@" , album.name);
-            
             [self.albumArray addObject:album];
         }
     }
     
    // NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]);
-
-    
     [[self collectionView] reloadData]; 
 }
 
 -(void) updateUI {
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
-    
+    self.view.backgroundColor = [[ThemeManager sharedManager] secondViewColor]; 
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -88,17 +76,10 @@
     [cell loadImageFromURLString: album.imageUrl];
     
     return cell;
-    
-    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.albumArray.count;
 }
-
-
-
-
-
 
 @end

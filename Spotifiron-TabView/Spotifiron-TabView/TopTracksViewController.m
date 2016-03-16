@@ -72,6 +72,8 @@
     
     cell.trackName.text = track.name;
     
+    cell.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
+    
     
     return cell;
 }
