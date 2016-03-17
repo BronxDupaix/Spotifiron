@@ -38,6 +38,11 @@
                                                  name:kNotificationGetNewApi
                                                object:nil];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateUI)
+                                                 name:kNotificationTracksLoaded
+                                               object:nil];
+
     
     self.tracksArray = [[NSMutableArray alloc] init];
     
@@ -87,8 +92,9 @@
         }
     }
     
-    
-    self.trackTableView.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
+
+    self.trackTableView.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    [self.trackTableView reloadData];
     
 }
 

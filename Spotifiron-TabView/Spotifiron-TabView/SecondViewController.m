@@ -7,7 +7,7 @@
 //
 
 #import "SecondViewController.h"
-#import "Artist.h" 
+#import "Artist.h"
 #import "Album.h"
 #import "AlbumCollectionViewCell.h"
 #import "DataStore.h"
@@ -36,54 +36,59 @@
     // Api Changed Notification
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
-                                                 name:kNotificationGetNewApi
+                                                 name:kNotificationTracksLoaded
                                                object:nil];
-   
     
     self.albumArray = [[NSMutableArray alloc] init];
     
-    NSMutableArray *artists = [[DataStore sharedInstance]artists];
-    for (Artist *a in artists){
-        self.currentArtist = a;
-    }
+    //    NSMutableArray *artists = [[DataStore sharedInstance]artists];
+    //    for (Artist *a in artists){
+    //        self.currentArtist = a;
+    //    }
     
-    if (self.currentArtist !=nil) {
-        NSMutableArray *albumsArray = self.currentArtist.albums;
-        for (Album *album in albumsArray){
-             NSLog(@"%@" , album.name);
-            [self.albumArray addObject:album];
-        }
-    }
+    //    if (self.currentArtist !=nil) {
     
-    [[self collectionView] reloadData]; 
+    
+    
+    
+    //        NSMutableArray *albumsArray = self.currentArtist.albums;
+    //        for (Album *album in albumsArray){
+    //             NSLog(@"%@" , album.name);
+    //            [self.albumArray addObject:album];
+    //        }
+    //    }
+    if ([[[DataStore sharedInstance] artists] firstObject] != nil) {
+        self.albumArray = [[[[DataStore sharedInstance] artists] firstObject] albums];
+        [[self collectionView] reloadData];
+    }
 }
 
 -(void) updateUI {
     
     self.view.backgroundColor = [[ThemeManager sharedManager] secondViewColor];
+    self.albumArray = [[[[DataStore sharedInstance] artists] firstObject] albums];
+    //    NSMutableArray *artists = [[DataStore sharedInstance]artists];
+    //    for (Artist *a in artists){
+    //        self.currentArtist = a;
+    //    }
+    //
+    //    if (self.currentArtist !=nil) {
+    //        [self.albumArray removeAllObjects];
+    //
+    //        NSMutableArray *albumsArray = self.currentArtist.albums;
+    //        for (Album *album in albumsArray){
+    //           // NSLog(@"%@" , album.name);
+    //            [self.albumArray addObject:album];
+    //        }
+    //    }
     
-    NSMutableArray *artists = [[DataStore sharedInstance]artists];
-    for (Artist *a in artists){
-        self.currentArtist = a;
-    }
-    
-    if (self.currentArtist !=nil) {
-        [self.albumArray removeAllObjects]; 
-        
-        NSMutableArray *albumsArray = self.currentArtist.albums;
-        for (Album *album in albumsArray){
-           // NSLog(@"%@" , album.name);
-            [self.albumArray addObject:album];
-        }
-    }
-
     
     [self.collectionView reloadData];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
 
-    cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     AlbumCollectionViewCell *cell = [collectionView   dequeueReusableCellWithReuseIdentifier:@"AlbumCell" forIndexPath:indexPath];
     
@@ -91,7 +96,7 @@
     
     cell.albumImage.image = nil;
     
-    cell.albumName.text = @""; 
+    cell.albumName.text = @"";
     
     cell.albumName.text = album.name;
     

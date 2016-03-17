@@ -51,10 +51,11 @@
 
 
 -(void) getArtistApi:(NSString *)artistName {
-    dispatch_group_t apiGroup = dispatch_group_create();
     
-    dispatch_group_enter(apiGroup);
-    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", artistName]; 
+    NSString *escapedSearchTerm = [artistName stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    NSString *urlString =[NSString stringWithFormat:@"https://api.spotify.com/v1/search?q=%@&type=artist", escapedSearchTerm];
+    
     NSURLSession *session = [NSURLSession sharedSession];
     
     [[session dataTaskWithURL:[NSURL URLWithString:urlString]
