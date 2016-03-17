@@ -284,7 +284,7 @@
         
     }
     if (allAlbumsLoaded == YES) {
-        
+        [[[DataStore sharedInstance] artists] removeAllObjects];
         [[[DataStore sharedInstance] artists] addObject:self.currentArtist];
         NSArray *sharedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
         NSLog(@"%lu", sharedArtists.count);

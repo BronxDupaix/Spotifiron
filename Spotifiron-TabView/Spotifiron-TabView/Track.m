@@ -15,9 +15,10 @@
     
     Track *track = nil;
     if (trackDictionary) {
-     
+        
         track = [[Track alloc] init];
         track.name = [trackDictionary objectForKey:@"name"];
+        track.previewURL = [trackDictionary objectForKey:@"preview_url"];
         
     }
     return track;
