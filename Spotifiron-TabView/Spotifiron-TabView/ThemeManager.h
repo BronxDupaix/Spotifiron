@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) UIColor *currentViewColor;
 
+@property (nonatomic, strong) UIFont *secondFontNameString; 
+
 @property (nonatomic, strong) UIColor *secondBackgroundColor;
 
 @property (nonatomic, strong) UIColor *secondViewColor;
