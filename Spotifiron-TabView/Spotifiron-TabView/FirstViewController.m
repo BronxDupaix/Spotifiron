@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(dataLoaded)
+                                             selector:@selector(updateUI)
                                                  name:kNotificationTracksLoaded
                                                object:nil];
     
@@ -39,7 +39,7 @@
                                                object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(dataLoaded) 
+                                             selector:@selector(updateUI)
                                                  name:kNotificationGetNewApi
                                                object:nil];
     
@@ -58,14 +58,10 @@
     
     NSLog(@"\n\nUpdateUI\n\n");
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor]; 
-    
-    [[self artistCollectionView] reloadData];
-}
-
-- (void)dataLoaded {
-    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
+    
+    
     
     NSLog(@"%lu", [[[[[DataStore sharedInstance] artists] firstObject] relatedArtists] count]);
     
@@ -81,10 +77,10 @@ collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     cell.artistImage.image = nil;
     cell.ArtistLabel.text = @"";
     
-    
     Artist *artist = [self.relatedArtists objectAtIndex:indexPath.row];
     
-    cell.ArtistLabel.text = artist.name; 
+    
+    cell.ArtistLabel.text = artist.name;
     
     [cell loadImageFromURLString: artist.imageUrl];
     

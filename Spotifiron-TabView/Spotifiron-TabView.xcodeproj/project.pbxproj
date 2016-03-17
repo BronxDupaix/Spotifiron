@@ -128,7 +128,7 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		5E8C6D771C975419009487BB /* TableViewCells */ = {
+		5E8C6D771C975419009487BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */,
@@ -138,7 +138,7 @@
 				CAF431181C967115006129C0 /* TrackTableViewCell.h */,
 				CAF431191C967115006129C0 /* TrackTableViewCell.m */,
 			);
-			name = TableViewCells;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		CAF430E91C8F95BD006129C0 = {
@@ -164,6 +164,7 @@
 				CAF430F91C8F95BD006129C0 /* AppDelegate.m */,
 				14BF23CA1C97516B00148463 /* Constants.h */,
 				5EA617591C90E00800B086A6 /* Main.storyboard */,
+				5E8C6D771C975419009487BB /* Views */,
 				14CC60021C8FC22E0007BB74 /* View Controllers */,
 				14CC60011C8FC21F0007BB74 /* Controllers */,
 				14CC5FFA1C8FC0210007BB74 /* Models */,

@@ -22,10 +22,6 @@
     
     if ( self = [super init] ) {
         self.artists = [[NSMutableArray alloc] init];
-        self.albums = [[NSMutableArray alloc] init];
-        self.tracks = [[NSMutableArray alloc] init];
-        self.relatedArtists = [[NSMutableArray alloc] init];
-        self.topTracks = [[NSMutableArray alloc] init];
     }
     return self;
 }
