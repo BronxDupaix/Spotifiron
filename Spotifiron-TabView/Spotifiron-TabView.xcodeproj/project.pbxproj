@@ -13,6 +13,8 @@
 		14CC60001C8FC2170007BB74 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FFF1C8FC2170007BB74 /* DataStore.m */; };
 		1B757B011C921796006CB185 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B757B001C921796006CB185 /* ThemeManager.m */; };
 		1B757B041C933D16006CB185 /* ArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */; };
+		1B8CAE801C9B453000BF115E /* CustomThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8CAE7F1C9B453000BF115E /* CustomThemeViewController.m */; };
+		1B8CAE831C9B468F00BF115E /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8CAE821C9B468F00BF115E /* ISColorWheel.m */; };
 		5EA617551C90DF9600B086A6 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA617541C90DF9600B086A6 /* APIController.m */; };
 		5EA6175B1C90E00800B086A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA617591C90E00800B086A6 /* Main.storyboard */; };
 		CAF430F71C8F95BD006129C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF430F61C8F95BD006129C0 /* main.m */; };
@@ -41,6 +43,10 @@
 		1B757B001C921796006CB185 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
 		1B757B021C933D16006CB185 /* ArtistCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtistCollectionViewCell.h; sourceTree = "<group>"; };
 		1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtistCollectionViewCell.m; sourceTree = "<group>"; };
+		1B8CAE7E1C9B453000BF115E /* CustomThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomThemeViewController.h; sourceTree = "<group>"; };
+		1B8CAE7F1C9B453000BF115E /* CustomThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomThemeViewController.m; sourceTree = "<group>"; };
+		1B8CAE811C9B468F00BF115E /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
+		1B8CAE821C9B468F00BF115E /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
 		5EA617531C90DF9600B086A6 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
 		5EA617541C90DF9600B086A6 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
 		5EA6175A1C90E00800B086A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 		14CC60011C8FC21F0007BB74 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B8CAE811C9B468F00BF115E /* ISColorWheel.h */,
+				1B8CAE821C9B468F00BF115E /* ISColorWheel.m */,
 				1B757AFF1C921796006CB185 /* ThemeManager.h */,
 				1B757B001C921796006CB185 /* ThemeManager.m */,
 				5EA617531C90DF9600B086A6 /* APIController.h */,
@@ -113,6 +121,9 @@
 				CAF431101C91F05B006129C0 /* TopTracksViewController.m */,
 				CAF431151C966B50006129C0 /* SettingsViewController.h */,
 				CAF431161C966B50006129C0 /* SettingsViewController.m */,
+				1B8CAE7E1C9B453000BF115E /* CustomThemeViewController.h */,
+				1B8CAE7F1C9B453000BF115E /* CustomThemeViewController.m */,
+				5E8C6D771C975419009487BB /* TableViewCells */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -244,9 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B8CAE831C9B468F00BF115E /* ISColorWheel.m in Sources */,
 				5EA617551C90DF9600B086A6 /* APIController.m in Sources */,
 				14CC5FF91C8FC0160007BB74 /* Track.m in Sources */,
 				CAF431001C8F95BD006129C0 /* SecondViewController.m in Sources */,
+				1B8CAE801C9B453000BF115E /* CustomThemeViewController.m in Sources */,
 				CAF430FA1C8F95BD006129C0 /* AppDelegate.m in Sources */,
 				1B757B011C921796006CB185 /* ThemeManager.m in Sources */,
 				CAF431111C91F05B006129C0 /* TopTracksViewController.m in Sources */,
