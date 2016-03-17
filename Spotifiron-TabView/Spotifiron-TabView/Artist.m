@@ -21,7 +21,7 @@
         artist.name = [artistDictionary objectForKey:@"name"];
         artist.idString = [artistDictionary objectForKey:@"id"];
         NSArray *items = [artistDictionary objectForKey:@"images"];
-        NSDictionary *item = [items objectAtIndex:1];
+        NSDictionary *item = [items lastObject];
         NSString *imageUrl = [item objectForKey:@"url"];
         artist.imageUrl = imageUrl;
     } else {

@@ -20,7 +20,7 @@
         album.name = [albumDictionary objectForKey:@"name"];
         album.idString = [albumDictionary objectForKey:@"id"];
         NSArray *items = [albumDictionary objectForKey:@"images"];
-        NSDictionary *item = [items objectAtIndex:1];
+        NSDictionary *item = [items lastObject];
         NSString *imageUrl = [item objectForKey:@"url"];
         album.imageUrl = imageUrl;
      //   NSLog(@"%@", album.imageUrl);
