@@ -39,6 +39,12 @@
     [[ThemeManager sharedManager] postNotification];
 }
 
+- (IBAction)thirdThemeButton:(UIButton *)sender {
+}
+
+- (IBAction)customThemeButton:(UIButton *)sender {
+}
+
 - (IBAction)artistSearchButton:(UIButton *)sender {
     
     NSString *str = self.artistSearchTextField.text;

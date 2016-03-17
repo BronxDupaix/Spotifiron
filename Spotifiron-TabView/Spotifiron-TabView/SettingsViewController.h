@@ -16,6 +16,10 @@
 
 - (IBAction)secondThemeButton:(UIButton *)sender;
 
+- (IBAction)thirdThemeButton:(UIButton *)sender;
+
+- (IBAction)customThemeButton:(UIButton *)sender;
+
 - (IBAction)artistSearchButton:(UIButton *)sender;
 
 @end

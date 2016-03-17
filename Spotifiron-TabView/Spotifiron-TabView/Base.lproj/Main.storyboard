@@ -3,9 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Self referencing constraints of the same attribute" minToolsVersion="5.1"/>
-        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Related Artists-->
@@ -146,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826" y="338"/>
+            <point key="canvasLocation" x="806" y="208"/>
         </scene>
         <!--tabBarController-->
         <scene sceneID="yl2-sM-qoP">
@@ -169,10 +166,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom Theme View Controller-->
         <scene sceneID="LhG-yF-2O2">
             <objects>
-                <viewController id="8YM-Wd-SPM" sceneMemberID="viewController">
+                <viewController id="8YM-Wd-SPM" customClass="CustomThemeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oNy-zV-1Qd"/>
                         <viewControllerLayoutGuide type="bottom" id="KpA-sX-fkE"/>
@@ -180,64 +177,12 @@
                     <view key="view" contentMode="scaleToFill" id="lJx-g6-zEC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GQh-a9-g2A">
-                                <rect key="frame" x="148" y="89" width="304" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="umL-Ue-ON1"/>
-                                </constraints>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Pz-r1-27M">
-                                <rect key="frame" x="148" y="188" width="304" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="GLZ-6M-EKB"/>
-                                </constraints>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="clJ-p0-bAN">
-                                <rect key="frame" x="148" y="287" width="304" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="WX9-K6-a6Y"/>
-                                </constraints>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkX-7R-HkD">
-                                <rect key="frame" x="20" y="54" width="30" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6V-hT-vz3">
-                                <rect key="frame" x="20" y="233" width="34" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekk-Dg-C4S">
-                                <rect key="frame" x="20" y="143" width="47" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="clJ-p0-bAN" firstAttribute="centerX" secondItem="lJx-g6-zEC" secondAttribute="centerX" id="1ey-83-M0E"/>
-                            <constraint firstItem="QkX-7R-HkD" firstAttribute="leading" secondItem="lJx-g6-zEC" secondAttribute="leadingMargin" id="GIY-aS-IRL"/>
-                            <constraint firstItem="h6V-hT-vz3" firstAttribute="top" secondItem="ekk-Dg-C4S" secondAttribute="bottom" constant="69" id="How-R6-hfO"/>
-                            <constraint firstItem="GQh-a9-g2A" firstAttribute="centerX" secondItem="lJx-g6-zEC" secondAttribute="centerX" id="S08-uY-0rz"/>
-                            <constraint firstItem="clJ-p0-bAN" firstAttribute="top" secondItem="9Pz-r1-27M" secondAttribute="bottom" constant="69" id="UzH-Bc-QYi"/>
-                            <constraint firstItem="ekk-Dg-C4S" firstAttribute="leading" secondItem="lJx-g6-zEC" secondAttribute="leadingMargin" id="iUz-Qs-fVY"/>
-                            <constraint firstItem="ekk-Dg-C4S" firstAttribute="top" secondItem="QkX-7R-HkD" secondAttribute="bottom" constant="69" id="lHA-iq-oyz"/>
-                            <constraint firstItem="9Pz-r1-27M" firstAttribute="centerX" secondItem="lJx-g6-zEC" secondAttribute="centerX" id="qjg-0R-FcH"/>
-                            <constraint firstItem="GQh-a9-g2A" firstAttribute="top" secondItem="oNy-zV-1Qd" secondAttribute="bottom" constant="69" id="seO-Cw-047"/>
-                            <constraint firstItem="9Pz-r1-27M" firstAttribute="top" secondItem="GQh-a9-g2A" secondAttribute="bottom" constant="69" id="wyU-ZM-sLZ"/>
-                            <constraint firstItem="QkX-7R-HkD" firstAttribute="top" secondItem="oNy-zV-1Qd" secondAttribute="bottom" constant="34" id="x1j-o3-plM"/>
-                            <constraint firstItem="h6V-hT-vz3" firstAttribute="leading" secondItem="lJx-g6-zEC" secondAttribute="leadingMargin" id="xBR-pN-NG8"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVj-DJ-vpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1752" y="864"/>
+            <point key="canvasLocation" x="-1778" y="906"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="gDk-46-XmJ">
@@ -251,8 +196,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-ZN-AmE">
-                                <rect key="frame" x="249" y="106" width="101" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-ZN-AmE">
+                                <rect key="frame" x="249" y="114" width="101" height="30"/>
                                 <state key="normal" title="Default Theme">
                                     <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -260,17 +205,8 @@
                                     <action selector="firstThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="cxk-KW-0eO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Vv-nzB">
-                                <rect key="frame" x="259" y="204" width="83" height="30"/>
-                                <state key="normal" title="Cool Theme">
-                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="secondThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="9pg-38-llS"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPy-WY-VbI">
-                                <rect key="frame" x="251.5" y="326" width="97" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPy-WY-VbI">
+                                <rect key="frame" x="251" y="501" width="97" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="SEARCH">
                                     <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -279,8 +215,32 @@
                                     <action selector="artistSearchButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="Mch-Xm-2Rn"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search for Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-ip-0K0">
-                                <rect key="frame" x="0.0" y="28" width="600" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Vv-nzB">
+                                <rect key="frame" x="259" y="214" width="83" height="30"/>
+                                <state key="normal" title="Cool Theme">
+                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="secondThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="9pg-38-llS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNv-EC-vop">
+                                <rect key="frame" x="241" y="314" width="118" height="30"/>
+                                <state key="normal" title="Hot Topic Theme"/>
+                                <connections>
+                                    <action selector="thirdThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="LOs-pr-6JE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-AW-c1P">
+                                <rect key="frame" x="247" y="414" width="105" height="30"/>
+                                <state key="normal" title="Custom Theme"/>
+                                <connections>
+                                    <action selector="customThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="GOV-tB-fYv"/>
+                                    <segue destination="8YM-Wd-SPM" kind="show" id="kgQ-ok-4g8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search for Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-ip-0K0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="22"/>
                                 <color key="backgroundColor" red="0.15751965866524861" green="0.7019608021" blue="0.32476140441804913" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -288,17 +248,25 @@
                         </subviews>
                         <color key="backgroundColor" red="0.52745593605181851" green="0.23979129570265204" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="FSn-Vv-nzB" firstAttribute="top" secondItem="4kI-ZN-AmE" secondAttribute="bottom" constant="68" id="9lY-5K-v8g"/>
-                            <constraint firstItem="4kI-ZN-AmE" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="HiZ-HW-1Qg"/>
-                            <constraint firstItem="4kI-ZN-AmE" firstAttribute="top" secondItem="Ibb-ip-0K0" secondAttribute="bottom" constant="56" id="Kjc-lW-D7i"/>
-                            <constraint firstItem="lPy-WY-VbI" firstAttribute="top" secondItem="FSn-Vv-nzB" secondAttribute="bottom" constant="64" id="UZB-dc-6nj"/>
-                            <constraint firstItem="lPy-WY-VbI" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="euw-yb-LRB"/>
-                            <constraint firstItem="FSn-Vv-nzB" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="h2T-lB-bt9"/>
-                            <constraint firstAttribute="width" secondItem="QtF-03-kCi" secondAttribute="width" id="vDe-q1-Jyo"/>
-                            <constraint firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="ypy-zL-LBc"/>
+                            <constraint firstItem="4kI-ZN-AmE" firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" constant="50" id="3oQ-X6-gWH"/>
+                            <constraint firstItem="4kI-ZN-AmE" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="6Fe-Wv-Ykc"/>
+                            <constraint firstItem="O0P-AW-c1P" firstAttribute="top" secondItem="uNv-EC-vop" secondAttribute="bottom" constant="70" id="E48-sG-oIz"/>
+                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="width" secondItem="QtF-03-kCi" secondAttribute="width" id="YUA-9u-ijm"/>
+                            <constraint firstItem="ax8-4y-ccW" firstAttribute="top" secondItem="lPy-WY-VbI" secondAttribute="bottom" constant="8" id="fT3-x3-RQN"/>
+                            <constraint firstItem="uNv-EC-vop" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="lgD-Eu-eXy"/>
+                            <constraint firstItem="FSn-Vv-nzB" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="mpW-by-7vV"/>
+                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" id="quF-7Q-zYh"/>
+                            <constraint firstItem="O0P-AW-c1P" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="rN4-5f-gNj"/>
+                            <constraint firstItem="lPy-WY-VbI" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="u75-2u-JwM"/>
+                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="uFu-Mp-D3M"/>
+                            <constraint firstItem="FSn-Vv-nzB" firstAttribute="top" secondItem="4kI-ZN-AmE" secondAttribute="bottom" constant="70" id="yiD-QI-TM5"/>
+                            <constraint firstItem="uNv-EC-vop" firstAttribute="top" secondItem="FSn-Vv-nzB" secondAttribute="bottom" constant="70" id="zH8-Gn-fn4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dgE-FQ-e9u"/>
+                    <connections>
+                        <outlet property="artistSearchTextField" destination="Ibb-ip-0K0" id="ixx-jh-SaJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weH-jX-y5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -339,7 +307,7 @@
                                                 <constraint firstItem="iEU-CS-0js" firstAttribute="leading" secondItem="0sX-J1-K3i" secondAttribute="leading" constant="8" id="oUG-gr-JJA"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="trackName" destination="iEU-CS-0js" id="EEc-1u-mjA"/>
                                         </connections>
