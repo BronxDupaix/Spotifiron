@@ -10,6 +10,7 @@
 #import "ThemeManager.h" 
 #import "Album.h"
 #import "Constants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation AlbumCollectionViewCell
 
@@ -55,6 +56,15 @@
     
     self.albumName.font = [[ThemeManager sharedManager] secondFontNameString]; 
     
+    self.albumName.layer.masksToBounds = YES;
+    
+    self.albumName.layer.cornerRadius = 20.0;
+    
+    // self.albumName.layer.borderColor =
+    
+    self.albumImage.layer.masksToBounds = YES;
+    
+    self.albumImage.layer.cornerRadius = 45.0;
 }
 
 

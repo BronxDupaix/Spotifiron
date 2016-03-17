@@ -10,6 +10,7 @@
 #import "ThemeManager.h" 
 #import "Constants.h"
 #import "ThemeManager.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ArtistCollectionViewCell
 
@@ -59,7 +60,13 @@
     
     self.ArtistLabel.textColor = [[ThemeManager sharedManager] currentFontColor];
     
+    self.ArtistLabel.layer.masksToBounds = YES;
     
+    self.ArtistLabel.layer.cornerRadius = 15.0;
+    
+    self.artistImage.layer.masksToBounds = YES;
+    
+    self.artistImage.layer.cornerRadius = 65.0; 
 }
 
 
