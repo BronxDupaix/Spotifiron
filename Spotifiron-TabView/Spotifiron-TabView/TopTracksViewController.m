@@ -33,6 +33,12 @@
                                                  name:kNotificationThemeChanged
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateUI)
+                                                 name:kNotificationGetNewApi
+                                               object:nil];
+
+    
     self.tracksArray = [[NSMutableArray alloc] init];
     
     NSMutableArray* artists = [[DataStore sharedInstance]artists]; 
@@ -58,7 +64,29 @@
 
 -(void) updateUI {
     
+    [self.tracksArray removeAllObjects];
+    
     self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
+    
+    NSMutableArray* artists = [[DataStore sharedInstance]artists];
+    
+    for (Artist *a in artists){
+        
+        self.currentArtist = a;
+    }
+    
+    if (self.currentArtist !=nil) {
+        
+        NSMutableArray *tracks = self.currentArtist.topTracks;
+        
+        for (Track *track in tracks){
+            
+           //  NSLog(@"%@" , track.name);
+            
+            [self.tracksArray addObject:track];
+        }
+    }
+    
     
     self.trackTableView.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
     
@@ -69,6 +97,7 @@
     Track *track = [self.tracksArray objectAtIndex:indexPath.row];
     
     TrackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell" forIndexPath: indexPath];
+    
     
     cell.trackName.text = track.name;
     

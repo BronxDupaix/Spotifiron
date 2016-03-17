@@ -23,13 +23,8 @@
 
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
-    
-    
-
     [[ThemeManager sharedManager] chooseDefaultTheme];
     [[ThemeManager sharedManager] postNotification];
-    
-    
 
 }
 
@@ -40,6 +35,9 @@
 }
 
 - (IBAction)thirdThemeButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] chooseTheme3];
+    [[ThemeManager sharedManager] postNotification];
 }
 
 - (IBAction)customThemeButton:(UIButton *)sender {
@@ -51,7 +49,7 @@
     
     [[APIController sharedInstance] getArtistApi:str];
     
-    [[ThemeManager sharedManager] changeAPI]; 
+    [[ThemeManager sharedManager] changeAPI];  
 }
 
 

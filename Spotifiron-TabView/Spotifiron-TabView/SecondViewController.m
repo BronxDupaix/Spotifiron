@@ -28,10 +28,15 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    // Theme Changed Notification
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
                                                  name:kNotificationThemeChanged
+                                               object:nil];
+    // Api Changed Notification
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateUI)
+                                                 name:kNotificationGetNewApi
                                                object:nil];
    
     
@@ -45,18 +50,35 @@
     if (self.currentArtist !=nil) {
         NSMutableArray *albumsArray = self.currentArtist.albums;
         for (Album *album in albumsArray){
-            // NSLog(@"%@" , album.name);
+             NSLog(@"%@" , album.name);
             [self.albumArray addObject:album];
         }
     }
     
-   // NSLog(@"Number of items in album array is: %lu", (unsigned long)[self.albumArray count]);
     [[self collectionView] reloadData]; 
 }
 
 -(void) updateUI {
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] secondViewColor]; 
+    self.view.backgroundColor = [[ThemeManager sharedManager] secondViewColor];
+    
+    NSMutableArray *artists = [[DataStore sharedInstance]artists];
+    for (Artist *a in artists){
+        self.currentArtist = a;
+    }
+    
+    if (self.currentArtist !=nil) {
+        [self.albumArray removeAllObjects]; 
+        
+        NSMutableArray *albumsArray = self.currentArtist.albums;
+        for (Album *album in albumsArray){
+           // NSLog(@"%@" , album.name);
+            [self.albumArray addObject:album];
+        }
+    }
+
+    
+    [self.collectionView reloadData];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView

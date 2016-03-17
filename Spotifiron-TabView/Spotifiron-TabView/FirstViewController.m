@@ -58,12 +58,11 @@
     
     NSLog(@"\n\nUpdateUI\n\n");
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];  
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
+    
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
     
-    
-    
-    NSLog(@"%lu", [[[[[DataStore sharedInstance] artists] firstObject] relatedArtists] count]);
+   // NSLog(@"%lu", [[[[[DataStore sharedInstance] artists] firstObject] relatedArtists] count]); 
     
     [[self artistCollectionView] reloadData];
 }
