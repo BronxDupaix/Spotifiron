@@ -10,6 +10,7 @@
 
 @interface Track : NSObject
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *previewURL;
 
 + (Track *)trackWithDictionary:(NSDictionary *)trackDictionary;
 
