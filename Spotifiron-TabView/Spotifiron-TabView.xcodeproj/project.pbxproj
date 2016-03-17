@@ -15,6 +15,8 @@
 		1B757B041C933D16006CB185 /* ArtistCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B757B031C933D16006CB185 /* ArtistCollectionViewCell.m */; };
 		1B8CAE801C9B453000BF115E /* CustomThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8CAE7F1C9B453000BF115E /* CustomThemeViewController.m */; };
 		1B8CAE831C9B468F00BF115E /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8CAE821C9B468F00BF115E /* ISColorWheel.m */; };
+		1B8CAE861C9B53D900BF115E /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8CAE851C9B53D900BF115E /* FontViewController.m */; };
+		1B8CAE891C9B540800BF115E /* ColorWheelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8CAE881C9B540800BF115E /* ColorWheelViewController.m */; };
 		5EA617551C90DF9600B086A6 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA617541C90DF9600B086A6 /* APIController.m */; };
 		5EA6175B1C90E00800B086A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA617591C90E00800B086A6 /* Main.storyboard */; };
 		CAF430F71C8F95BD006129C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF430F61C8F95BD006129C0 /* main.m */; };
@@ -47,6 +49,10 @@
 		1B8CAE7F1C9B453000BF115E /* CustomThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomThemeViewController.m; sourceTree = "<group>"; };
 		1B8CAE811C9B468F00BF115E /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		1B8CAE821C9B468F00BF115E /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
+		1B8CAE841C9B53D900BF115E /* FontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontViewController.h; sourceTree = "<group>"; };
+		1B8CAE851C9B53D900BF115E /* FontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontViewController.m; sourceTree = "<group>"; };
+		1B8CAE871C9B540800BF115E /* ColorWheelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorWheelViewController.h; sourceTree = "<group>"; };
+		1B8CAE881C9B540800BF115E /* ColorWheelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorWheelViewController.m; sourceTree = "<group>"; };
 		5EA617531C90DF9600B086A6 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
 		5EA617541C90DF9600B086A6 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
 		5EA6175A1C90E00800B086A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,7 +129,10 @@
 				CAF431161C966B50006129C0 /* SettingsViewController.m */,
 				1B8CAE7E1C9B453000BF115E /* CustomThemeViewController.h */,
 				1B8CAE7F1C9B453000BF115E /* CustomThemeViewController.m */,
-				5E8C6D771C975419009487BB /* TableViewCells */,
+				1B8CAE841C9B53D900BF115E /* FontViewController.h */,
+				1B8CAE851C9B53D900BF115E /* FontViewController.m */,
+				1B8CAE871C9B540800BF115E /* ColorWheelViewController.h */,
+				1B8CAE881C9B540800BF115E /* ColorWheelViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -256,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B8CAE831C9B468F00BF115E /* ISColorWheel.m in Sources */,
+				1B8CAE861C9B53D900BF115E /* FontViewController.m in Sources */,
 				5EA617551C90DF9600B086A6 /* APIController.m in Sources */,
 				14CC5FF91C8FC0160007BB74 /* Track.m in Sources */,
 				CAF431001C8F95BD006129C0 /* SecondViewController.m in Sources */,
@@ -264,6 +274,7 @@
 				1B757B011C921796006CB185 /* ThemeManager.m in Sources */,
 				CAF431111C91F05B006129C0 /* TopTracksViewController.m in Sources */,
 				CAF430FD1C8F95BD006129C0 /* FirstViewController.m in Sources */,
+				1B8CAE891C9B540800BF115E /* ColorWheelViewController.m in Sources */,
 				CAF4311A1C967115006129C0 /* TrackTableViewCell.m in Sources */,
 				CAF431141C9666C2006129C0 /* AlbumCollectionViewCell.m in Sources */,
 				14CC5FF61C8FC0060007BB74 /* Album.m in Sources */,

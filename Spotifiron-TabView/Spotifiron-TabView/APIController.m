@@ -96,6 +96,7 @@
                     } else {
                         NSLog(@"Could not parse json");
                     }
+                    [self passArtistToDataStore];
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
@@ -140,6 +141,7 @@
                     } else {
                         NSLog(@"Could not parse json");
                     }
+                    [self passArtistToDataStore];
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
@@ -185,6 +187,7 @@
                     } else {
                         NSLog(@"Could not parse json");
                     }
+                    [self passArtistToDataStore];
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
@@ -223,6 +226,7 @@
                     } else {
                         NSLog(@"Could not parse json");
                     }
+                    [self passArtistToDataStore];
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
@@ -265,6 +269,7 @@
                             
                         }
                     }
+                    [self passArtistToDataStore];
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
