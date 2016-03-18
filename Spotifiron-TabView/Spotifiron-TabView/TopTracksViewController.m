@@ -52,7 +52,13 @@
 
 -(void) updateUI {
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
+
+    self.tracksArray = [[[[DataStore sharedInstance] artists] firstObject] topTracks];
+
+    self.trackTableView.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    
+    [self.trackTableView reloadData];
     
 }
 

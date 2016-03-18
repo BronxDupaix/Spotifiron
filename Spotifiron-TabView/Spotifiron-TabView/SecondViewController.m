@@ -59,7 +59,14 @@
 - (IBAction)searchTapped:(UIButton *)sender {
     NSLog(@"search tapped");
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    if (![self.artistSearchTextField.text isEqual: @""]) {
+        
+        NSString *str = self.artistSearchTextField.text;
+        
+        [[APIController sharedInstance] getArtistApi:str];
+        
+        self.artistSearchTextField.text = @"";
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
