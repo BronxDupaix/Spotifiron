@@ -167,7 +167,7 @@
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Wsx-oa-OtZ">
                                                     <rect key="frame" x="69" y="70" width="37" height="37"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
                                                     <rect key="frame" x="0.0" y="176" width="176" height="20.5"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="0.54676942569999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -506,6 +506,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-32-hoR">
                                                     <rect key="frame" x="529" y="2" width="42" height="42"/>
                                                     <state key="normal" image="playButton"/>
+                                                    <connections>
+                                                        <action selector="playButton:" destination="tzw-dd-NOP" eventType="touchUpInside" id="c4Y-CX-aYU"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

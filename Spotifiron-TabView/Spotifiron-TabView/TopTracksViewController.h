@@ -16,4 +16,7 @@
 
 
 
+- (void)passPreviewUrl:(NSString *)previewURL; 
+
+
 @end

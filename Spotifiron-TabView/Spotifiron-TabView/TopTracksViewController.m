@@ -14,12 +14,19 @@
 #import "ThemeManager.h" 
 #import "Constants.h"
 #import "APIController.h"
+@import WebKit;
 
 @interface TopTracksViewController ()
 
 @property (strong, nonatomic) NSMutableArray *tracksArray;
 @property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
-@property (strong, nonatomic) Artist * currentArtist; 
+@property (strong, nonatomic) Artist * currentArtist;
+@property (nonatomic, strong) WKWebView* webView;
+@property (nonatomic, strong) NSString* songPreview;
+@property (nonatomic, strong) UIButton*playButton;
+
+- (void)passPreviewUrl:(NSString *)previewURL;
+- (IBAction)playButton:(UIButton *)sender;
 
 @end
 
@@ -42,11 +49,18 @@
                                              selector:@selector(updateUI)
                                                  name:kNotificationTracksLoaded
                                                object:nil];
-
+    
+    
     
     self.tracksArray = [[NSMutableArray alloc] init];
     
     [self updateUI];
+}
+
+-(void) viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:YES];
+    
+   // [self.webView];
 }
 
 -(void) updateUI {
@@ -70,7 +84,7 @@
         
         [[APIController sharedInstance] getArtistApi:str];
         
-        self.artistSearchTextField.text = @"";
+        self.artistSearchTextField.text = @""; 
     }
 }
 
@@ -80,11 +94,15 @@
     
     TrackTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TrackCell" forIndexPath: indexPath];
     
-    
     cell.trackName.text = track.name;
     
-    cell.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
+   // [self.passPreviewUrl(track.previewURL)];
     
+    // [cell playButton:track.previewURL];
+    
+    NSLog(@" %@" , track.previewURL);
+    
+    cell.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     
     return cell;
 }
@@ -95,10 +113,44 @@
 }
 
 
+
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 80;
 }
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Track *track = [self.tracksArray objectAtIndex:indexPath.row];
+    
+    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    
+    self.playButton = [[UIButton alloc] initWithFrame:CGRectMake(125, 35, 90, 90)];
+    
+    NSLog(@"play button pressed@");
+    
+    [self.view addSubview:self.webView];
+    
+   // [self.webView ]
+    
+    self.webView.backgroundColor = [UIColor blueColor];
+    
+    NSURL * url = [NSURL URLWithString: track.previewURL];
+    
+    [self.view addSubview:self.playButton];
+    
+    [self.view bringSubviewToFront:self.playButton];
+    
+    self.playButton.backgroundColor = [UIColor redColor];
+    
+    [self.webView loadRequest: [[NSURLRequest alloc] initWithURL:url]];
+    
+}
+
+
+
+
 
 
 @end
