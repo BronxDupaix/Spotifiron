@@ -53,7 +53,7 @@
                                                         <constraint firstAttribute="height" constant="180" id="21S-Fo-0yl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
                                                     <rect key="frame" x="67" y="66" width="37" height="37"/>
                                                 </activityIndicatorView>
                                             </subviews>
@@ -149,7 +149,6 @@
                                         <connections>
                                             <outlet property="albumImage" destination="ofU-4w-mMq" id="9tc-Wg-Jak"/>
                                             <outlet property="albumName" destination="NMa-l7-gYq" id="0P0-Rd-hht"/>
-                                            <outlet property="spinner" destination="gWl-16-QwV" id="kU9-7U-Y53"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
