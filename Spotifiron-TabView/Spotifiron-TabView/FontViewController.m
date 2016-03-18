@@ -39,16 +39,19 @@
 
 - (IBAction)chooseRockabillyButton:(UIButton *)sender {
     
+    [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"Rockabilly" size:18]];
     
 }
 
 - (IBAction)chooseFeltButton:(UIButton *)sender {
     
+    [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"Marker Felt Thin" size:18]];
     
 }
 
 - (IBAction)choosePapyrusButton:(UIButton *)sender {
     
+    [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"Papyrus" size:18]];
     
 }
 @end
