@@ -41,11 +41,11 @@
 
 -(void)chooseDefaultTheme {
     
-    self.currentBackgroundColor = [UIColor orangeColor];
+    self.currentBackgroundColor = [UIColor brownColor];
     
     self.currentFontNameString = [UIFont fontWithName: @"DK Trollslayer" size:18];
     
-    self.currentFontColor = [UIColor blueColor];
+    self.currentFontColor = [UIColor whiteColor];
     
     self.currentViewColor = [UIColor blackColor];
     
