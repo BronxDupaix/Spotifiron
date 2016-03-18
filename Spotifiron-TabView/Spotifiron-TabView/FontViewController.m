@@ -7,6 +7,7 @@
 //
 
 #import "FontViewController.h"
+#import "ThemeManager.h"
 
 @interface FontViewController ()
 
@@ -24,16 +25,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 
 - (IBAction)chooseTypewriterButton:(UIButton *)sender {
+    
+//    [[ThemeManager NSMutableArray] currentFontNameString] = @"American Typewriter";
+    
 }
 
 - (IBAction)chooseRockabillyButton:(UIButton *)sender {
