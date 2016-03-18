@@ -6,6 +6,9 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Gondola_SD.ttf">
+            <string>GondolaSD</string>
+        </mutableArray>
         <mutableArray key="Rockabilly.ttf">
             <string>Rockabilly</string>
         </mutableArray>
