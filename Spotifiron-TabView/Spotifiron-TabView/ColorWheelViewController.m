@@ -92,10 +92,7 @@
         
         NSLog(@"green: %.5f" ,green);
         
-        
-        
     }
-    
     
 }
 
