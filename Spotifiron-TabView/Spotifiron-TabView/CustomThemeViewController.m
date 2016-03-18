@@ -19,6 +19,17 @@
     
 }
 
+- (IBAction)backgroundButton:(UIButton *)sender {
+    
+    [self performSegueWithIdentifier:@"colorWheelSegue" sender:self];
+    
+}
+
+- (IBAction)textColorButton:(UIButton *)sender {
+    
+    [self performSegueWithIdentifier:@"colorWheelSegue" sender:self];
+    
+}
 
 
 @end

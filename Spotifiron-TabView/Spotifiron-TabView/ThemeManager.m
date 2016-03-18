@@ -63,7 +63,7 @@
 -(void)chooseTheme3 { 
     
     self.currentBackgroundColor = [UIColor redColor];
-    self.currentFontNameString = [UIFont fontWithName: @"Gondola_SD" size: 18];
+    self.currentFontNameString = [UIFont fontWithName: @"Futura" size: 18];
     
     self.currentFontColor = [UIColor blackColor];
     

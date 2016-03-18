@@ -69,6 +69,8 @@
 {
     [self.wellView setBackgroundColor:self.colorWheel.currentColor];
     [self.view setBackgroundColor:self.colorWheel.currentColor];
+
+    
     UIColor *uicolor = [self.colorWheel currentColor] ;
     CGColorRef color = [uicolor CGColor];
     
