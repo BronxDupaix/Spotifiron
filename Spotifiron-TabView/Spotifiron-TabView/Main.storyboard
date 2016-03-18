@@ -53,6 +53,9 @@
                                                         <constraint firstAttribute="height" constant="180" id="21S-Fo-0yl"/>
                                                     </constraints>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
+                                                    <rect key="frame" x="67" y="66" width="37" height="37"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -66,6 +69,7 @@
                                         <connections>
                                             <outlet property="ArtistLabel" destination="BB6-Jq-m1Y" id="MEG-3Y-3KN"/>
                                             <outlet property="artistImage" destination="Xe0-TI-YVi" id="9iu-7a-KoZ"/>
+                                            <outlet property="spinner" destination="Kex-DQ-NC1" id="Uqn-o5-mDX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -145,6 +149,7 @@
                                         <connections>
                                             <outlet property="albumImage" destination="ofU-4w-mMq" id="9tc-Wg-Jak"/>
                                             <outlet property="albumName" destination="NMa-l7-gYq" id="0P0-Rd-hht"/>
+                                            <outlet property="spinner" destination="gWl-16-QwV" id="kU9-7U-Y53"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

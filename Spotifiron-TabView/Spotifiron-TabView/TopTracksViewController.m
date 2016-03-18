@@ -15,7 +15,6 @@
 #import "Constants.h"
 #import "APIController.h"
 
-
 @interface TopTracksViewController ()
 
 @property (strong, nonatomic) NSMutableArray *tracksArray;
