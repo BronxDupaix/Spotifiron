@@ -287,14 +287,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXU-pL-2o8">
-                                <rect key="frame" x="469" y="521" width="111" height="30"/>
+                                <rect key="frame" x="469" y="421" width="111" height="30"/>
                                 <state key="normal" title="Set as text color"/>
                                 <connections>
                                     <action selector="setCustomTextColorButton:" destination="E2P-bu-hzQ" eventType="touchUpInside" id="snP-Yf-32h"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CL-nr-i9k">
-                                <rect key="frame" x="20" y="521" width="129" height="30"/>
+                                <rect key="frame" x="20" y="421" width="129" height="30"/>
                                 <state key="normal" title="Set as background"/>
                                 <connections>
                                     <action selector="setCustomBackgroundButton:" destination="E2P-bu-hzQ" eventType="touchUpInside" id="Y77-HG-637"/>
@@ -303,9 +303,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="frU-g9-hGe" firstAttribute="top" secondItem="XXU-pL-2o8" secondAttribute="bottom" id="0Gz-IX-yNc"/>
+                            <constraint firstItem="frU-g9-hGe" firstAttribute="top" secondItem="XXU-pL-2o8" secondAttribute="bottom" constant="100" id="0Gz-IX-yNc"/>
                             <constraint firstAttribute="trailing" secondItem="XXU-pL-2o8" secondAttribute="trailing" constant="20" id="Xbf-4V-zUL"/>
-                            <constraint firstItem="frU-g9-hGe" firstAttribute="top" secondItem="6CL-nr-i9k" secondAttribute="bottom" id="kva-aq-atN"/>
+                            <constraint firstItem="frU-g9-hGe" firstAttribute="top" secondItem="6CL-nr-i9k" secondAttribute="bottom" constant="100" id="kva-aq-atN"/>
                             <constraint firstItem="6CL-nr-i9k" firstAttribute="leading" secondItem="UhQ-53-B8d" secondAttribute="leading" constant="20" id="pmx-1S-mcp"/>
                         </constraints>
                     </view>
