@@ -504,15 +504,15 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" rowHeight="46" id="Fey-ae-G0x" customClass="TrackTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="584" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TrackCell" rowHeight="22" id="Fey-ae-G0x" customClass="TrackTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="584" height="22"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fey-ae-G0x" id="0sX-J1-K3i">
-                                            <rect key="frame" x="0.0" y="0.0" width="584" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="584" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-32-hoR">
-                                                    <rect key="frame" x="554" y="12" width="22" height="22"/>
+                                                    <rect key="frame" x="554" y="0.0" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="QtT-t9-sJI"/>
                                                         <constraint firstAttribute="width" constant="22" id="wvg-7w-eRD"/>
