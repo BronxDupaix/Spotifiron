@@ -14,7 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *trackTableView; 
 
-- (IBAction)playButton:(UIButton *)sender;
+
+
+- (void)passPreviewUrl:(NSString *)previewURL; 
 
 
 @end
