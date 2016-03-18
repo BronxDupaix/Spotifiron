@@ -14,9 +14,4 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *trackTableView; 
 
-
-
-- (void)passPreviewUrl:(NSString *)previewURL; 
-
-
 @end

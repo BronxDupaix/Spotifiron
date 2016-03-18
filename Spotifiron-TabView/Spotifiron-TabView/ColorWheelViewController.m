@@ -76,6 +76,8 @@
     CGColorRef color = [uicolor CGColor];
     int numComponents = CGColorGetNumberOfComponents(color);
     
+    
+    
     if (numComponents == 4)
     {
         const CGFloat *components = CGColorGetComponents(color);

@@ -22,6 +22,10 @@
 
 @property (nonatomic, strong) UIColor *currentBackgroundColor;
 
+@property (nonatomic, strong) UIColor *defaultBackgroundColor;
+
+@property (nonatomic, strong) UIColor *defaultFontColor;
+
 @property (nonatomic, strong) UIColor *currentFontColor;
 
 @property (nonatomic, strong) UIColor *currentViewColor;

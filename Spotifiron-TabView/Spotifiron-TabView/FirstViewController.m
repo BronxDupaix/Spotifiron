@@ -13,7 +13,8 @@
 #import "DataStore.h"
 #import "Constants.h"
 
-@interface FirstViewController () {
+@interface FirstViewController () <UITextFieldDelegate>
+{
     
 }
 
@@ -25,9 +26,11 @@
 
 @implementation FirstViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.artistSearchTextField.delegate = self;
+    self.view.backgroundColor = [[ThemeManager sharedManager] defaultBackgroundColor];
+
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
@@ -70,7 +73,20 @@
         
         self.artistSearchTextField.text = @"";
     }
+    [self.artistSearchTextField resignFirstResponder];
 }
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.artistSearchTextField becomeFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.artistSearchTextField) {
+    [textField resignFirstResponder];
+    }
+    return NO;
+}
+
 
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)

@@ -11,6 +11,7 @@
 #import "APIController.h" 
 
 @interface SettingsViewController ()
+@property (assign) BOOL hasPickedCustomTheme;
 
 @end
 
@@ -19,16 +20,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.hasPickedCustomTheme = NO;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    if (self.hasPickedCustomTheme == YES) {
     self.view.backgroundColor = [[[ThemeManager sharedManager] colorValueArray] firstObject];
+    }
 }
 
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
-    
+    self.hasPickedCustomTheme = NO;
     [[ThemeManager sharedManager] chooseDefaultTheme];
     [[ThemeManager sharedManager] postNotification];
     

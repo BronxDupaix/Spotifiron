@@ -16,7 +16,7 @@
 #import "APIController.h"
 @import WebKit;
 
-@interface TopTracksViewController ()
+@interface TopTracksViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) NSMutableArray *tracksArray;
 @property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
@@ -32,6 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.artistSearchTextField.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
@@ -84,6 +86,17 @@
         
         self.artistSearchTextField.text = @""; 
     }
+    [self.artistSearchTextField resignFirstResponder];
+}
+
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.artistSearchTextField becomeFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.artistSearchTextField resignFirstResponder];
+    return NO;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
