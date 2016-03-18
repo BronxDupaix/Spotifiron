@@ -24,7 +24,6 @@
 @property (nonatomic, strong) WKWebView* webView;
 @property (nonatomic, strong) NSString* songPreview;
 @property (nonatomic, strong) UIButton*playButton;
-- (IBAction)playButton:(UIButton *)sender;
 
 @end
 
@@ -155,7 +154,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     self.playButton.backgroundColor = [UIColor clearColor];
     
-    [self.playButton setTitle:@"CLOSE" forState:UIControlStateNormal];
+    [self.playButton setTitle:@"Close" forState:UIControlStateNormal];
     
     self.playButton.titleLabel.textColor = [UIColor redColor];
     
