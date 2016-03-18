@@ -24,8 +24,6 @@
 @property (nonatomic, strong) WKWebView* webView;
 @property (nonatomic, strong) NSString* songPreview;
 @property (nonatomic, strong) UIButton*playButton;
-
-- (void)passPreviewUrl:(NSString *)previewURL;
 - (IBAction)playButton:(UIButton *)sender;
 
 @end
@@ -126,15 +124,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     
-    self.playButton = [[UIButton alloc] initWithFrame:CGRectMake(125, 35, 90, 90)];
+    self.playButton = [[UIButton alloc] initWithFrame:CGRectMake(8, 8, 70, 45)];
+    
+    [self.playButton addTarget:self action:@selector(dismissViews) forControlEvents:UIControlEventTouchUpInside];
     
     NSLog(@"play button pressed@");
     
     [self.view addSubview:self.webView];
     
-   // [self.webView ]
-    
-    self.webView.backgroundColor = [UIColor blueColor];
+    self.webView.backgroundColor = [UIColor clearColor];
     
     NSURL * url = [NSURL URLWithString: track.previewURL];
     
@@ -142,13 +140,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self.view bringSubviewToFront:self.playButton];
     
-    self.playButton.backgroundColor = [UIColor redColor];
+    self.playButton.backgroundColor = [UIColor clearColor];
+    
+    [self.playButton setTitle:@"CLOSE" forState:UIControlStateNormal];
+    
+    self.playButton.titleLabel.textColor = [UIColor redColor];
     
     [self.webView loadRequest: [[NSURLRequest alloc] initWithURL:url]];
     
 }
 
-
+-(void)dismissViews{
+    
+    self.webView.hidden = YES;
+    
+    self.playButton.hidden = YES;
+}
 
 
 
