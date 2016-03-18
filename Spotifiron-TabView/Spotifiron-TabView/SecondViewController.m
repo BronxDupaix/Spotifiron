@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.artistSearchTextField.delegate = self;
     self.view.backgroundColor = [[ThemeManager sharedManager] defaultBackgroundColor];
     
         // Theme Changed Notification

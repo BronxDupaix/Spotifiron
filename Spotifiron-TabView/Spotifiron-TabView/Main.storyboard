@@ -485,7 +485,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VHy-EZ-H3U">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="22" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VHy-EZ-H3U">
                                 <rect key="frame" x="8" y="66" width="584" height="484"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -497,25 +497,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="584" height="46"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEU-CS-0js">
-                                                    <rect key="frame" x="8" y="12" width="42" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEU-CS-0js">
+                                                    <rect key="frame" x="8" y="12" width="518" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.034675970673561096" green="0.91868883371353149" blue="0.95458227396011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-32-hoR">
-                                                    <rect key="frame" x="529" y="2" width="42" height="42"/>
-                                                    <state key="normal" image="playButton"/>
-                                                    <connections>
-                                                        <action selector="playButton:" destination="tzw-dd-NOP" eventType="touchUpInside" id="c4Y-CX-aYU"/>
-                                                    </connections>
-                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="playButton" translatesAutoresizingMaskIntoConstraints="NO" id="bPr-9O-EKT">
+                                                    <rect key="frame" x="534" y="1" width="42" height="42"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="lGn-32-hoR" secondAttribute="trailing" constant="5" id="Oia-a6-BfH"/>
-                                                <constraint firstItem="lGn-32-hoR" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="ZLF-6i-OkH"/>
+                                                <constraint firstItem="bPr-9O-EKT" firstAttribute="leading" secondItem="iEU-CS-0js" secondAttribute="trailing" constant="8" id="KiX-xZ-k4Y"/>
+                                                <constraint firstItem="bPr-9O-EKT" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="LdQ-dy-b69"/>
                                                 <constraint firstItem="iEU-CS-0js" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="ZtU-Yi-LVi"/>
                                                 <constraint firstItem="iEU-CS-0js" firstAttribute="leading" secondItem="0sX-J1-K3i" secondAttribute="leading" constant="8" id="oUG-gr-JJA"/>
+                                                <constraint firstAttribute="trailing" secondItem="bPr-9O-EKT" secondAttribute="trailing" constant="8" id="yYT-e2-Vhz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -538,7 +535,7 @@
                                 <rect key="frame" x="550" y="22" width="42" height="42"/>
                                 <state key="normal" image="search"/>
                                 <connections>
-                                    <action selector="searchTapped:" destination="tzw-dd-NOP" eventType="touchUpInside" id="8AK-hV-6ry"/>
+                                    <action selector="searchTapped:" destination="tzw-dd-NOP" eventType="touchUpInside" id="3UO-HT-U7f"/>
                                 </connections>
                             </button>
                         </subviews>
