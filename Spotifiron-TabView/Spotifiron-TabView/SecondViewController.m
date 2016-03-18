@@ -40,23 +40,7 @@
                                                object:nil];
     
     self.albumArray = [[NSMutableArray alloc] init];
-    
-    //    NSMutableArray *artists = [[DataStore sharedInstance]artists];
-    //    for (Artist *a in artists){
-    //        self.currentArtist = a;
-    //    }
-    
-    //    if (self.currentArtist !=nil) {
-    
-    
-    
-    
-    //        NSMutableArray *albumsArray = self.currentArtist.albums;
-    //        for (Album *album in albumsArray){
-    //             NSLog(@"%@" , album.name);
-    //            [self.albumArray addObject:album];
-    //        }
-    //    }
+ 
     if ([[[DataStore sharedInstance] artists] firstObject] != nil) {
         self.albumArray = [[[[DataStore sharedInstance] artists] firstObject] albums];
         [[self collectionView] reloadData];

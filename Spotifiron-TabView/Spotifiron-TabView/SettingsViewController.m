@@ -43,14 +43,7 @@
 - (IBAction)customThemeButton:(UIButton *)sender {
 }
 
-- (IBAction)artistSearchButton:(UIButton *)sender {
-    
-    NSString *str = self.artistSearchTextField.text;
-    
-    [[APIController sharedInstance] getArtistApi:str];
-    
-    [[ThemeManager sharedManager] changeAPI];  
-}
+
 
 
 @end

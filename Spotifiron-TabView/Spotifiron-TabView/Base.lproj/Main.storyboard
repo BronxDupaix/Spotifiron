@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Related Artists-->
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UxE-yw-aQe">
-                                <rect key="frame" x="8" y="22" width="584" height="528"/>
+                                <rect key="frame" x="8" y="66" width="584" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gsj-ER-q0a">
                                     <size key="itemSize" width="170" height="212"/>
@@ -74,18 +75,54 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="xVZ-qX-dI3"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search For Your Favorite Artist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hPx-QF-Ee6">
+                                <rect key="frame" x="8" y="28" width="584" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp3-Lx-XTx">
+                                <rect key="frame" x="550" y="22" width="42" height="42"/>
+                                <state key="normal" image="search"/>
+                                <connections>
+                                    <action selector="searchTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="mji-YG-abn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UxE-yw-aQe" secondAttribute="trailing" constant="8" id="1vn-v5-XbP"/>
+                            <constraint firstItem="hPx-QF-Ee6" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="5hi-Er-gh8"/>
                             <constraint firstItem="UxE-yw-aQe" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="8" id="DAx-dm-t1z"/>
-                            <constraint firstItem="UxE-yw-aQe" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="22" id="Wb6-FE-YTv"/>
+                            <constraint firstItem="hPx-QF-Ee6" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" multiplier="0.9" constant="1" id="Exu-hF-mbK"/>
+                            <constraint firstItem="hPx-QF-Ee6" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="G17-zX-c7l"/>
+                            <constraint firstItem="hPx-QF-Ee6" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="22" id="KKq-ei-GZr"/>
+                            <constraint firstAttribute="trailing" secondItem="fp3-Lx-XTx" secondAttribute="trailing" constant="51" id="NYf-UU-qSF"/>
+                            <constraint firstAttribute="trailing" secondItem="hPx-QF-Ee6" secondAttribute="trailing" constant="8" id="Ori-Xt-kVN"/>
+                            <constraint firstItem="UxE-yw-aQe" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="66" id="Wb6-FE-YTv"/>
+                            <constraint firstItem="hPx-QF-Ee6" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="8" id="b3m-XW-MSn"/>
+                            <constraint firstAttribute="trailing" secondItem="fp3-Lx-XTx" secondAttribute="trailing" constant="8" id="hmj-Si-aCa"/>
                             <constraint firstAttribute="bottom" secondItem="UxE-yw-aQe" secondAttribute="bottom" constant="50" id="k4S-z7-JyZ"/>
+                            <constraint firstItem="fp3-Lx-XTx" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="laq-xj-CPn"/>
+                            <constraint firstItem="fp3-Lx-XTx" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="2" id="tEy-qX-AmG"/>
+                            <constraint firstItem="hPx-QF-Ee6" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="8" id="zse-H6-jAH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5hi-Er-gh8"/>
+                                <exclude reference="Exu-hF-mbK"/>
+                                <exclude reference="KKq-ei-GZr"/>
+                                <exclude reference="zse-H6-jAH"/>
+                                <exclude reference="NYf-UU-qSF"/>
+                                <exclude reference="laq-xj-CPn"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Related Artists" image="guitar" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="artistCollectionView" destination="UxE-yw-aQe" id="EcG-2w-ofm"/>
+                        <outlet property="artistSearchTextField" destination="hPx-QF-Ee6" id="pW0-d7-ESy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -490,6 +527,7 @@
         <image name="cd" width="33" height="33"/>
         <image name="guitar" width="33" height="33"/>
         <image name="music" width="33" height="33"/>
+        <image name="search" width="42" height="42"/>
         <image name="settings" width="33" height="33"/>
     </resources>
 </document>
