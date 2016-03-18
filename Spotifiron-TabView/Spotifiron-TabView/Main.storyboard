@@ -40,10 +40,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
+                                                    <rect key="frame" x="71" y="79" width="37" height="37"/>
+                                                </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-Jq-m1Y">
-                                                    <rect key="frame" x="69" y="195" width="42" height="20.5"/>
+                                                    <rect key="frame" x="66" y="195" width="48" height="32.5"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.54676942567567566" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="GondolaSD" family="Gondola SD" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -53,9 +56,6 @@
                                                         <constraint firstAttribute="height" constant="180" id="21S-Fo-0yl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
-                                                    <rect key="frame" x="67" y="66" width="37" height="37"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -87,6 +87,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMX-uf-ikD">
                                 <rect key="frame" x="550" y="22" width="42" height="42"/>
                                 <state key="normal" image="search"/>
+                                <connections>
+                                    <action selector="searchTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8xz-GC-S0h"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,6 +124,7 @@
                     <tabBarItem key="tabBarItem" title="Related Artists" image="guitar" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="artistCollectionView" destination="UxE-yw-aQe" id="EcG-2w-ofm"/>
+                        <outlet property="artistSearchTextField" destination="s6V-Nw-0b7" id="O6U-gI-fbo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -157,7 +161,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Wsx-oa-OtZ">
-                                                    <rect key="frame" x="71.5" y="71.5" width="37" height="37"/>
+                                                    <rect key="frame" x="71" y="72" width="37" height="37"/>
                                                 </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
                                                     <rect key="frame" x="69" y="196" width="42" height="20.5"/>
@@ -210,6 +214,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omY-OW-HBY">
                                 <rect key="frame" x="550" y="22" width="42" height="42"/>
                                 <state key="normal" image="search"/>
+                                <connections>
+                                    <action selector="searchTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="CrP-5s-OwV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -227,6 +234,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Albums" image="cd" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="artistSearchTextField" destination="oL6-P0-Cqa" id="jYS-ZY-hTA"/>
                         <outlet property="collectionView" destination="2ZE-FX-gLs" id="nHe-c8-5tN"/>
                     </connections>
                 </viewController>
@@ -515,6 +523,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOq-bb-OXk">
                                 <rect key="frame" x="550" y="22" width="42" height="42"/>
                                 <state key="normal" image="search"/>
+                                <connections>
+                                    <action selector="searchTapped:" destination="tzw-dd-NOP" eventType="touchUpInside" id="8AK-hV-6ry"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -544,6 +555,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Top Tracks" image="music" id="jBG-nf-KH2"/>
                     <connections>
+                        <outlet property="artistSearchTextField" destination="mtq-Kw-lGb" id="vOG-50-H1s"/>
                         <outlet property="trackTableView" destination="VHy-EZ-H3U" id="TV7-5r-Rvy"/>
                     </connections>
                 </viewController>
