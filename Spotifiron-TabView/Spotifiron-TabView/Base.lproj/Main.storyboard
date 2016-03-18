@@ -67,18 +67,24 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
+                                                    <rect key="frame" x="67" y="66" width="37" height="37"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Xe0-TI-YVi" firstAttribute="leading" secondItem="Xzi-7t-iaq" secondAttribute="leading" id="5ot-XN-boL"/>
+                                            <constraint firstItem="Kex-DQ-NC1" firstAttribute="centerX" secondItem="Xe0-TI-YVi" secondAttribute="centerX" id="8St-FX-rfZ"/>
                                             <constraint firstItem="BB6-Jq-m1Y" firstAttribute="centerX" secondItem="Xzi-7t-iaq" secondAttribute="centerX" id="9yr-wJ-plD"/>
                                             <constraint firstItem="BB6-Jq-m1Y" firstAttribute="top" secondItem="Xe0-TI-YVi" secondAttribute="bottom" constant="8" id="GRV-p6-Lkj"/>
+                                            <constraint firstItem="Kex-DQ-NC1" firstAttribute="centerY" secondItem="Xe0-TI-YVi" secondAttribute="centerY" id="Q5N-zC-rjP"/>
                                             <constraint firstItem="Xe0-TI-YVi" firstAttribute="top" secondItem="Xzi-7t-iaq" secondAttribute="top" id="aBO-lC-eUL"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="ArtistLabel" destination="BB6-Jq-m1Y" id="MEG-3Y-3KN"/>
                                             <outlet property="artistImage" destination="Xe0-TI-YVi" id="9iu-7a-KoZ"/>
+                                            <outlet property="spinner" destination="Kex-DQ-NC1" id="Uqn-o5-mDX"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -171,11 +177,16 @@
                                                         <constraint firstAttribute="width" constant="170" id="PG1-3I-oW5"/>
                                                     </constraints>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gWl-16-QwV">
+                                                    <rect key="frame" x="67" y="66" width="37" height="37"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="leading" secondItem="SxD-en-WUU" secondAttribute="leading" id="KDO-vz-Yfc"/>
+                                            <constraint firstItem="gWl-16-QwV" firstAttribute="centerY" secondItem="ofU-4w-mMq" secondAttribute="centerY" id="L3T-ia-GEW"/>
+                                            <constraint firstItem="gWl-16-QwV" firstAttribute="centerX" secondItem="ofU-4w-mMq" secondAttribute="centerX" id="aRK-3d-kyt"/>
                                             <constraint firstItem="NMa-l7-gYq" firstAttribute="top" secondItem="ofU-4w-mMq" secondAttribute="bottom" constant="8" id="fr0-5h-6al"/>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="top" secondItem="SxD-en-WUU" secondAttribute="top" id="nWO-g4-IlF"/>
                                             <constraint firstItem="NMa-l7-gYq" firstAttribute="centerX" secondItem="SxD-en-WUU" secondAttribute="centerX" id="oVW-FK-T6c"/>
@@ -183,6 +194,7 @@
                                         <connections>
                                             <outlet property="albumImage" destination="ofU-4w-mMq" id="9tc-Wg-Jak"/>
                                             <outlet property="albumName" destination="NMa-l7-gYq" id="0P0-Rd-hht"/>
+                                            <outlet property="spinner" destination="gWl-16-QwV" id="kU9-7U-Y53"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
