@@ -12,13 +12,16 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
 
-- (IBAction)firstThemeButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *defaultThemeOutlet;
 
-- (IBAction)secondThemeButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *coolThemeOutlet;
 
-- (IBAction)thirdThemeButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *hotTopicThemeOutlet;
 
-- (IBAction)customThemeButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *customThemeButton;
+
+
+
 
 
 

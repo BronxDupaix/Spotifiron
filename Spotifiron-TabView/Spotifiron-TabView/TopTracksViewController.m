@@ -24,7 +24,6 @@
 @property (nonatomic, strong) WKWebView* webView;
 @property (nonatomic, strong) NSString* songPreview;
 @property (nonatomic, strong) UIButton*playButton;
-
 @end
 
 @implementation TopTracksViewController

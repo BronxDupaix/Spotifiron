@@ -468,6 +468,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Themes" id="dgE-FQ-e9u"/>
+                    <connections>
+                        <outlet property="coolThemeOutlet" destination="FSn-Vv-nzB" id="vhJ-Hg-i8J"/>
+                        <outlet property="customThemeButton" destination="O0P-AW-c1P" id="Rtd-Kr-MHH"/>
+                        <outlet property="defaultThemeOutlet" destination="4kI-ZN-AmE" id="gWh-XZ-0Ou"/>
+                        <outlet property="hotTopicThemeOutlet" destination="uNv-EC-vop" id="8pS-ik-hCe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weH-jX-y5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -503,13 +509,10 @@
                                                     <color key="textColor" red="0.034675970673561096" green="0.91868883371353149" blue="0.95458227396011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playButton" translatesAutoresizingMaskIntoConstraints="NO" id="bPr-9O-EKT">
-                                                    <rect key="frame" x="552" y="12" width="22" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="22" id="0zj-Mb-3M8"/>
-                                                        <constraint firstAttribute="height" constant="22" id="j2x-eA-4uQ"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-32-hoR">
+                                                    <rect key="frame" x="529" y="2" width="42" height="42"/>
+                                                    <state key="normal" image="playButton"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bPr-9O-EKT" firstAttribute="leading" secondItem="iEU-CS-0js" secondAttribute="trailing" constant="8" id="KiX-xZ-k4Y"/>
