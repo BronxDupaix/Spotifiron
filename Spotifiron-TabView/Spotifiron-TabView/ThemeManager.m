@@ -42,13 +42,15 @@
 
 -(void)chooseDefaultTheme {
     
+    self.defaultBackgroundColor = [UIColor brownColor];
+    
     self.currentBackgroundColor = [UIColor brownColor];
     
-    self.currentFontNameString = [UIFont fontWithName: @"DK Trollslayer" size:18];
+    self.currentFontNameString = [UIFont fontWithName: @"Times New Roman" size:18];
     
     self.currentFontColor = [UIColor whiteColor];
     
-    self.currentViewColor = [UIColor blackColor];
+    self.defaultFontColor = [UIColor whiteColor];
     
 }
 

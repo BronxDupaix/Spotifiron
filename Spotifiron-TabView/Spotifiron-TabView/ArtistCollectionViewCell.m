@@ -16,6 +16,8 @@
 
 - (void)awakeFromNib {
     
+    self.ArtistLabel.textColor = [[ThemeManager sharedManager] defaultFontColor];
+    
 }
 
 -(void)loadImageFromURLString:(NSString *)urlString

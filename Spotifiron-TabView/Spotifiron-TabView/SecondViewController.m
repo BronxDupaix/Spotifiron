@@ -29,6 +29,8 @@
     
     [super viewDidLoad];
     
+    self.view.backgroundColor = [[ThemeManager sharedManager] defaultBackgroundColor];
+    
         // Theme Changed Notification
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)

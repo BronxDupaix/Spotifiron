@@ -29,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [[ThemeManager sharedManager] defaultBackgroundColor];
+
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
                                                  name:kNotificationTracksLoaded
