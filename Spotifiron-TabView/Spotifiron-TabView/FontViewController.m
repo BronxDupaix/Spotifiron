@@ -45,7 +45,7 @@
 
 - (IBAction)chooseFeltButton:(UIButton *)sender {
     
-    [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"Marker Felt Thin" size:18]];
+    [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"Marker Felt" size:18]];
     
 }
 
