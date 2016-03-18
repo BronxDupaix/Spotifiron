@@ -52,7 +52,7 @@
     
     NSLog(@"\n\nUpdateUI\n\n");
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     dispatch_async(dispatch_get_main_queue(), ^{
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
     [[self artistCollectionView] reloadData];

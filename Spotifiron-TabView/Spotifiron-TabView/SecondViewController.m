@@ -28,6 +28,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [[APIController sharedInstance] getArtistApi:@"Slayer"];
+    
     // Theme Changed Notification
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
@@ -49,7 +52,7 @@
 
 -(void) updateUI {
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] secondViewColor];
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     
     self.albumArray = [[[[DataStore sharedInstance] artists] firstObject] albums];
     
