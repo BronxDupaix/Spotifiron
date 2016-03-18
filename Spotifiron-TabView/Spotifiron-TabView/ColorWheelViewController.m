@@ -13,11 +13,27 @@
 
 @interface ColorWheelViewController () <ISColorWheelDelegate>
 
-
+@property (strong, nonatomic) UIColor *customColor;
 
 @end
 
 @implementation ColorWheelViewController
+
+
+
+- (IBAction)setCustomBackgroundButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] setCurrentBackgroundColor:self.customColor];
+    [[ThemeManager sharedManager] postNotification];
+    
+}
+
+- (IBAction)setCustomTextColorButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] setCurrentFontColor:self.customColor];
+    [[ThemeManager sharedManager] postNotification];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
