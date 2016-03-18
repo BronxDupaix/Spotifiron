@@ -74,9 +74,6 @@
     
     UIColor *uicolor = [self.colorWheel currentColor] ;
     CGColorRef color = [uicolor CGColor];
-    
-    self.view.backgroundColor = uicolor;
-    
     int numComponents = CGColorGetNumberOfComponents(color);
     
     if (numComponents == 4)

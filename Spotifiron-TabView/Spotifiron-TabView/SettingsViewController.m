@@ -19,12 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
-    
 }
 
-
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    self.view.backgroundColor = [[[ThemeManager sharedManager] colorValueArray] firstObject];
+}
 
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
