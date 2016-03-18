@@ -288,10 +288,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyj-Ah-LUT">
                                 <rect key="frame" x="210" y="144" width="180" height="30"/>
                                 <state key="normal" title="Choose Background Color"/>
+                                <connections>
+                                    <action selector="backgroundButton:" destination="8YM-Wd-SPM" eventType="touchUpInside" id="0wK-xC-Sg1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AA0-6y-tP3">
                                 <rect key="frame" x="236" y="254" width="127" height="30"/>
                                 <state key="normal" title="Choose Text Color"/>
+                                <connections>
+                                    <action selector="textColorButton:" destination="8YM-Wd-SPM" eventType="touchUpInside" id="Urf-jp-keR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGP-By-iN9">
                                 <rect key="frame" x="237" y="364" width="126" height="30"/>
@@ -387,7 +393,7 @@
             </objects>
             <point key="canvasLocation" x="-1766" y="1660"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Themes-->
         <scene sceneID="gDk-46-XmJ">
             <objects>
                 <viewController storyboardIdentifier="settingsID" id="nAQ-B8-Psa" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -401,28 +407,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kI-ZN-AmE">
                                 <rect key="frame" x="249" y="114" width="101" height="30"/>
-                                <state key="normal" title="Default Theme">
-                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="Default Theme"/>
                                 <connections>
                                     <action selector="firstThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="cxk-KW-0eO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPy-WY-VbI">
-                                <rect key="frame" x="251" y="501" width="97" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="SEARCH">
-                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="artistSearchButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="Mch-Xm-2Rn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSn-Vv-nzB">
                                 <rect key="frame" x="259" y="214" width="83" height="30"/>
-                                <state key="normal" title="Cool Theme">
-                                    <color key="titleColor" red="0.15751965870000001" green="0.7019608021" blue="0.32476140440000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="Cool Theme"/>
                                 <connections>
                                     <action selector="secondThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="9pg-38-llS"/>
                                 </connections>
@@ -434,42 +426,29 @@
                                     <action selector="thirdThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="LOs-pr-6JE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-AW-c1P">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-AW-c1P">
                                 <rect key="frame" x="247" y="414" width="105" height="30"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Custom Theme"/>
                                 <connections>
                                     <action selector="customThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="GOV-tB-fYv"/>
                                     <segue destination="8YM-Wd-SPM" kind="show" id="kgQ-ok-4g8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search for Artist" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-ip-0K0">
-                                <rect key="frame" x="0.0" y="64" width="600" height="22"/>
-                                <color key="backgroundColor" red="0.15751965866524861" green="0.7019608021" blue="0.32476140441804913" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.52745593605181851" green="0.23979129570265204" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstItem="4kI-ZN-AmE" firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" constant="50" id="3oQ-X6-gWH"/>
                             <constraint firstItem="4kI-ZN-AmE" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="6Fe-Wv-Ykc"/>
                             <constraint firstItem="O0P-AW-c1P" firstAttribute="top" secondItem="uNv-EC-vop" secondAttribute="bottom" constant="70" id="E48-sG-oIz"/>
-                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="width" secondItem="QtF-03-kCi" secondAttribute="width" id="YUA-9u-ijm"/>
-                            <constraint firstItem="ax8-4y-ccW" firstAttribute="top" secondItem="lPy-WY-VbI" secondAttribute="bottom" constant="8" id="fT3-x3-RQN"/>
                             <constraint firstItem="uNv-EC-vop" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="lgD-Eu-eXy"/>
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="mpW-by-7vV"/>
-                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="top" secondItem="TFY-4w-5u5" secondAttribute="bottom" id="quF-7Q-zYh"/>
                             <constraint firstItem="O0P-AW-c1P" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="rN4-5f-gNj"/>
-                            <constraint firstItem="lPy-WY-VbI" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="u75-2u-JwM"/>
-                            <constraint firstItem="Ibb-ip-0K0" firstAttribute="centerX" secondItem="QtF-03-kCi" secondAttribute="centerX" id="uFu-Mp-D3M"/>
                             <constraint firstItem="FSn-Vv-nzB" firstAttribute="top" secondItem="4kI-ZN-AmE" secondAttribute="bottom" constant="70" id="yiD-QI-TM5"/>
                             <constraint firstItem="uNv-EC-vop" firstAttribute="top" secondItem="FSn-Vv-nzB" secondAttribute="bottom" constant="70" id="zH8-Gn-fn4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dgE-FQ-e9u"/>
-                    <connections>
-                        <outlet property="artistSearchTextField" destination="Ibb-ip-0K0" id="ixx-jh-SaJ"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Themes" id="dgE-FQ-e9u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weH-jX-y5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -566,11 +545,11 @@
             </objects>
             <point key="canvasLocation" x="550" y="1084"/>
         </scene>
-        <!--Settings-->
+        <!--Themes-->
         <scene sceneID="t0P-0j-D9o">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YNI-In-FPI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="KXR-WL-unC"/>
+                    <tabBarItem key="tabBarItem" title="Themes" image="settings" id="KXR-WL-unC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aUw-jd-B6R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

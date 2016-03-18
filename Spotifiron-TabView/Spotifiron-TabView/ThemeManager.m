@@ -8,6 +8,7 @@
 
 #import "ThemeManager.h"
 #import "Constants.h" 
+#import "ColorWheelViewController.h"
 
 @implementation ThemeManager
 
@@ -72,7 +73,7 @@
 -(void)chooseTheme3 { 
     
     self.currentBackgroundColor = [UIColor redColor];
-    self.currentFontNameString = [UIFont fontWithName: @"Gondola_SD" size: 18];
+    self.currentFontNameString = [UIFont fontWithName: @"Futura" size: 18];
     
     self.currentFontColor = [UIColor blackColor];
     
@@ -84,7 +85,6 @@
 
 -(void)chooseCustomTheme {
     
-    self.currentBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     self.currentFontColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     self.currentFontNameString = [UIFont fontWithName:@"" size:18];
 

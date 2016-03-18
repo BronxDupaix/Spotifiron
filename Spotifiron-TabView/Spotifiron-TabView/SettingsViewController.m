@@ -19,7 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     
     
     
@@ -30,10 +29,10 @@
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
-
     [[ThemeManager sharedManager] chooseDefaultTheme];
     [[ThemeManager sharedManager] postNotification];
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
 
 }
 
@@ -41,15 +40,22 @@
     
     [[ThemeManager sharedManager] chooseTheme2];
     [[ThemeManager sharedManager] postNotification];
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    
 }
 
 - (IBAction)thirdThemeButton:(UIButton *)sender {
     
     [[ThemeManager sharedManager] chooseTheme3];
     [[ThemeManager sharedManager] postNotification];
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
 }
 
 - (IBAction)customThemeButton:(UIButton *)sender {
+    
+    
 }
 
 

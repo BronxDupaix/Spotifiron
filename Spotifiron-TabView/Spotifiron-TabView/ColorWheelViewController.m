@@ -8,6 +8,7 @@
 
 #import "ColorWheelViewController.h"
 #import "ISColorWheel.h"
+#import "ThemeManager.h"
 
 @interface ColorWheelViewController () <ISColorWheelDelegate>
 
@@ -68,9 +69,11 @@
 {
     [self.wellView setBackgroundColor:self.colorWheel.currentColor];
     [self.view setBackgroundColor:self.colorWheel.currentColor];
+
+    
     UIColor *uicolor = [self.colorWheel currentColor] ;
     CGColorRef color = [uicolor CGColor];
-    
+    uicolor;
     int numComponents = CGColorGetNumberOfComponents(color);
     
     if (numComponents == 4)
