@@ -29,6 +29,7 @@
         
         self.defaults = [NSUserDefaults standardUserDefaults];
         self.colorValueArray = [[NSMutableArray alloc] init];
+        
     }
     
     return self;
@@ -42,11 +43,8 @@
 -(void)chooseDefaultTheme {
     
     self.currentBackgroundColor = [UIColor orangeColor];
-    
     self.currentFontNameString = [UIFont fontWithName: @"DK Trollslayer" size:18];
-    
     self.currentFontColor = [UIColor blueColor];
-    
     self.currentViewColor = [UIColor blackColor];
     
 }
@@ -64,9 +62,7 @@
     
     self.currentBackgroundColor = [UIColor redColor];
     self.currentFontNameString = [UIFont fontWithName: @"Futura" size: 18];
-    
     self.currentFontColor = [UIColor blackColor];
-    
     self.currentViewColor = [UIColor redColor];
     
     

@@ -29,9 +29,7 @@
     
     [super viewDidLoad];
     
-    [[APIController sharedInstance] getArtistApi:@"Slayer"];
-    
-    // Theme Changed Notification
+        // Theme Changed Notification
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
                                                  name:kNotificationThemeChanged
