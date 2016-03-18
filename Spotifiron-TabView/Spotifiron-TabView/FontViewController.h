@@ -10,4 +10,9 @@
 
 @interface FontViewController : UIViewController
 
+@property (nonatomic, strong) NSString *typewriterStringSelected;
+@property (nonatomic, strong) NSString *rockabillyStringSelected;
+@property (nonatomic, strong) NSString *feltMarkerStringSelected;
+@property (nonatomic, strong) NSString *papyrusStringSelected;
+
 @end

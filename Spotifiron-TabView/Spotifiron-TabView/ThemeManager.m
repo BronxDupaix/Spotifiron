@@ -28,7 +28,6 @@
     if ( self = [super init]) {
         
         self.defaults = [NSUserDefaults standardUserDefaults];
-        self.colorValueArray = [[NSMutableArray alloc] init];
         
     }
     
@@ -76,7 +75,6 @@
 
 -(void)chooseCustomTheme {
     
-    self.currentBackgroundColor = self.colorValueArray.firstObject;
     self.currentFontColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     self.currentFontNameString = [UIFont fontWithName:@"" size:18];
 

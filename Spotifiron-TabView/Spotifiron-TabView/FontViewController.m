@@ -33,16 +33,22 @@
 
 - (IBAction)chooseTypewriterButton:(UIButton *)sender {
     
-//    [[ThemeManager NSMutableArray] currentFontNameString] = @"American Typewriter";
+    [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"American Typewriter" size:18]];
     
 }
 
 - (IBAction)chooseRockabillyButton:(UIButton *)sender {
+    
+    
 }
 
 - (IBAction)chooseFeltButton:(UIButton *)sender {
+    
+    
 }
 
 - (IBAction)choosePapyrusButton:(UIButton *)sender {
+    
+    
 }
 @end

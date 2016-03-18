@@ -76,7 +76,7 @@
     CGColorRef color = [uicolor CGColor];
     int numComponents = CGColorGetNumberOfComponents(color);
     
-    
+    [[ThemeManager sharedManager] setCurrentBackgroundColor:uicolor];
     
     if (numComponents == 4)
     {
@@ -84,10 +84,7 @@
         CGFloat red = components[0];
         CGFloat green = components[1];
         CGFloat blue = components[2];
-        
-        [[[ThemeManager sharedManager] colorValueArray] removeAllObjects];
-        [[[ThemeManager sharedManager] colorValueArray] addObject:uicolor];
-        
+               
         NSLog(@"red: %.5f" ,red);
         
         NSLog(@"blue: %.5f" ,blue);

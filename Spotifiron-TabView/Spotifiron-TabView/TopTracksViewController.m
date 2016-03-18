@@ -105,11 +105,7 @@
     
     cell.trackName.text = track.name;
     
-   // [self.passPreviewUrl(track.previewURL)];
-    
-    // [cell playButton:track.previewURL];
-    
-    NSLog(@" %@" , track.previewURL);
+    //NSLog(@" %@" , track.previewURL);
     
     cell.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     
@@ -135,7 +131,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     
-    self.playButton = [[UIButton alloc] initWithFrame:CGRectMake(8, 8, 70, 45)];
+    self.playButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 11, 70, 45)];
     
     [self.playButton addTarget:self action:@selector(dismissViews) forControlEvents:UIControlEventTouchUpInside];
     
@@ -153,7 +149,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     self.playButton.backgroundColor = [UIColor clearColor];
     
-    [self.playButton setTitle:@"CLOSE" forState:UIControlStateNormal];
+    [self.playButton setTitle:@"Close" forState:UIControlStateNormal];
     
     self.playButton.titleLabel.textColor = [UIColor redColor];
     

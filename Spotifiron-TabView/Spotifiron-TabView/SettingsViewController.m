@@ -39,13 +39,6 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-    if (self.hasPickedCustomTheme == YES) {
-    self.view.backgroundColor = [[[ThemeManager sharedManager] colorValueArray] firstObject];
-    }
-}
-
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
     
