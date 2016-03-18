@@ -29,6 +29,7 @@
         
         self.defaults = [NSUserDefaults standardUserDefaults];
         self.colorValueArray = [[NSMutableArray alloc] init];
+        
     }
     
     return self;
@@ -64,9 +65,7 @@
     
     self.currentBackgroundColor = [UIColor redColor];
     self.currentFontNameString = [UIFont fontWithName: @"Futura" size: 18];
-    
     self.currentFontColor = [UIColor blackColor];
-    
     self.currentViewColor = [UIColor redColor];
     
     

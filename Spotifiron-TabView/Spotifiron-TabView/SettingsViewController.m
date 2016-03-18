@@ -21,8 +21,8 @@
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:YES];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
     self.view.backgroundColor = [[[ThemeManager sharedManager] colorValueArray] firstObject];
 }
 
