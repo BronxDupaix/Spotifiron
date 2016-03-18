@@ -503,23 +503,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="584" height="46"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-32-hoR">
+                                                    <rect key="frame" x="554" y="12" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="QtT-t9-sJI"/>
+                                                        <constraint firstAttribute="width" constant="22" id="wvg-7w-eRD"/>
+                                                    </constraints>
+                                                    <state key="normal" image="playButton"/>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEU-CS-0js">
-                                                    <rect key="frame" x="8" y="12" width="536" height="20.5"/>
+                                                    <rect key="frame" x="8" y="12" width="538" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.034675970673561096" green="0.91868883371353149" blue="0.95458227396011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-32-hoR">
-                                                    <rect key="frame" x="529" y="2" width="42" height="42"/>
-                                                    <state key="normal" image="playButton"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bPr-9O-EKT" firstAttribute="leading" secondItem="iEU-CS-0js" secondAttribute="trailing" constant="8" id="KiX-xZ-k4Y"/>
-                                                <constraint firstItem="bPr-9O-EKT" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="LdQ-dy-b69"/>
-                                                <constraint firstItem="iEU-CS-0js" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="ZtU-Yi-LVi"/>
-                                                <constraint firstItem="iEU-CS-0js" firstAttribute="leading" secondItem="0sX-J1-K3i" secondAttribute="leading" constant="8" id="oUG-gr-JJA"/>
-                                                <constraint firstAttribute="trailing" secondItem="bPr-9O-EKT" secondAttribute="trailing" constant="10" id="yYT-e2-Vhz"/>
+                                                <constraint firstItem="iEU-CS-0js" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="MAE-De-3Xu"/>
+                                                <constraint firstAttribute="trailing" secondItem="lGn-32-hoR" secondAttribute="trailing" constant="8" id="XHv-p4-HLE"/>
+                                                <constraint firstItem="iEU-CS-0js" firstAttribute="leading" secondItem="0sX-J1-K3i" secondAttribute="leading" constant="8" id="aqC-Gd-rX5"/>
+                                                <constraint firstItem="lGn-32-hoR" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="ngS-IC-pjg"/>
+                                                <constraint firstItem="lGn-32-hoR" firstAttribute="leading" secondItem="iEU-CS-0js" secondAttribute="trailing" constant="8" id="zBP-SU-FTM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
