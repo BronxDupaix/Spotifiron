@@ -42,7 +42,7 @@
                                              selector:@selector(updateUI)
                                                  name:kNotificationGetNewApi
                                                object:nil];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
                                                  name:kNotificationTracksLoaded
@@ -58,15 +58,15 @@
 -(void) viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:YES];
     
-   // [self.webView];
+    // [self.webView];
 }
 
 -(void) updateUI {
     
     self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
-
+    
     self.tracksArray = [[[[DataStore sharedInstance] artists] firstObject] topTracks];
-
+    
     self.trackTableView.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     
     [self.trackTableView reloadData];
@@ -139,7 +139,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Track *track = [self.tracksArray objectAtIndex:indexPath.row];
     
-    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    CGRect f = self.view.frame;
+    f.size.height -= 44;
+    
+    self.webView = [[WKWebView alloc] initWithFrame:f];
     
     self.playButton = [[UIButton alloc] initWithFrame:CGRectMake(4, 11, 70, 45)];
     
