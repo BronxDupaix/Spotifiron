@@ -28,10 +28,10 @@
 	<string>Main</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Gondola_SD</string>
-		<string>puree____2</string>
-		<string>Swamp Witch</string>
+		<string>DK Trollslayer</string>
+		<string>VampireFont</string>
 		<string>Rockabilly</string>
+		<string>Gondola_SD</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

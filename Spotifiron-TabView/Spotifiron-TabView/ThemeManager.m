@@ -8,6 +8,7 @@
 
 #import "ThemeManager.h"
 #import "Constants.h" 
+#import "ColorWheelViewController.h"
 
 @implementation ThemeManager
 
@@ -16,6 +17,7 @@
     @synchronized(self) {
         if (sharedManager == nil)
             sharedManager = [[self alloc] init];
+       
     }
     return sharedManager;
 }
@@ -26,7 +28,7 @@
     if ( self = [super init]) {
         
         self.defaults = [NSUserDefaults standardUserDefaults];
-        
+        self.colorValueArray = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -41,19 +43,11 @@
     
     self.currentBackgroundColor = [UIColor orangeColor];
     
-    self.currentFontNameString = [UIFont fontWithName: @"Helvetica" size:18];
+    self.currentFontNameString = [UIFont fontWithName: @"DK Trollslayer" size:18];
     
     self.currentFontColor = [UIColor blueColor];
     
     self.currentViewColor = [UIColor blackColor];
-    
-    self.secondFontNameString = [UIFont fontWithName: @"Helvetica" size: 18];
-    
-    self.secondBackgroundColor = [UIColor cyanColor];
-    
-    self.secondFontColor = [UIColor purpleColor];
-    
-    self.secondViewColor = [UIColor lightGrayColor]; 
     
 }
 
@@ -63,10 +57,7 @@
     self.currentFontColor = [UIColor cyanColor];
     self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size: 18];
     self.secondFontNameString = [UIFont fontWithName: @"Avenir Next" size: 18];
-    self.currentViewColor = [UIColor redColor];
-    self.secondBackgroundColor = [UIColor redColor];
-    self.secondFontColor = [UIColor blackColor];
-    self.secondViewColor = [UIColor magentaColor];
+
 }
 
 -(void)chooseTheme3 { 
@@ -84,7 +75,7 @@
 
 -(void)chooseCustomTheme {
     
-    self.currentBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    self.currentBackgroundColor = self.colorValueArray.firstObject;
     self.currentFontColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     self.currentFontNameString = [UIFont fontWithName:@"" size:18];
 

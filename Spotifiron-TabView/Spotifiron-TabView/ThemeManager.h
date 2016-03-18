@@ -15,18 +15,24 @@
 
 
 @property (nonatomic, weak)   NSUserDefaults *defaults;
+
 @property (nonatomic, strong) UIFont *currentFontNameString;
+
 @property (nonatomic, strong) UIFont *secondFontNameString;
+
 @property (nonatomic, strong) UIColor *currentBackgroundColor;
+
 @property (nonatomic, strong) UIColor *currentFontColor;
 
 @property (nonatomic, strong) UIColor *currentViewColor;
 
-@property (nonatomic, strong) UIColor *secondBackgroundColor;
+@property (nonatomic, strong) NSMutableArray *colorValueArray;
+
+@property (nonatomic, strong) UIColor *customBackgroundColor;
 
 @property (nonatomic, strong) UIColor *secondViewColor;
 
-@property (nonatomic, strong) UIColor *secondFontColor; 
+@property (nonatomic, strong) UIColor *customFontColor;
 
 -(void)chooseDefaultTheme;
 -(void)chooseTheme2;

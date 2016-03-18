@@ -15,4 +15,6 @@
 @property (strong, nonatomic) UISlider *brightnessSlider;
 @property (strong, nonatomic) UIView *wellView;
 
+- (void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel;
+
 @end

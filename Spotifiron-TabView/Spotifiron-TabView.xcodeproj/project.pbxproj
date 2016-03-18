@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14000D8C1C9B99C60019242A /* Gondola_SD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14000D8B1C9B99C60019242A /* Gondola_SD.ttf */; };
+		14000D8E1C9B9A150019242A /* VampireFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14000D8D1C9B9A150019242A /* VampireFont.ttf */; };
+		14000D901C9B9A630019242A /* DK Trollslayer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14000D8F1C9B9A630019242A /* DK Trollslayer.ttf */; };
 		14CC5FF31C8FBFFB0007BB74 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF21C8FBFFB0007BB74 /* Artist.m */; };
 		14CC5FF61C8FC0060007BB74 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF51C8FC0060007BB74 /* Album.m */; };
 		14CC5FF91C8FC0160007BB74 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5FF81C8FC0160007BB74 /* Track.m */; };
@@ -18,9 +21,6 @@
 		1B8CAE861C9B53D900BF115E /* FontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8CAE851C9B53D900BF115E /* FontViewController.m */; };
 		1B8CAE891C9B540800BF115E /* ColorWheelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8CAE881C9B540800BF115E /* ColorWheelViewController.m */; };
 		1B8CAE8B1C9B590800BF115E /* Rockabilly.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CAE8A1C9B590800BF115E /* Rockabilly.ttf */; };
-		1B8CAE8D1C9B591200BF115E /* Swamp Witch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CAE8C1C9B591200BF115E /* Swamp Witch.ttf */; };
-		1B8CAE8F1C9B592700BF115E /* puree____2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CAE8E1C9B592700BF115E /* puree____2.ttf */; };
-		1B8CAE911C9B594000BF115E /* Gondola_SD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CAE901C9B594000BF115E /* Gondola_SD.ttf */; };
 		1B8CAE931C9B8F3300BF115E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CAE921C9B8F3300BF115E /* Main.storyboard */; };
 		5EA617551C90DF9600B086A6 /* APIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA617541C90DF9600B086A6 /* APIController.m */; };
 		CAF430F71C8F95BD006129C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF430F61C8F95BD006129C0 /* main.m */; };
@@ -36,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14000D8B1C9B99C60019242A /* Gondola_SD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gondola_SD.ttf; sourceTree = "<group>"; };
+		14000D8D1C9B9A150019242A /* VampireFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VampireFont.ttf; sourceTree = "<group>"; };
+		14000D8F1C9B9A630019242A /* DK Trollslayer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DK Trollslayer.ttf"; sourceTree = "<group>"; };
 		14BF23CA1C97516B00148463 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		14CC5FF11C8FBFFB0007BB74 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		14CC5FF21C8FBFFB0007BB74 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
@@ -58,9 +61,6 @@
 		1B8CAE871C9B540800BF115E /* ColorWheelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorWheelViewController.h; sourceTree = "<group>"; };
 		1B8CAE881C9B540800BF115E /* ColorWheelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorWheelViewController.m; sourceTree = "<group>"; };
 		1B8CAE8A1C9B590800BF115E /* Rockabilly.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rockabilly.ttf; sourceTree = "<group>"; };
-		1B8CAE8C1C9B591200BF115E /* Swamp Witch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swamp Witch.ttf"; sourceTree = "<group>"; };
-		1B8CAE8E1C9B592700BF115E /* puree____2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "puree____2.ttf"; sourceTree = "<group>"; };
-		1B8CAE901C9B594000BF115E /* Gondola_SD.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gondola_SD.ttf; sourceTree = "<group>"; };
 		1B8CAE921C9B8F3300BF115E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5EA617531C90DF9600B086A6 /* APIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIController.h; sourceTree = "<group>"; };
 		5EA617541C90DF9600B086A6 /* APIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIController.m; sourceTree = "<group>"; };
@@ -96,6 +96,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14000D911C9B9EDB0019242A /* Custom Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				14000D8F1C9B9A630019242A /* DK Trollslayer.ttf */,
+				14000D8D1C9B9A150019242A /* VampireFont.ttf */,
+				14000D8B1C9B99C60019242A /* Gondola_SD.ttf */,
+			);
+			name = "Custom Fonts";
+			sourceTree = "<group>";
+		};
 		14CC5FFA1C8FC0210007BB74 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,12 +196,10 @@
 				14CC60011C8FC21F0007BB74 /* Controllers */,
 				14CC5FFA1C8FC0210007BB74 /* Models */,
 				CAF431041C8F95BD006129C0 /* Assets.xcassets */,
-				1B8CAE901C9B594000BF115E /* Gondola_SD.ttf */,
-				1B8CAE8E1C9B592700BF115E /* puree____2.ttf */,
 				1B8CAE8A1C9B590800BF115E /* Rockabilly.ttf */,
-				1B8CAE8C1C9B591200BF115E /* Swamp Witch.ttf */,
 				CAF431061C8F95BD006129C0 /* LaunchScreen.storyboard */,
 				CAF431091C8F95BD006129C0 /* Info.plist */,
+				14000D911C9B9EDB0019242A /* Custom Fonts */,
 				CAF430F51C8F95BD006129C0 /* Supporting Files */,
 			);
 			path = "Spotifiron-TabView";
@@ -264,12 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B8CAE931C9B8F3300BF115E /* Main.storyboard in Resources */,
-				1B8CAE8F1C9B592700BF115E /* puree____2.ttf in Resources */,
 				CAF431081C8F95BD006129C0 /* LaunchScreen.storyboard in Resources */,
+				14000D901C9B9A630019242A /* DK Trollslayer.ttf in Resources */,
+				14000D8E1C9B9A150019242A /* VampireFont.ttf in Resources */,
 				1B8CAE8B1C9B590800BF115E /* Rockabilly.ttf in Resources */,
-				1B8CAE911C9B594000BF115E /* Gondola_SD.ttf in Resources */,
-				1B8CAE8D1C9B591200BF115E /* Swamp Witch.ttf in Resources */,
 				CAF431051C8F95BD006129C0 /* Assets.xcassets in Resources */,
+				14000D8C1C9B99C60019242A /* Gondola_SD.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
