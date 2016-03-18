@@ -172,8 +172,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 -(void)dismissViews{
     
+    [self.webView loadHTMLString:@"<html><body></body></html>" baseURL:nil];
     self.webView.hidden = YES;
-    
     self.playButton.hidden = YES;
 }
 

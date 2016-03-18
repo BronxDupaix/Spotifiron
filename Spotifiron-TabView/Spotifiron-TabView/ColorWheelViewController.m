@@ -29,18 +29,21 @@
     
     CGSize wheelSize = CGSizeMake(size.width * .9, size.width * .9);
     
-    self.colorWheel = [[ISColorWheel alloc] initWithFrame:CGRectMake(size.width / 2 - wheelSize.width / 2,
-                                                                 size.height * .1,
-                                                                 wheelSize.width,
-                                                                 wheelSize.height)];
+    
+    CGRect frame = CGRectMake( (size.width / 2 - wheelSize.width / 2),
+                              (size.height * .1) + 40,
+                              wheelSize.width,
+                              wheelSize.height);
+    
+    self.colorWheel = [[ISColorWheel alloc] initWithFrame:frame];
     self.colorWheel.delegate = self;
     self.colorWheel.continuous = true;
     [self.view addSubview:self.colorWheel];
     
     self.brightnessSlider = [[UISlider alloc] initWithFrame:CGRectMake(size.width * .4,
-                                                                   size.height * .8,
-                                                                   size.width * .5,
-                                                                   size.height * .1)];
+                                                                       size.height * .8,
+                                                                       size.width * .5,
+                                                                       size.height * .1)];
     self.brightnessSlider.minimumValue = 0.0;
     self.brightnessSlider.maximumValue = 1.0;
     self.brightnessSlider.value = 1.0;
@@ -49,9 +52,9 @@
     [self.view addSubview:self.brightnessSlider];
     
     self.wellView = [[UIView alloc] initWithFrame:CGRectMake(size.width * .1,
-                                                         size.height * .8,
-                                                         size.width * .2,
-                                                         size.height * .1)];
+                                                             size.height * .8,
+                                                             size.width * .2,
+                                                             size.height * .1)];
     
     self.wellView.layer.borderColor = [UIColor blackColor].CGColor;
     self.wellView.layer.borderWidth = 2.0;
@@ -70,7 +73,7 @@
 {
     [self.wellView setBackgroundColor:self.colorWheel.currentColor];
     [self.view setBackgroundColor:self.colorWheel.currentColor];
-//    [self.FirstViewController.view setBackgroundColor:self.colorWheel.currentColor];
+    //    [self.FirstViewController.view setBackgroundColor:self.colorWheel.currentColor];
     
     UIColor *uicolor = [self.colorWheel currentColor] ;
     CGColorRef color = [uicolor CGColor];
@@ -84,7 +87,7 @@
         CGFloat red = components[0];
         CGFloat green = components[1];
         CGFloat blue = components[2];
-               
+        
         NSLog(@"red: %.5f" ,red);
         
         NSLog(@"blue: %.5f" ,blue);
