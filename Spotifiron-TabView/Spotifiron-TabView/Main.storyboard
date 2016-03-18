@@ -42,33 +42,33 @@
                                 <rect key="frame" x="8" y="86" width="584" height="464"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gsj-ER-q0a">
-                                    <size key="itemSize" width="166" height="210"/>
+                                    <size key="itemSize" width="156" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArtistCell" id="Xzi-7t-iaq" customClass="ArtistCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="210"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="166" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
-                                                    <rect key="frame" x="64" y="73" width="37" height="37"/>
+                                                    <rect key="frame" x="59" y="68" width="37" height="37"/>
                                                 </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-Jq-m1Y">
-                                                    <rect key="frame" x="0.0" y="174" width="166" height="32.5"/>
+                                                    <rect key="frame" x="0.0" y="164" width="156" height="32.5"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.54676942567567566" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="GondolaSD" family="Gondola SD" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xe0-TI-YVi">
-                                                    <rect key="frame" x="0.0" y="8" width="166" height="166"/>
+                                                    <rect key="frame" x="0.0" y="8" width="156" height="156"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="166" id="21S-Fo-0yl"/>
+                                                        <constraint firstAttribute="height" constant="156" id="21S-Fo-0yl"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -151,33 +151,33 @@
                                 <rect key="frame" x="8" y="66" width="584" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hMi-nX-Qgq">
-                                    <size key="itemSize" width="166" height="210"/>
+                                    <size key="itemSize" width="156" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="SxD-en-WUU" customClass="AlbumCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="210"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="166" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Wsx-oa-OtZ">
-                                                    <rect key="frame" x="64" y="65" width="37" height="37"/>
+                                                    <rect key="frame" x="59" y="60" width="37" height="37"/>
                                                 </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
-                                                    <rect key="frame" x="0.0" y="166" width="166" height="20"/>
+                                                    <rect key="frame" x="0.0" y="156" width="156" height="20"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="0.54676942569999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-4w-mMq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="156" height="156"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="166" id="qDP-zP-AlD"/>
+                                                        <constraint firstAttribute="height" constant="156" id="qDP-zP-AlD"/>
                                                         <constraint firstAttribute="width" constant="180" id="wso-CL-yTr"/>
                                                     </constraints>
                                                     <variation key="default">
