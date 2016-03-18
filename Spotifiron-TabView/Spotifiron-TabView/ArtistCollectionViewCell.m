@@ -36,7 +36,7 @@
                                                        if (downloadedImage != nil) {
                                                            
                                                            dispatch_sync(dispatch_get_main_queue(), ^{
-                                                               self.artistImage.image =downloadedImage;
+                                                               self.artistImage.image = downloadedImage;
                                                            });
                                                            
                                                        }

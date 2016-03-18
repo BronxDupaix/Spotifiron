@@ -82,7 +82,9 @@
                     } else {
                         NSLog(@"Could not parse json");
                     }
-                    [self passArtistToDataStore];
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [self passArtistToDataStore];
+                    });
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
@@ -132,7 +134,9 @@
                     NSLog(@"I couldnt part the first json dictionary");
                 }
                 //   NSLog(@"album api done");
-                [self passArtistToDataStore];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self passArtistToDataStore];
+                });
             }] resume];
     
 }
@@ -174,7 +178,11 @@
                     } else {
                         NSLog(@"Could not parse json");
                     }
-                    [self passArtistToDataStore];
+                    
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [self passArtistToDataStore];
+                    });
+                    
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
@@ -213,7 +221,9 @@
                     } else {
                         NSLog(@"Could not parse json");
                     }
-                    [self passArtistToDataStore];
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [self passArtistToDataStore];
+                    });
                 } else {
                     NSLog(@"I couldnt part the first json dictionary");
                 }
@@ -261,7 +271,9 @@
                     NSLog(@"I couldnt part the first json dictionary");
                 }
                 //  NSLog(@"related artist api done");
-                [self passArtistToDataStore];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [self passArtistToDataStore];
+                });
             }] resume];
     
     

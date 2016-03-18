@@ -41,7 +41,7 @@
     
     self.relatedArtists = [[NSMutableArray alloc] init];
     
-    //[self updateUI];
+    [self updateUI];
     
     //[self.artistCollectionView  reloadData];
     
@@ -67,6 +67,8 @@
         NSString *str = self.artistSearchTextField.text;
     
         [[APIController sharedInstance] getArtistApi:str];
+        
+        self.artistSearchTextField.text = @"";
     }
 }
 

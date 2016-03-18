@@ -13,12 +13,13 @@
 #import "Track.h" 
 #import "ThemeManager.h" 
 #import "Constants.h"
+#import "APIController.h"
 
 
 @interface TopTracksViewController ()
 
 @property (strong, nonatomic) NSMutableArray *tracksArray;
-
+@property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
 @property (strong, nonatomic) Artist * currentArtist; 
 
 @end
@@ -46,56 +47,32 @@
     
     self.tracksArray = [[NSMutableArray alloc] init];
     
-    NSMutableArray* artists = [[DataStore sharedInstance]artists]; 
-
-    for (Artist *a in artists){
-        
-        self.currentArtist = a;
-    }
-    
-    if (self.currentArtist !=nil) {
-        
-        NSMutableArray *tracks = self.currentArtist.topTracks;
-        
-        for (Track *track in tracks){ 
-            
-            // NSLog(@"%@" , track.name);
-            
-            [self.tracksArray addObject:track];
-        }
-    }
-
+    [self updateUI];
 }
 
 -(void) updateUI {
     
-    [self.tracksArray removeAllObjects];
-    
     self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
-    
-    NSMutableArray* artists = [[DataStore sharedInstance]artists];
-    
-    for (Artist *a in artists){
-        
-        self.currentArtist = a;
-    }
-    
-    if (self.currentArtist !=nil) {
-        
-        NSMutableArray *tracks = self.currentArtist.topTracks;
-        
-        for (Track *track in tracks){
-            
-           //  NSLog(@"%@" , track.name);
-            
-            [self.tracksArray addObject:track];
-        }
-    }
-    
+
+    self.tracksArray = [[[[DataStore sharedInstance] artists] firstObject] topTracks];
 
     self.trackTableView.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    
     [self.trackTableView reloadData];
     
+}
+
+- (IBAction)searchTapped:(UIButton *)sender {
+    NSLog(@"search tapped");
+    
+    if (![self.artistSearchTextField.text isEqual: @""]) {
+        
+        NSString *str = self.artistSearchTextField.text;
+        
+        [[APIController sharedInstance] getArtistApi:str];
+        
+        self.artistSearchTextField.text = @"";
+    }
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

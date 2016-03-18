@@ -18,7 +18,7 @@
 @interface SecondViewController ()
 
 @property (strong, nonatomic) NSMutableArray *albumArray;
-
+@property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
 @property (strong , nonatomic) Artist *currentArtist;
 
 @end
@@ -50,24 +50,23 @@
 -(void) updateUI {
     
     self.view.backgroundColor = [[ThemeManager sharedManager] secondViewColor];
-    self.albumArray = [[[[DataStore sharedInstance] artists] firstObject] albums];
-    //    NSMutableArray *artists = [[DataStore sharedInstance]artists];
-    //    for (Artist *a in artists){
-    //        self.currentArtist = a;
-    //    }
-    //
-    //    if (self.currentArtist !=nil) {
-    //        [self.albumArray removeAllObjects];
-    //
-    //        NSMutableArray *albumsArray = self.currentArtist.albums;
-    //        for (Album *album in albumsArray){
-    //           // NSLog(@"%@" , album.name);
-    //            [self.albumArray addObject:album];
-    //        }
-    //    }
     
+    self.albumArray = [[[[DataStore sharedInstance] artists] firstObject] albums];
     
     [self.collectionView reloadData];
+}
+
+- (IBAction)searchTapped:(UIButton *)sender {
+    NSLog(@"search tapped");
+    
+    if (![self.artistSearchTextField.text isEqual: @""]) {
+        
+        NSString *str = self.artistSearchTextField.text;
+        
+        [[APIController sharedInstance] getArtistApi:str];
+        
+        self.artistSearchTextField.text = @"";
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
