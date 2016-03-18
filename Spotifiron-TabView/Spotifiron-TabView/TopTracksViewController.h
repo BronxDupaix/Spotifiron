@@ -14,7 +14,4 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *trackTableView; 
 
-- (IBAction)playButton:(UIButton *)sender;
-
-
 @end

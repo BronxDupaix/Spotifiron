@@ -15,7 +15,7 @@
 #import "ThemeManager.h"
 #import "Constants.h"
 
-@interface SecondViewController ()
+@interface SecondViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) NSMutableArray *albumArray;
 @property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
@@ -69,7 +69,18 @@
         [[APIController sharedInstance] getArtistApi:str];
         
         self.artistSearchTextField.text = @"";
+
     }
+    [self.artistSearchTextField resignFirstResponder];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.artistSearchTextField becomeFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.artistSearchTextField resignFirstResponder];
+    return NO;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
