@@ -484,8 +484,14 @@
                                                     <color key="textColor" red="0.034675970673561096" green="0.91868883371353149" blue="0.95458227396011353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-32-hoR">
+                                                    <rect key="frame" x="529" y="2" width="42" height="42"/>
+                                                    <state key="normal" image="playButton"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lGn-32-hoR" secondAttribute="trailing" constant="5" id="Oia-a6-BfH"/>
+                                                <constraint firstItem="lGn-32-hoR" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="ZLF-6i-OkH"/>
                                                 <constraint firstItem="iEU-CS-0js" firstAttribute="centerY" secondItem="0sX-J1-K3i" secondAttribute="centerY" id="ZtU-Yi-LVi"/>
                                                 <constraint firstItem="iEU-CS-0js" firstAttribute="leading" secondItem="0sX-J1-K3i" secondAttribute="leading" constant="8" id="oUG-gr-JJA"/>
                                             </constraints>
@@ -569,6 +575,7 @@
         <image name="cd" width="33" height="33"/>
         <image name="guitar" width="33" height="33"/>
         <image name="music" width="33" height="33"/>
+        <image name="playButton" width="42" height="42"/>
         <image name="search" width="42" height="42"/>
         <image name="settings" width="33" height="33"/>
     </resources>

@@ -9,6 +9,7 @@
 #import "ColorWheelViewController.h"
 #import "ISColorWheel.h"
 #import "ThemeManager.h"
+#import "FirstViewController.h"
 
 @interface ColorWheelViewController () <ISColorWheelDelegate>
 
@@ -69,7 +70,7 @@
 {
     [self.wellView setBackgroundColor:self.colorWheel.currentColor];
     [self.view setBackgroundColor:self.colorWheel.currentColor];
-
+//    [self.FirstViewController.view setBackgroundColor:self.colorWheel.currentColor];
     
     UIColor *uicolor = [self.colorWheel currentColor] ;
     CGColorRef color = [uicolor CGColor];
