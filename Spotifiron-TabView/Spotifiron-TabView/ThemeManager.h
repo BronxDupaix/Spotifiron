@@ -30,8 +30,6 @@
 
 @property (nonatomic, strong) UIColor *currentViewColor;
 
-@property (nonatomic, strong) NSMutableArray *colorValueArray;
-
 @property (nonatomic, strong) UIColor *customBackgroundColor;
 
 @property (nonatomic, strong) UIColor *secondViewColor;
