@@ -13,6 +13,15 @@
 @interface SettingsViewController ()
 @property (assign) BOOL hasPickedCustomTheme;
 
+- (IBAction)firstThemeButton:(UIButton *)sender;
+
+- (IBAction)secondThemeButton:(UIButton *)sender;
+
+- (IBAction)thirdThemeButton:(UIButton *)sender;
+
+- (IBAction)customThemeButton:(UIButton *)sender;
+
+
 @end
 
 @implementation SettingsViewController
@@ -21,6 +30,12 @@
     [super viewDidLoad];
     
     self.hasPickedCustomTheme = NO;
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager]defaultBackgroundColor];
+    
+    [[ThemeManager sharedManager] defaultFontColor];
+    
+    [self.defaultThemeOutlet.titleLabel setTextColor:[[ThemeManager sharedManager] defaultFontColor]];
     
 }
 
@@ -32,6 +47,8 @@
 }
 
 - (IBAction)firstThemeButton:(UIButton *)sender {
+    
+    
     
     self.hasPickedCustomTheme = NO;
     [[ThemeManager sharedManager] chooseDefaultTheme];

@@ -468,6 +468,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Themes" id="dgE-FQ-e9u"/>
+                    <connections>
+                        <outlet property="coolThemeOutlet" destination="FSn-Vv-nzB" id="vhJ-Hg-i8J"/>
+                        <outlet property="customThemeButton" destination="O0P-AW-c1P" id="Rtd-Kr-MHH"/>
+                        <outlet property="defaultThemeOutlet" destination="4kI-ZN-AmE" id="gWh-XZ-0Ou"/>
+                        <outlet property="hotTopicThemeOutlet" destination="uNv-EC-vop" id="8pS-ik-hCe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weH-jX-y5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -506,9 +512,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-32-hoR">
                                                     <rect key="frame" x="529" y="2" width="42" height="42"/>
                                                     <state key="normal" image="playButton"/>
-                                                    <connections>
-                                                        <action selector="playButton:" destination="tzw-dd-NOP" eventType="touchUpInside" id="c4Y-CX-aYU"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
