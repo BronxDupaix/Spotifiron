@@ -81,6 +81,7 @@
     
     [[ThemeManager sharedManager] setCurrentBackgroundColor:uicolor];
     
+    [[ThemeManager sharedManager] postNotification];
     if (numComponents == 4)
     {
         const CGFloat *components = CGColorGetComponents(color);
