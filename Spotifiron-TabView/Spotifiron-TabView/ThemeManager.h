@@ -33,8 +33,6 @@
 -(void)chooseTheme3;
 -(void)chooseCustomTheme;
 -(void)postNotification;
--(BOOL)loadCustomTheme;
--(BOOL)saveCustomTheme;
 -(void)changeAPI; 
 
 

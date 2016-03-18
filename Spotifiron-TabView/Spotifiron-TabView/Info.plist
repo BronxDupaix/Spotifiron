@@ -26,6 +26,13 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gondola_SD</string>
+		<string>puree____2</string>
+		<string>Swamp Witch</string>
+		<string>Rockabilly</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

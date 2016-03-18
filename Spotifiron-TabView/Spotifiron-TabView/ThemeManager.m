@@ -41,7 +41,7 @@
     
     self.currentBackgroundColor = [UIColor orangeColor];
     
-    self.currentFontNameString = [UIFont fontWithName: @"Helvetica" size:25];
+    self.currentFontNameString = [UIFont fontWithName: @"Helvetica" size:18];
     
     self.currentFontColor = [UIColor blueColor];
     
@@ -61,9 +61,9 @@
     
     self.currentBackgroundColor = [UIColor grayColor];
     self.currentFontColor = [UIColor cyanColor];
-    self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size: 25];
+    self.currentFontNameString = [UIFont fontWithName: @"Avenir Next" size: 18];
     self.secondFontNameString = [UIFont fontWithName: @"Avenir Next" size: 18];
-    self.currentViewColor = [UIColor purpleColor];
+    self.currentViewColor = [UIColor redColor];
     self.secondBackgroundColor = [UIColor redColor];
     self.secondFontColor = [UIColor blackColor];
     self.secondViewColor = [UIColor magentaColor];
@@ -72,11 +72,11 @@
 -(void)chooseTheme3 { 
     
     self.currentBackgroundColor = [UIColor redColor];
-    self.currentFontNameString = [UIFont fontWithName: @"Futura" size: 25];
+    self.currentFontNameString = [UIFont fontWithName: @"Gondola_SD" size: 18];
     
     self.currentFontColor = [UIColor blackColor];
     
-    self.currentViewColor = [UIColor purpleColor]; 
+    self.currentViewColor = [UIColor redColor];
     
     
 
@@ -86,22 +86,11 @@
     
     self.currentBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
     self.currentFontColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
-//    self.currentFontNameString = @"@%", selectedFont;
+    self.currentFontNameString = [UIFont fontWithName:@"" size:18];
 
 }
 
--(BOOL)loadCustomTheme {
-    
-    return NO;
-    
-}
 
--(BOOL)saveCustomTheme {
-    
-    
-    
-    return NO;
-}
 
 -(void)postNotification
 {

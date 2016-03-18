@@ -6,6 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Rockabilly.ttf">
+            <string>Rockabilly</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Related Artists-->
         <scene sceneID="hNz-n2-bh7">
@@ -49,7 +54,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-Jq-m1Y">
-                                                    <rect key="frame" x="64" y="178" width="42" height="20.5"/>
+                                                    <rect key="frame" x="69" y="195" width="42" height="21"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.54676942567567566" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -164,8 +170,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="212"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
-                                                    <rect key="frame" x="64" y="178" width="42" height="20.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-4w-mMq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
+                                                    <rect key="frame" x="0.0" y="199" width="200" height="45"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="0.54676942569999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -349,29 +359,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urg-fJ-HN7">
-                                <rect key="frame" x="256" y="254" width="88" height="31"/>
-                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="15"/>
-                                <state key="normal" title="Elegant Cursive"/>
+                                <rect key="frame" x="268" y="254" width="63" height="27"/>
+                                <fontDescription key="fontDescription" name="Rockabilly" family="Rockabilly" pointSize="15"/>
+                                <state key="normal" title="Rockabilly"/>
+                                <connections>
+                                    <action selector="chooseRockabillyButton:" destination="JaH-xZ-q67" eventType="touchUpInside" id="17K-Vd-EpU"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-bN-aAj">
-                                <rect key="frame" x="277" y="357" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-bN-aAj">
+                                <rect key="frame" x="262" y="361" width="76" height="29"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <state key="normal" title="Felt Marker"/>
+                                <connections>
+                                    <action selector="chooseFeltButton:" destination="JaH-xZ-q67" eventType="touchUpInside" id="V5e-2y-m6d"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYK-DE-Rvm">
-                                <rect key="frame" x="277" y="496" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYK-DE-Rvm">
+                                <rect key="frame" x="272" y="470" width="55" height="36"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="15"/>
+                                <state key="normal" title="Papyrus"/>
+                                <connections>
+                                    <action selector="choosePapyrusButton:" destination="JaH-xZ-q67" eventType="touchUpInside" id="ihg-NY-g40"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4X-vA-MXj">
                                 <rect key="frame" x="259" y="144" width="82" height="30"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                 <state key="normal" title="Typewriter"/>
+                                <connections>
+                                    <action selector="chooseTypewriterButton:" destination="JaH-xZ-q67" eventType="touchUpInside" id="UJe-0d-ElL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="OYK-DE-Rvm" firstAttribute="top" secondItem="m7C-bN-aAj" secondAttribute="bottom" constant="80" id="Xzj-Od-ZDi"/>
+                            <constraint firstItem="m7C-bN-aAj" firstAttribute="top" secondItem="Urg-fJ-HN7" secondAttribute="bottom" constant="80" id="Y9H-BC-u8e"/>
+                            <constraint firstItem="OYK-DE-Rvm" firstAttribute="centerX" secondItem="rKp-cC-xX7" secondAttribute="centerX" id="cDY-V5-Zmo"/>
                             <constraint firstItem="I4X-vA-MXj" firstAttribute="centerX" secondItem="rKp-cC-xX7" secondAttribute="centerX" id="egB-GE-Skc"/>
                             <constraint firstItem="I4X-vA-MXj" firstAttribute="top" secondItem="nKc-vw-fUp" secondAttribute="bottom" constant="80" id="lEa-BE-fJ3"/>
                             <constraint firstItem="Urg-fJ-HN7" firstAttribute="centerX" secondItem="rKp-cC-xX7" secondAttribute="centerX" id="uy4-YC-fzH"/>
+                            <constraint firstItem="m7C-bN-aAj" firstAttribute="centerX" secondItem="rKp-cC-xX7" secondAttribute="centerX" id="xE0-cS-teM"/>
                             <constraint firstItem="Urg-fJ-HN7" firstAttribute="top" secondItem="I4X-vA-MXj" secondAttribute="bottom" constant="80" id="y4k-0b-lVb"/>
                         </constraints>
                     </view>

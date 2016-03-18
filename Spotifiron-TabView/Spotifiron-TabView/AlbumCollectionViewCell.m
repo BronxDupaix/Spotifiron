@@ -50,17 +50,13 @@
                                                  name:kNotificationThemeChanged
                                                object:nil];
     
-    self.albumName.backgroundColor = [[ThemeManager sharedManager] secondBackgroundColor];
+    self.albumName.textColor = [[ThemeManager sharedManager] currentFontColor];
     
-    self.albumName.textColor = [[ThemeManager sharedManager] secondFontColor]; 
-    
-    self.albumName.font = [[ThemeManager sharedManager] secondFontNameString]; 
+    self.albumName.font = [[ThemeManager sharedManager] currentFontNameString];
     
     self.albumName.layer.masksToBounds = YES;
     
     self.albumName.layer.cornerRadius = 2.5;
-    
-    // self.albumName.layer.borderColor =
     
     self.albumImage.layer.masksToBounds = YES;
     
