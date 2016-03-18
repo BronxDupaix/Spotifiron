@@ -82,9 +82,17 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.artistSearchTextField) {
+        if (![self.artistSearchTextField.text isEqual: @""]) {
+            
+            NSString *str = self.artistSearchTextField.text;
+            
+            [[APIController sharedInstance] getArtistApi:str];
+            
+            self.artistSearchTextField.text = @"";
+        }
     [textField resignFirstResponder];
     }
-    return NO;
+    return YES;
 }
 
 

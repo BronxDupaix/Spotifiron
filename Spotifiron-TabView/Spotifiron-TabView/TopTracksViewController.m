@@ -94,8 +94,18 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.artistSearchTextField resignFirstResponder];
-    return NO;
+    if (textField == self.artistSearchTextField) {
+        if (![self.artistSearchTextField.text isEqual: @""]) {
+            
+            NSString *str = self.artistSearchTextField.text;
+            
+            [[APIController sharedInstance] getArtistApi:str];
+            
+            self.artistSearchTextField.text = @"";
+        }
+        [textField resignFirstResponder];
+    }
+    return YES;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
