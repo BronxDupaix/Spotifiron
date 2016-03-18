@@ -285,7 +285,29 @@
                     <view key="view" contentMode="scaleToFill" id="UhQ-53-B8d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXU-pL-2o8">
+                                <rect key="frame" x="391" y="521" width="150" height="30"/>
+                                <state key="normal" title="Set as text color"/>
+                                <connections>
+                                    <action selector="setCustomTextColorButton:" destination="E2P-bu-hzQ" eventType="touchUpInside" id="snP-Yf-32h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6CL-nr-i9k">
+                                <rect key="frame" x="40" y="521" width="167" height="30"/>
+                                <state key="normal" title="Set as background"/>
+                                <connections>
+                                    <action selector="setCustomBackgroundButton:" destination="E2P-bu-hzQ" eventType="touchUpInside" id="Y77-HG-637"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="frU-g9-hGe" firstAttribute="top" secondItem="6CL-nr-i9k" secondAttribute="bottom" id="9C7-C5-Kcm"/>
+                            <constraint firstItem="frU-g9-hGe" firstAttribute="top" secondItem="XXU-pL-2o8" secondAttribute="bottom" id="EcX-0g-F6A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XXU-pL-2o8" secondAttribute="trailing" constant="39" id="KHW-CM-Vpt"/>
+                            <constraint firstItem="6CL-nr-i9k" firstAttribute="leading" secondItem="UhQ-53-B8d" secondAttribute="leadingMargin" constant="20" id="KmK-Gy-vn7"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p69-Tn-9Wd" userLabel="First Responder" sceneMemberID="firstResponder"/>

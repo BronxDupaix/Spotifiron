@@ -13,11 +13,27 @@
 
 @interface ColorWheelViewController () <ISColorWheelDelegate>
 
-
+@property (strong, nonatomic) UIColor *customColor;
 
 @end
 
 @implementation ColorWheelViewController
+
+
+
+- (IBAction)setCustomBackgroundButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] setCurrentBackgroundColor:self.customColor];
+    [[ThemeManager sharedManager] postNotification];
+    
+}
+
+- (IBAction)setCustomTextColorButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] setCurrentFontColor:self.customColor];
+    [[ThemeManager sharedManager] postNotification];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,30 +85,9 @@
 - (void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel
 {
     [self.wellView setBackgroundColor:self.colorWheel.currentColor];
-    [self.view setBackgroundColor:self.colorWheel.currentColor];
-//    [self.FirstViewController.view setBackgroundColor:self.colorWheel.currentColor];
     
     UIColor *uicolor = [self.colorWheel currentColor] ;
-    CGColorRef color = [uicolor CGColor];
-    int numComponents = CGColorGetNumberOfComponents(color);
-    
-    [[ThemeManager sharedManager] setCurrentBackgroundColor:uicolor];
-    
-    [[ThemeManager sharedManager] postNotification];
-    if (numComponents == 4)
-    {
-        const CGFloat *components = CGColorGetComponents(color);
-        CGFloat red = components[0];
-        CGFloat green = components[1];
-        CGFloat blue = components[2];
-               
-        NSLog(@"red: %.5f" ,red);
-        
-        NSLog(@"blue: %.5f" ,blue);
-        
-        NSLog(@"green: %.5f" ,green);
-        
-    }
+    self.customColor = uicolor;
     
 }
 
