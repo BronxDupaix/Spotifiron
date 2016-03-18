@@ -56,7 +56,7 @@
 
 -(void) updateUI {
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] secondViewColor]; 
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView

@@ -17,14 +17,20 @@
 @implementation SettingsViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad]; 
+    [super viewDidLoad];
+    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
+    
+    
     
 }
+
+
 
 - (IBAction)firstThemeButton:(UIButton *)sender {
     
     
-    
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
 
     [[ThemeManager sharedManager] chooseDefaultTheme];
     [[ThemeManager sharedManager] postNotification];
@@ -53,6 +59,7 @@
     
     [[ThemeManager sharedManager] changeAPI]; 
 }
+
 
 
 @end

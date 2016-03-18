@@ -58,7 +58,7 @@
 
 -(void) updateUI {
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     
     self.trackTableView.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
     

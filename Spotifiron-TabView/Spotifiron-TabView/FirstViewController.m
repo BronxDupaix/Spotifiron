@@ -58,7 +58,7 @@
     
     NSLog(@"\n\nUpdateUI\n\n");
     
-    self.view.backgroundColor = [[ThemeManager sharedManager] currentViewColor];  
+    self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
     
     
