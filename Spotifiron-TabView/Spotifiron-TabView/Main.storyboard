@@ -26,46 +26,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search For Your Favorite Artist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6V-Nw-0b7">
+                                <rect key="frame" x="8" y="28" width="584" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMX-uf-ikD">
+                                <rect key="frame" x="550" y="22" width="42" height="42"/>
+                                <state key="normal" image="search"/>
+                                <connections>
+                                    <action selector="searchTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8xz-GC-S0h"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UxE-yw-aQe">
                                 <rect key="frame" x="8" y="86" width="584" height="464"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Gsj-ER-q0a">
-                                    <size key="itemSize" width="180" height="224"/>
+                                    <size key="itemSize" width="176" height="220"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArtistCell" id="Xzi-7t-iaq" customClass="ArtistCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="224"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="176" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
-                                                    <rect key="frame" x="71" y="79" width="37" height="37"/>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
+                                                    <rect key="frame" x="69" y="78" width="37" height="37"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-Jq-m1Y">
-                                                    <rect key="frame" x="66" y="195" width="48" height="32.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-Jq-m1Y">
+                                                    <rect key="frame" x="0.0" y="184" width="176" height="32.5"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.54676942567567566" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="GondolaSD" family="Gondola SD" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xe0-TI-YVi">
-                                                    <rect key="frame" x="0.0" y="8" width="180" height="180"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xe0-TI-YVi">
+                                                    <rect key="frame" x="-1" y="8" width="176" height="176"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="180" id="21S-Fo-0yl"/>
+                                                        <constraint firstAttribute="height" constant="176" id="21S-Fo-0yl"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="BB6-Jq-m1Y" firstAttribute="width" secondItem="Xe0-TI-YVi" secondAttribute="width" id="1f6-Mw-Dex"/>
                                             <constraint firstItem="Kex-DQ-NC1" firstAttribute="centerY" secondItem="Xe0-TI-YVi" secondAttribute="centerY" id="5pk-3z-qLs"/>
                                             <constraint firstItem="BB6-Jq-m1Y" firstAttribute="centerX" secondItem="Xzi-7t-iaq" secondAttribute="centerX" id="9yr-wJ-plD"/>
-                                            <constraint firstItem="BB6-Jq-m1Y" firstAttribute="top" secondItem="Xe0-TI-YVi" secondAttribute="bottom" constant="7" id="E2g-30-CbX"/>
+                                            <constraint firstItem="BB6-Jq-m1Y" firstAttribute="top" secondItem="Xe0-TI-YVi" secondAttribute="bottom" id="E2g-30-CbX"/>
                                             <constraint firstItem="Xe0-TI-YVi" firstAttribute="centerX" secondItem="Xzi-7t-iaq" secondAttribute="centerX" id="Uht-pv-xUA"/>
                                             <constraint firstItem="Xe0-TI-YVi" firstAttribute="width" secondItem="Xzi-7t-iaq" secondAttribute="width" id="b98-Uf-wD2"/>
                                             <constraint firstItem="Xe0-TI-YVi" firstAttribute="top" secondItem="Xzi-7t-iaq" secondAttribute="topMargin" id="j6N-jS-Cva"/>
@@ -82,18 +95,6 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="xVZ-qX-dI3"/>
                                 </connections>
                             </collectionView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6V-Nw-0b7">
-                                <rect key="frame" x="8" y="28" width="584" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMX-uf-ikD">
-                                <rect key="frame" x="550" y="22" width="42" height="42"/>
-                                <state key="normal" image="search"/>
-                                <connections>
-                                    <action selector="searchTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8xz-GC-S0h"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -149,34 +150,34 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ZE-FX-gLs" userLabel="Album Collection View">
                                 <rect key="frame" x="8" y="66" width="584" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hMi-nX-Qgq">
-                                    <size key="itemSize" width="180" height="224"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hMi-nX-Qgq">
+                                    <size key="itemSize" width="176" height="220"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AlbumCell" id="SxD-en-WUU" customClass="AlbumCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="224"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="224"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="176" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Wsx-oa-OtZ">
-                                                    <rect key="frame" x="71" y="72" width="37" height="37"/>
+                                                    <rect key="frame" x="69" y="70" width="37" height="37"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
-                                                    <rect key="frame" x="69" y="196" width="42" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
+                                                    <rect key="frame" x="0.0" y="176" width="176" height="20.5"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="0.54676942569999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ofU-4w-mMq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="176"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="180" id="qDP-zP-AlD"/>
+                                                        <constraint firstAttribute="height" constant="176" id="qDP-zP-AlD"/>
                                                         <constraint firstAttribute="width" constant="180" id="wso-CL-yTr"/>
                                                     </constraints>
                                                     <variation key="default">
@@ -191,13 +192,20 @@
                                         <constraints>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="width" secondItem="SxD-en-WUU" secondAttribute="width" id="EFK-Ph-SmS"/>
                                             <constraint firstItem="NMa-l7-gYq" firstAttribute="centerX" secondItem="SxD-en-WUU" secondAttribute="centerX" id="IhB-np-a70"/>
+                                            <constraint firstItem="NMa-l7-gYq" firstAttribute="width" secondItem="ofU-4w-mMq" secondAttribute="width" id="bg2-E6-HuE"/>
                                             <constraint firstItem="Wsx-oa-OtZ" firstAttribute="centerY" secondItem="ofU-4w-mMq" secondAttribute="centerY" id="d8M-U3-ZVo"/>
                                             <constraint firstItem="Wsx-oa-OtZ" firstAttribute="centerX" secondItem="ofU-4w-mMq" secondAttribute="centerX" id="g7M-2x-RoM"/>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="leading" secondItem="SxD-en-WUU" secondAttribute="leading" id="mGh-UR-KeI"/>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="top" secondItem="SxD-en-WUU" secondAttribute="top" id="tOt-Gz-6HI"/>
-                                            <constraint firstAttribute="bottom" secondItem="NMa-l7-gYq" secondAttribute="bottom" constant="7" id="uS7-uo-HoP"/>
+                                            <constraint firstAttribute="bottom" secondItem="NMa-l7-gYq" secondAttribute="bottom" id="uS7-uo-HoP"/>
+                                            <constraint firstItem="NMa-l7-gYq" firstAttribute="top" secondItem="ofU-4w-mMq" secondAttribute="bottom" id="uSP-A9-0vb"/>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="centerX" secondItem="SxD-en-WUU" secondAttribute="centerX" id="xXg-hu-g1O"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="uS7-uo-HoP"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="albumImage" destination="ofU-4w-mMq" id="9tc-Wg-Jak"/>
                                             <outlet property="albumName" destination="NMa-l7-gYq" id="0P0-Rd-hht"/>
@@ -209,7 +217,7 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="njg-eg-fy3"/>
                                 </connections>
                             </collectionView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oL6-P0-Cqa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search For Your Favorite Artist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oL6-P0-Cqa">
                                 <rect key="frame" x="8" y="28" width="584" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -437,8 +445,8 @@
                                     <action selector="thirdThemeButton:" destination="nAQ-B8-Psa" eventType="touchUpInside" id="LOs-pr-6JE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-AW-c1P">
-                                <rect key="frame" x="247" y="414" width="105" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0P-AW-c1P">
+                                <rect key="frame" x="248" y="414" width="103" height="30"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Custom Theme"/>
                                 <connections>
@@ -518,7 +526,7 @@
                                     <outlet property="delegate" destination="tzw-dd-NOP" id="fTz-R5-wgF"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtq-Kw-lGb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search For Your Favorite Artist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtq-Kw-lGb">
                                 <rect key="frame" x="8" y="28" width="584" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
