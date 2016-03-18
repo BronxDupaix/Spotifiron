@@ -69,7 +69,7 @@
     self.secondViewColor = [UIColor magentaColor];
 }
 
--(void)chooseTheme3 {
+-(void)chooseTheme3 { 
     
     self.currentBackgroundColor = [UIColor redColor];
     self.currentFontNameString = [UIFont fontWithName: @"Gondola_SD" size: 18];

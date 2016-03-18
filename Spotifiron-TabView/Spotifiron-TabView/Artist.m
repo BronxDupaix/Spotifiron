@@ -21,9 +21,11 @@
         artist.name = [artistDictionary objectForKey:@"name"];
         artist.idString = [artistDictionary objectForKey:@"id"];
         NSArray *items = [artistDictionary objectForKey:@"images"];
+        if (items.count > 2) {
         NSDictionary *item = [items objectAtIndex:(items.count - 2)];
         NSString *imageUrl = [item objectForKey:@"url"];
         artist.imageUrl = imageUrl;
+        }
     } else {
          NSLog(@"issue with parsing artist image urls");
     }

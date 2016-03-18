@@ -36,7 +36,7 @@
                                                        if (downloadedImage != nil) {
                                                            
                                                            dispatch_sync(dispatch_get_main_queue(), ^{
-                                                               self.artistImage.image =downloadedImage;
+                                                               self.artistImage.image = downloadedImage;
                                                            });
                                                            
                                                        }
@@ -60,11 +60,11 @@
     
     self.ArtistLabel.layer.masksToBounds = YES;
     
-    self.ArtistLabel.layer.cornerRadius = 15.0;
+    self.ArtistLabel.layer.cornerRadius = 2.5;
     
     self.artistImage.layer.masksToBounds = YES;
     
-    self.artistImage.layer.cornerRadius = 65.0; 
+    self.artistImage.layer.cornerRadius = 5.0;
 }
 
 

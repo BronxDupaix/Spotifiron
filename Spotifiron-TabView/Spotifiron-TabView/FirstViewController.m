@@ -18,6 +18,7 @@
 }
 
 @property (strong, nonatomic) NSMutableArray *relatedArtists;
+@property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
 
 @end
 
@@ -38,18 +39,11 @@
                                                  name:kNotificationThemeChanged
                                                object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateUI)
-                                                 name:kNotificationGetNewApi
-                                               object:nil];
-    
-   [[APIController sharedInstance] getArtistApi:@"slayer"];
-    
     self.relatedArtists = [[NSMutableArray alloc] init];
     
     [self updateUI];
     
-    [self.artistCollectionView  reloadData];
+    //[self.artistCollectionView  reloadData];
     
 }
 
@@ -60,13 +54,23 @@
     
     self.view.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor];
     self.relatedArtists = [[[[DataStore sharedInstance] artists] firstObject] relatedArtists];
-    
-    
-    
-    NSLog(@"%lu", [[[[[DataStore sharedInstance] artists] firstObject] relatedArtists] count]);
-    
     [[self artistCollectionView] reloadData];
+         });
 }
+
+- (IBAction)searchTapped:(UIButton *)sender {
+    NSLog(@"search tapped");
+    
+    if (![self.artistSearchTextField.text isEqual: @""]) {
+    
+        NSString *str = self.artistSearchTextField.text;
+    
+        [[APIController sharedInstance] getArtistApi:str];
+        
+        self.artistSearchTextField.text = @"";
+    }
+}
+
 
 -(UICollectionViewCell *) collectionView:(UICollectionView *)
 

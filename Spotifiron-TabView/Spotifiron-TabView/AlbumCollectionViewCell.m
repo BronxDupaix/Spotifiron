@@ -56,11 +56,11 @@
     
     self.albumName.layer.masksToBounds = YES;
     
-    self.albumName.layer.cornerRadius = 20.0;
+    self.albumName.layer.cornerRadius = 2.5;
     
     self.albumImage.layer.masksToBounds = YES;
     
-    self.albumImage.layer.cornerRadius = 45.0;
+    self.albumImage.layer.cornerRadius = 5.0;
 }
 
 

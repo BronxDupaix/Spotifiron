@@ -34,8 +34,6 @@
 
     [[ThemeManager sharedManager] chooseDefaultTheme];
     [[ThemeManager sharedManager] postNotification];
-    
-    
 
 }
 
@@ -46,19 +44,15 @@
 }
 
 - (IBAction)thirdThemeButton:(UIButton *)sender {
+    
+    [[ThemeManager sharedManager] chooseTheme3];
+    [[ThemeManager sharedManager] postNotification];
 }
 
 - (IBAction)customThemeButton:(UIButton *)sender {
 }
 
-- (IBAction)artistSearchButton:(UIButton *)sender {
-    
-    NSString *str = self.artistSearchTextField.text;
-    
-    [[APIController sharedInstance] getArtistApi:str];
-    
-    [[ThemeManager sharedManager] changeAPI]; 
-}
+
 
 
 
