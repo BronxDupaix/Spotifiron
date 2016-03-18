@@ -15,7 +15,7 @@
 #import "ThemeManager.h"
 #import "Constants.h"
 
-@interface SecondViewController ()
+@interface SecondViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) NSMutableArray *albumArray;
 @property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    self.artistSearchTextField.delegate = self;
     
         // Theme Changed Notification
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -67,7 +69,18 @@
         [[APIController sharedInstance] getArtistApi:str];
         
         self.artistSearchTextField.text = @"";
+
     }
+    [self.artistSearchTextField resignFirstResponder];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self.artistSearchTextField becomeFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.artistSearchTextField resignFirstResponder];
+    return NO;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView

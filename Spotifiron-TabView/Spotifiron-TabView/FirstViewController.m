@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.artistSearchTextField.delegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateUI)
                                                  name:kNotificationTracksLoaded
@@ -70,6 +70,7 @@
         
         self.artistSearchTextField.text = @"";
     }
+    [self.artistSearchTextField resignFirstResponder];
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -77,7 +78,9 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.artistSearchTextField resignFirstResponder];
+    if (textField == self.artistSearchTextField) {
+    [textField resignFirstResponder];
+    }
     return NO;
 }
 
