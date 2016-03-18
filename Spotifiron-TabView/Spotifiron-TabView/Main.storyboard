@@ -53,8 +53,8 @@
                                                         <constraint firstAttribute="height" constant="180" id="21S-Fo-0yl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
-                                                    <rect key="frame" x="71.5" y="79.5" width="37" height="37"/>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
+                                                    <rect key="frame" x="67" y="66" width="37" height="37"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
