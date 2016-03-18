@@ -55,18 +55,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="176" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-DQ-NC1">
                                                     <rect key="frame" x="69" y="78" width="37" height="37"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-Jq-m1Y">
-                                                    <rect key="frame" x="64" y="191" width="48" height="32.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB6-Jq-m1Y">
+                                                    <rect key="frame" x="0.0" y="184" width="176" height="32.5"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.54676942567567566" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="GondolaSD" family="Gondola SD" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xe0-TI-YVi">
-                                                    <rect key="frame" x="-0.5" y="8" width="176" height="176"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xe0-TI-YVi">
+                                                    <rect key="frame" x="-1" y="8" width="176" height="176"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="176" id="21S-Fo-0yl"/>
                                                     </constraints>
@@ -75,9 +75,10 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="BB6-Jq-m1Y" firstAttribute="width" secondItem="Xe0-TI-YVi" secondAttribute="width" id="1f6-Mw-Dex"/>
                                             <constraint firstItem="Kex-DQ-NC1" firstAttribute="centerY" secondItem="Xe0-TI-YVi" secondAttribute="centerY" id="5pk-3z-qLs"/>
                                             <constraint firstItem="BB6-Jq-m1Y" firstAttribute="centerX" secondItem="Xzi-7t-iaq" secondAttribute="centerX" id="9yr-wJ-plD"/>
-                                            <constraint firstItem="BB6-Jq-m1Y" firstAttribute="top" secondItem="Xe0-TI-YVi" secondAttribute="bottom" constant="7" id="E2g-30-CbX"/>
+                                            <constraint firstItem="BB6-Jq-m1Y" firstAttribute="top" secondItem="Xe0-TI-YVi" secondAttribute="bottom" id="E2g-30-CbX"/>
                                             <constraint firstItem="Xe0-TI-YVi" firstAttribute="centerX" secondItem="Xzi-7t-iaq" secondAttribute="centerX" id="Uht-pv-xUA"/>
                                             <constraint firstItem="Xe0-TI-YVi" firstAttribute="width" secondItem="Xzi-7t-iaq" secondAttribute="width" id="b98-Uf-wD2"/>
                                             <constraint firstItem="Xe0-TI-YVi" firstAttribute="top" secondItem="Xzi-7t-iaq" secondAttribute="topMargin" id="j6N-jS-Cva"/>
@@ -166,8 +167,8 @@
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Wsx-oa-OtZ">
                                                     <rect key="frame" x="69" y="70" width="37" height="37"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
-                                                    <rect key="frame" x="67" y="192.5" width="42" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMa-l7-gYq">
+                                                    <rect key="frame" x="0.0" y="176" width="176" height="20.5"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="0.54676942569999998" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -191,13 +192,20 @@
                                         <constraints>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="width" secondItem="SxD-en-WUU" secondAttribute="width" id="EFK-Ph-SmS"/>
                                             <constraint firstItem="NMa-l7-gYq" firstAttribute="centerX" secondItem="SxD-en-WUU" secondAttribute="centerX" id="IhB-np-a70"/>
+                                            <constraint firstItem="NMa-l7-gYq" firstAttribute="width" secondItem="ofU-4w-mMq" secondAttribute="width" id="bg2-E6-HuE"/>
                                             <constraint firstItem="Wsx-oa-OtZ" firstAttribute="centerY" secondItem="ofU-4w-mMq" secondAttribute="centerY" id="d8M-U3-ZVo"/>
                                             <constraint firstItem="Wsx-oa-OtZ" firstAttribute="centerX" secondItem="ofU-4w-mMq" secondAttribute="centerX" id="g7M-2x-RoM"/>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="leading" secondItem="SxD-en-WUU" secondAttribute="leading" id="mGh-UR-KeI"/>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="top" secondItem="SxD-en-WUU" secondAttribute="top" id="tOt-Gz-6HI"/>
-                                            <constraint firstAttribute="bottom" secondItem="NMa-l7-gYq" secondAttribute="bottom" constant="7" id="uS7-uo-HoP"/>
+                                            <constraint firstAttribute="bottom" secondItem="NMa-l7-gYq" secondAttribute="bottom" id="uS7-uo-HoP"/>
+                                            <constraint firstItem="NMa-l7-gYq" firstAttribute="top" secondItem="ofU-4w-mMq" secondAttribute="bottom" id="uSP-A9-0vb"/>
                                             <constraint firstItem="ofU-4w-mMq" firstAttribute="centerX" secondItem="SxD-en-WUU" secondAttribute="centerX" id="xXg-hu-g1O"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="uS7-uo-HoP"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outlet property="albumImage" destination="ofU-4w-mMq" id="9tc-Wg-Jak"/>
                                             <outlet property="albumName" destination="NMa-l7-gYq" id="0P0-Rd-hht"/>
