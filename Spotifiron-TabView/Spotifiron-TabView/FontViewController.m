@@ -34,6 +34,8 @@
 - (IBAction)chooseTypewriterButton:(UIButton *)sender {
     
     [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"American Typewriter" size:18]];
+    [[ThemeManager sharedManager] postNotification];
+
     
 }
 
@@ -41,17 +43,23 @@
     
     [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"Rockabilly" size:18]];
     
+    [[ThemeManager sharedManager] postNotification];
+
 }
 
 - (IBAction)chooseFeltButton:(UIButton *)sender {
     
     [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"Marker Felt" size:18]];
     
+    [[ThemeManager sharedManager] postNotification];
+
 }
 
 - (IBAction)choosePapyrusButton:(UIButton *)sender {
     
     [[ThemeManager sharedManager] setCurrentFontNameString: [UIFont fontWithName:@"Papyrus" size:18]];
     
+    [[ThemeManager sharedManager] postNotification];
+
 }
 @end
