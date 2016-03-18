@@ -14,12 +14,14 @@
 #import "ThemeManager.h" 
 #import "Constants.h"
 #import "APIController.h"
+@import WebKit;
 
 @interface TopTracksViewController ()
 
 @property (strong, nonatomic) NSMutableArray *tracksArray;
 @property (weak, nonatomic) IBOutlet UITextField *artistSearchTextField;
-@property (strong, nonatomic) Artist * currentArtist; 
+@property (strong, nonatomic) Artist * currentArtist;
+@property (nonatomic, strong) WKWebView* webView;
 
 @end
 
@@ -83,6 +85,12 @@
     
     cell.trackName.text = track.name;
     
+    // [cell playButton:track.previewURL];
+    
+    
+    
+    NSLog(@" %@" , track.previewURL);
+    
     cell.backgroundColor = [[ThemeManager sharedManager] currentBackgroundColor]; 
     
     
@@ -92,7 +100,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     return self.tracksArray.count;
-}
+} 
 
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -100,5 +108,23 @@
     return 80;
 }
 
+
+- (IBAction)playButton:(UIButton *)sender {
+    
+    
+    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    
+    NSLog(@"play button pressed@");
+    
+    [self.view addSubview:self.webView]; 
+    
+    self.webView.backgroundColor = [UIColor blueColor];
+    
+    NSURL * url = [NSURL URLWithString:@"https://p.scdn.co/mp3-preview/0e079625cc7c025cb38895d8a9f339ae2fcd9d2f"];
+    
+    [self.webView loadRequest: [[NSURLRequest alloc] initWithURL:url]];
+    
+    // self.webView.allowsBackForwardNavigationGestures = YES;
+}
 
 @end
