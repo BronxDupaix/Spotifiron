@@ -62,11 +62,11 @@
     
     self.ArtistLabel.layer.masksToBounds = YES;
     
-    self.ArtistLabel.layer.cornerRadius = 2.5;
+    self.ArtistLabel.layer.cornerRadius = 25.0; 
     
     self.artistImage.layer.masksToBounds = YES;
     
-    self.artistImage.layer.cornerRadius = 5.0;
+    self.artistImage.layer.cornerRadius = 25.0;
 }
 
 
